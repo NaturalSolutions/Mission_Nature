@@ -1,0 +1,360 @@
+[
+    {
+        "id": 1,
+        "num": "1",
+        "title": "super morio!",
+        "plural": 1,
+        "difficulty": 1,
+        "environments": [
+            "lisiere",
+            "milieux_humide"
+        ],
+        "seasons": [
+            {
+                "startAt": "03",
+                "endAt": "09"
+            }
+        ],
+        "departements": [
+            "01",
+            "02",
+            "03",
+            "07",
+            "08",
+            "09",
+            "10",
+            "12",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "21",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "31",
+            "32",
+            "33",
+            "36",
+            "37"
+        ],
+        "taxon": [
+            {
+                "id": "1",
+                "cd_nom": "53773",
+                "title": "morio",
+                "family": "lepidopteres",
+                "description": "jaune.",
+                "lien": "\\\/morio\\\/",
+                "characteristic": "Caract\\u00e8res"
+            },
+            {
+                "id": "2",
+                "cd_nom": "53856",
+                "title": "Damier",
+                "family": "lepidopteres",
+                "description": "Le Damier",
+                "lien": "damier",
+                "characteristic": "Caract\\u00e8res"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "num": "2",
+        "title": "corewar",
+        "plural": 1,
+        "difficulty": 4,
+        "environments": [
+            "lisiere"
+        ],
+        "seasons": [
+            {
+                "startAt": "02",
+                "endAt": "04"
+            }
+        ],
+        "departements": [
+            "01",
+            "02",
+            "13",
+            "15"
+        ],
+        "taxon": [
+            {
+                "id": "4",
+                "cd_nom": "53234",
+                "title": "hadrien",
+                "family": "grenacs",
+                "description": "slay the spire",
+                "lien": "warcraftlogs",
+                "characteristic": "Caract\\u00e8res"
+            },
+            {
+                "id": "5",
+                "cd_nom": "56234",
+                "title": "bruno",
+                "family": "cazabat",
+                "description": "r6iencli",
+                "lien": "worpressfaismonann\u00e9e",
+                "characteristic": "Caract\\u00e8res"
+            },
+            {
+                "id": "6",
+                "cd_nom": "52423",
+                "title": "florian",
+                "family": "terrasse",
+                "description": "CSFML",
+                "lien": "lolilol",
+                "characteristic": "Caract\\u00e8res"
+            },
+            {
+                "id": "10",
+                "cd_nom": "99999",
+                "title": "gabriel",
+                "family": "girard",
+                "description": "carnouxcity",
+                "lien": "couilleal'aireceweek",
+                "characteristic": "Caract\\u00e8res"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "num": "3",
+        "title": "corewar2",
+        "plural": 1,
+        "difficulty": 4,
+        "environments": [
+            "milieux_humide"
+        ],
+        "seasons": [
+            {
+                "startAt": "02",
+                "endAt": "04"
+            }
+        ],
+        "departements": [
+            "01",
+            "02",
+            "13",
+            "15"
+        ],
+        "taxon": [
+            {
+                "id": "7",
+                "cd_nom": "53212",
+                "title": "jessy",
+                "family": "beltran",
+                "description": "mexico",
+                "lien": "jvounik",
+                "characteristic": "Caract\\u00e8res"
+            },
+            {
+                "id": "8",
+                "cd_nom": "56789",
+                "title": "joshua",
+                "family": "moisan",
+                "description": "villeurbane",
+                "lien": "canarticho",
+                "characteristic": "Caract\\u00e8res"
+            },
+            {
+                "id": "9",
+                "cd_nom": "54673",
+                "title": "paul",
+                "family": "savoye",
+                "description": "toulonlesang",
+                "lien": "blackjackpot",
+                "characteristic": "Caract\\u00e8res"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "num": "4",
+        "title": "my_rpg",
+        "plural": 1,
+        "difficulty": 3,
+        "environments": [
+            "milieux_humide"
+        ],
+        "seasons": [
+            {
+                "startAt": "02",
+                "endAt": "04"
+            }
+        ],
+        "departements": [
+            "01",
+            "02",
+            "13",
+            "15"
+        ],
+        "taxon": [
+            {
+                "id": "1",
+                "cd_nom": "53773",
+                "title": "morio",
+                "family": "lepidopteres",
+                "description": "jaune.",
+                "lien": "\\\/morio\\\/",
+                "characteristic": "Caract\\u00e8res"
+            },
+            {
+                "id": "3",
+                "cd_nom": "54325",
+                "title": "mite",
+                "family": "oiseaux",
+                "description": "la mite magique",
+                "lien": "magical girl",
+                "characteristic": "Caract\\u00e8res"
+            },
+            {
+                "id": "5",
+                "cd_nom": "56234",
+                "title": "bruno",
+                "family": "cazabat",
+                "description": "r6iencli",
+                "lien": "worpressfaismonann\u00e9e",
+                "characteristic": "Caract\\u00e8res"
+            },
+            {
+                "id": "7",
+                "cd_nom": "53212",
+                "title": "jessy",
+                "family": "beltran",
+                "description": "mexico",
+                "lien": "jvounik",
+                "characteristic": "Caract\\u00e8res"
+            },
+            {
+                "id": "9",
+                "cd_nom": "54673",
+                "title": "paul",
+                "family": "savoye",
+                "description": "toulonlesang",
+                "lien": "blackjackpot",
+                "characteristic": "Caract\\u00e8res"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "num": "5",
+        "title": "my_rpg2",
+        "plural": 1,
+        "difficulty": 3,
+        "environments": [
+            "milieux_humide"
+        ],
+        "seasons": [
+            {
+                "startAt": "02",
+                "endAt": "04"
+            }
+        ],
+        "departements": [
+            "01",
+            "02",
+            "13",
+            "15"
+        ],
+        "taxon": [
+            {
+                "id": "1",
+                "cd_nom": "53773",
+                "title": "morio",
+                "family": "lepidopteres",
+                "description": "jaune.",
+                "lien": "\\\/morio\\\/",
+                "characteristic": "Caract\\u00e8res"
+            },
+            {
+                "id": "2",
+                "cd_nom": "53856",
+                "title": "Damier",
+                "family": "lepidopteres",
+                "description": "Le Damier",
+                "lien": "damier",
+                "characteristic": "Caract\\u00e8res"
+            },
+            {
+                "id": "3",
+                "cd_nom": "54325",
+                "title": "mite",
+                "family": "oiseaux",
+                "description": "la mite magique",
+                "lien": "magical girl",
+                "characteristic": "Caract\\u00e8res"
+            },
+            {
+                "id": "4",
+                "cd_nom": "53234",
+                "title": "hadrien",
+                "family": "grenacs",
+                "description": "slay the spire",
+                "lien": "warcraftlogs",
+                "characteristic": "Caract\\u00e8res"
+            },
+            {
+                "id": "5",
+                "cd_nom": "56234",
+                "title": "bruno",
+                "family": "cazabat",
+                "description": "r6iencli",
+                "lien": "worpressfaismonann\u00e9e",
+                "characteristic": "Caract\\u00e8res"
+            },
+            {
+                "id": "6",
+                "cd_nom": "52423",
+                "title": "florian",
+                "family": "terrasse",
+                "description": "CSFML",
+                "lien": "lolilol",
+                "characteristic": "Caract\\u00e8res"
+            },
+            {
+                "id": "7",
+                "cd_nom": "53212",
+                "title": "jessy",
+                "family": "beltran",
+                "description": "mexico",
+                "lien": "jvounik",
+                "characteristic": "Caract\\u00e8res"
+            },
+            {
+                "id": "8",
+                "cd_nom": "56789",
+                "title": "joshua",
+                "family": "moisan",
+                "description": "villeurbane",
+                "lien": "canarticho",
+                "characteristic": "Caract\\u00e8res"
+            },
+            {
+                "id": "9",
+                "cd_nom": "54673",
+                "title": "paul",
+                "family": "savoye",
+                "description": "toulonlesang",
+                "lien": "blackjackpot",
+                "characteristic": "Caract\\u00e8res"
+            },
+            {
+                "id": "10",
+                "cd_nom": "99999",
+                "title": "gabriel",
+                "family": "girard",
+                "description": "carnouxcity",
+                "lien": "couilleal'aireceweek",
+                "characteristic": "Caract\\u00e8res"
+            }
+        ]
+    }
+]

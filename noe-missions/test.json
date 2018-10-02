@@ -1,0 +1,20 @@
+[
+    {
+        "ID":"1",
+        "num":"1",
+        "Titre":"Super Morio !",
+        "Esp\u00e8ce":"Morio",
+        "Plural":"",
+        "cd_nom":"53733",
+        "Famille":"lepidopteres",
+        "Difficult\u00e9":"1",
+        "Milieu\nchoix possibles : sous_bois, feuillus, coniferes, prairie, milieu_humide, lisiere, clairiere":"lisiere, milieu_humide",
+        "Saison (mois)":"03-09",
+        "D\u00e9partement":"01,02,03,07,08,09,10,12,15,16,17,18,19,21,23,24,25,26,27,28,31,32,33,36,37,38,39,40,41,42,43,44,45,46,47,49,51,52,53,58,59,60,62,63,64,65,67,68,69,70,71,72,73,74,76,79,80,81,82,85,86,87,89,90",
+        "Description":"Le Morio est un grand papillon pouvant atteindre 7,5 cm d'envergure. On le reconnait au dessus de ses ailes violet fonc\u00e9 pr\u00e9sentant une bande marginale jaune (blanche apr\u00e8s hibernation) et une s\u00e9rie de taches marginales bleues. Le dessous des ailes est noir avec la m\u00eame bande marginale jaune.",
+        "Caract\u00e8res distinctifs":"Caract\u00e8res distinctifs :\n -dessus des ailes viol\u00e9 fonc\u00e9\n -bande marginale blanche \u00e0 jaune\n sur les 4 ailes\n Taille : 7,5 cm",
+        "Lien":"http:\/\/biodiversite-foret.fr\/les-especes-2\/lepidopteres\/morio\/",
+        "":"",
+        "id":0
+    }
+]
