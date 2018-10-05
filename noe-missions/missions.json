@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "num": "1",
+        "title": "super morio!",
+        "plural": 1,
+        "difficulty": 1,
+        "environments": [
+            "lisiere",
+            "milieux_humide"
+        ],
+        "seasons": [
+            {
+                "startAt": "03",
+                "endAt": "09"
+            }
+        ],
+        "departements": [
+            "01",
+            "02",
+            "03",
+            "07",
+            "08",
+            "09",
+            "10",
+            "12",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "21",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "31",
+            "32",
+            "33",
+            "36",
+            "37"
+        ],
+        "taxon": [
+            {
+                "id": "1",
+                "cd_nom": "53773",
+                "title": "morio",
+                "family": "lepidopteres",
+                "description": "Le Morio est un grand papillon pouvant atteindre 7,5 cm d'envergure.",
+                "url": "http:\\\/\\\/biodiversite-foret.fr\\\/les-especes-2\\\/lepidopteres\\\/morio\\\/",
+                "characteristic": "Caract\u00e9res distinctifs :\\n -dessus des ailes violette"
+            },
+            {
+                "id": "2",
+                "cd_nom": "53856",
+                "title": "Damier",
+                "family": "lepidopteres",
+                "description": "Le Damier du fr\u00e9ane a une envergure comprise entre 21 et 24 mm.",
+                "url": "http:\\\/\\\/biodiversite-foret.fr\\\/les-especes-2\\\/lepidopteres\\\/damier-du-frene\\\/",
+                "characteristic": "Caract\u00e9res distinctifs :\\n -s\u00e9rie de taches blanches en marge des\\n ailes"
+            }
+        ]
+    }
+]
