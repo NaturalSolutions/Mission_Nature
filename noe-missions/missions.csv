@@ -1,6 +1,0 @@
-id;num;title;plural;difficulty;environments:"Milieu choix possibles : sous_bois, feuillus, coniferes, prairie, milieu_humide, lisiere, clairiere";Saison (mois);Département;taxons;;;;;
-1;1;"super morio!";1;1;lisiere, milieux_humide;03-09;01,02,03,07,08,09,10,12,15,16,17,18,19,21,23,24,25,26,27,28,31,32,33,36,37;1,2;;;;;
-2;2;"corewar";1;4;lisiere;02-04;01,02,13,15;4,5,6,10;;;;;
-3;3;"corewar2";1;4;milieux_humide;02-04;01,02,13,15;7,8,9;;;;;
-4;4;"my_rpg";1;3;milieux_humide;02-04;01,02,13,15;1,3,5,7,9;;;;;
-5;5;"my_rpg2";1;3;milieux_humide;02-04;01,02,13,15;1,3,2,10,5,6,7,8,9,4;;;;;
