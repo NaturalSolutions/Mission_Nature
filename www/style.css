@@ -1071,7 +1071,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: Bree, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: BreeNormal, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #444444;
@@ -6322,7 +6322,7 @@ button.list-group-item-danger.active:focus {
 .close {
   float: right;
   font-size: 21px;
-  font-weight: bold;
+  font-weight: normal;
   line-height: 1;
   color: #000000;
   text-shadow: 0 1px 0 #ffffff;
@@ -6472,7 +6472,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: Bree, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: BreeNormal, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6590,7 +6590,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: Bree, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: BreeNormal, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -8287,7 +8287,6 @@ select.input-lg {
   margin-top: 0;
 }
 .panel-group .panel-heading {
-  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.12);
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.12);
 }
@@ -8632,9 +8631,9 @@ select.input-lg {
 }
 /*==========  Global  =========*/
 @font-face {
-  font-family: "Bree";
+  font-family: "BreeNormal";
   src: url("fonts/PoliceBree/BreeRegular.otf");
-  font-weight: 200;
+  font-weight: 100;
 }
 @font-face {
   font-family: "Bree";
@@ -8811,7 +8810,7 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 body {
-  background: url("images/bg.jpg") no-repeat center;
+  background: #ffffff;
   background-size: cover;
 }
 body:before {
@@ -8872,7 +8871,6 @@ body.with-help .dialog-help .bootstrap-dialog-title p {
   margin-top: 0px;
   font-size: 19px;
   padding-top: 12px;
-  text-shadow: 0 2px 9px rgba(0, 0, 0, 0.3);
 }
 body.with-help .dialog-help .modal-header {
   border-bottom: none;
@@ -8880,7 +8878,6 @@ body.with-help .dialog-help .modal-header {
 }
 body.with-help .dialog-help .modal-header .close {
   color: #FFF;
-  text-shadow: 0 1px 0 #000;
 }
 body.with-help .dialog-help .modal-body {
   font-size: 1.6rem;
@@ -8933,9 +8930,9 @@ body:not(.with-help) .btn-inner-border:before {
 ul.form-control {
   list-style: none;
 }
-.bg-yellow {
-  background-color: #ffcd06;
-  color: #333333;
+.bg-grey {
+  background-color: #7a7975;
+  color: #ffffff;
 }
 .dropdown-menu > li > a.bg-yellow {
   color: #333333;
@@ -11116,7 +11113,6 @@ fieldset[disabled] .dropdown-menu > li > a.bg-blue-royal.active {
   font-size: 70px;
   line-height: 2em;
   display: inline-block;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
 }
@@ -11133,7 +11129,6 @@ fieldset[disabled] .dropdown-menu > li > a.bg-blue-royal.active {
 }
 .modal.user-score .bootstrap-dialog-body .badge .text-xs {
   font-size: .23em;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 .modal.user-score .bootstrap-dialog-body .badge .text-bottom {
   position: absolute;
@@ -11232,7 +11227,7 @@ fieldset[disabled] .dropdown-menu > li > a.bg-blue-royal.active {
 }
 .btn-fab > .icon {
   vertical-align: middle;
-  font-size: 2.8em;
+  font-size: 2.6em;
 }
 .btn-fab > .icon.icon-open {
   display: none;
@@ -11380,7 +11375,6 @@ body.header-none:before {
   font-size: 19px;
   padding-top: 12px;
   padding-bottom: 12px;
-  text-shadow: 0 2px 9px rgba(0, 0, 0, 0.3);
 }
 #header .col-side,
 .header-app .col-side {
@@ -11408,7 +11402,7 @@ body.header-none:before {
   color: white;
 }
 body.in-forest #header {
-  background: #32934e;
+  background: #49a763;
   color: white;
   -webkit-transition: background-color 500ms linear;
 }
@@ -11942,7 +11936,6 @@ body.show-sidenav .sidenav {
   color: #8f8f8f;
   font-size: 2rem;
   font-weight: 400;
-  text-shadow: 0 2px 9px rgba(0, 0, 0, 0.2);
   padding: 16px;
   padding-right: 90px;
   position: relative;
