@@ -30,7 +30,7 @@ foreach ($missions_rows as $key => $mission_row) {
   $mission_row = explode(";", $mission_row);
   $id = (int) $mission_row[0];
   if ( $id ) {
-    $id_especes = explode(',', $mission_row[8]);
+    $id_especes = explode(',', $mission_row[7]);
     sort($id_especes);
     $seasons = explode('-', $mission_row[6]);
     $title = trim($mission_row[2], '"');
@@ -66,7 +66,7 @@ foreach ($missions_rows as $key => $mission_row) {
           'endAt' => $seasons[1],
         ),
       ),
-      'departements' => explode(',', $mission_row[7]),
+//      'departements' => explode(',', $mission_row[7]),
       'taxon' => $newArray,
     );
     $ouput[] = $mission_row;
