@@ -1071,7 +1071,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Bree, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #444444;
@@ -6472,7 +6472,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Bree, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6590,7 +6590,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Bree, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -8631,6 +8631,33 @@ select.input-lg {
   margin: -0.5em 0 0 -0.5em;
 }
 /*==========  Global  =========*/
+@font-face {
+  font-family: "Bree";
+  src: url("fonts/PoliceBree/BreeRegular.otf");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Bree";
+  src: url("fonts/PoliceBree/BreeBold.otf");
+  font-style: bold;
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Bree";
+  src: url("fonts/PoliceBree/BreeExtrabold.otf");
+  font-style: bold;
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Bree";
+  src: url("fonts/PoliceBree/BreeLight.otf");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Bree";
+  src: url("fonts/PoliceBree/BreeThin.otf");
+  font-weight: 100;
+}
 @font-face {
   font-family: "Roboto";
   src: url("fonts/roboto/Roboto-Thin.ttf");
