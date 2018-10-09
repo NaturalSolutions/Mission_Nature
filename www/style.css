@@ -10441,30 +10441,30 @@ fieldset[disabled] .dropdown-menu > li > a.bg-gray.active {
   color: #444444;
 }
 .bg-gray-dark {
-  background-color: #333333;
+  background-color: #6b6565;
   color: #eeeeee;
 }
 .dropdown-menu > li > a.bg-gray-dark {
   color: #eeeeee;
-  background-color: #333333;
+  background-color: #6b6565;
   border-color: transparent;
 }
 .dropdown-menu > li > a.bg-gray-dark:focus,
 .dropdown-menu > li > a.bg-gray-dark.focus {
   color: #eeeeee;
-  background-color: #1a1a1a;
+  background-color: #514c4c;
   border-color: rgba(0, 0, 0, 0);
 }
 .dropdown-menu > li > a.bg-gray-dark:hover {
   color: #eeeeee;
-  background-color: #1a1a1a;
+  background-color: #514c4c;
   border-color: rgba(0, 0, 0, 0);
 }
 .dropdown-menu > li > a.bg-gray-dark:active,
 .dropdown-menu > li > a.bg-gray-dark.active,
 .open > .dropdown-toggle.dropdown-menu > li > a.bg-gray-dark {
   color: #eeeeee;
-  background-color: #1a1a1a;
+  background-color: #514c4c;
   border-color: rgba(0, 0, 0, 0);
 }
 .dropdown-menu > li > a.bg-gray-dark:active:hover,
@@ -10477,7 +10477,7 @@ fieldset[disabled] .dropdown-menu > li > a.bg-gray.active {
 .dropdown-menu > li > a.bg-gray-dark.active.focus,
 .open > .dropdown-toggle.dropdown-menu > li > a.bg-gray-dark.focus {
   color: #eeeeee;
-  background-color: #080808;
+  background-color: #3e3b3b;
   border-color: rgba(0, 0, 0, 0);
 }
 .dropdown-menu > li > a.bg-gray-dark:active,
@@ -10503,29 +10503,29 @@ fieldset[disabled] .dropdown-menu > li > a.bg-gray-dark:active,
 .dropdown-menu > li > a.bg-gray-dark.disabled.active,
 .dropdown-menu > li > a.bg-gray-dark[disabled].active,
 fieldset[disabled] .dropdown-menu > li > a.bg-gray-dark.active {
-  background-color: #333333;
+  background-color: #6b6565;
   border-color: transparent;
 }
 .dropdown-menu > li > a.bg-gray-dark .badge {
-  color: #333333;
+  color: #6b6565;
   background-color: #eeeeee;
 }
 .dropdown-menu > li > a.bg-gray-dark:focus,
 .dropdown-menu > li > a.bg-gray-dark.focus {
   color: #eeeeee;
-  background-color: #333333;
+  background-color: #6b6565;
   border-color: transparent;
 }
 .dropdown-menu > li > a.bg-gray-dark:hover {
   color: #eeeeee;
-  background-color: #333333;
+  background-color: #6b6565;
   border-color: transparent;
 }
 .dropdown-menu > li > a.bg-gray-dark:active,
 .dropdown-menu > li > a.bg-gray-dark.active,
 .open > .dropdown-toggle.dropdown-menu > li > a.bg-gray-dark {
   color: #eeeeee;
-  background-color: #333333;
+  background-color: #6b6565;
   border-color: transparent;
 }
 .dropdown-menu > li > a.bg-gray-dark:active:hover,
@@ -10538,7 +10538,7 @@ fieldset[disabled] .dropdown-menu > li > a.bg-gray-dark.active {
 .dropdown-menu > li > a.bg-gray-dark.active.focus,
 .open > .dropdown-toggle.dropdown-menu > li > a.bg-gray-dark.focus {
   color: #eeeeee;
-  background-color: #333333;
+  background-color: #6b6565;
   border-color: transparent;
 }
 .dropdown-menu > li > a.bg-gray-dark:active,
@@ -10564,29 +10564,29 @@ fieldset[disabled] .dropdown-menu > li > a.bg-gray-dark:active,
 .dropdown-menu > li > a.bg-gray-dark.disabled.active,
 .dropdown-menu > li > a.bg-gray-dark[disabled].active,
 fieldset[disabled] .dropdown-menu > li > a.bg-gray-dark.active {
-  background-color: #333333;
+  background-color: #6b6565;
   border-color: transparent;
 }
 .dropdown-menu > li > a.bg-gray-dark .badge {
-  color: #333333;
+  color: #6b6565;
   background-color: #eeeeee;
 }
 .text-gray-dark,
 .dropdown-menu > li > a.text-gray-dark {
-  color: #333333;
+  color: #6b6565;
 }
 .modal.theme-gray-dark .modal-content {
-  background-color: #333333;
+  background-color: #6b6565;
   color: #eeeeee;
 }
 .donutchart-gray-dark .circle {
-  border-color: #333333;
+  border-color: #6b6565;
 }
 .donutchart-gray-dark .cap {
-  background: #333333;
+  background: #6b6565;
 }
 .spinner-gray-dark {
-  stroke: #333333;
+  stroke: #6b6565;
 }
 .btn.bg-gray-dark {
   color: #eeeeee;
@@ -12130,6 +12130,13 @@ body.show-sidenav .sidenav {
 .page-mission_sheet .accordion .panel-body {
   font-size: 1.6rem;
   padding: 26px;
+}
+.page-mission_sheet .accordion .panel-body img {
+  display: block;
+  margin-top: 1.3em;
+  margin-bottom: 1.3em;
+  margin-left: auto;
+  margin-right: auto;
 }
 .page-mission_sheet .accordion .panel-body .btn-block {
   margin-top: 20px;
