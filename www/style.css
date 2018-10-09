@@ -8930,9 +8930,9 @@ body:not(.with-help) .btn-inner-border:before {
 ul.form-control {
   list-style: none;
 }
-.bg-grey {
-  background-color: #7a7975;
-  color: #ffffff;
+.bg-yellow {
+  background-color: #ffcd06;
+  color: #333333;
 }
 .dropdown-menu > li > a.bg-yellow {
   color: #333333;
@@ -10964,7 +10964,6 @@ fieldset[disabled] .dropdown-menu > li > a.bg-blue-royal.active {
 }
 .user-sky {
   position: relative;
-  background-image: linear-gradient(to bottom, #27277d 0%, #28a5be 33%, #00d889 66%, #98d800 100%);
   background-size: 100% 400%;
   /*&.user-sky-1 {
         background-image: radial-gradient(circle at 45% 55%, #0099D8 0%, #27277D 100%);
@@ -11227,7 +11226,7 @@ fieldset[disabled] .dropdown-menu > li > a.bg-blue-royal.active {
 }
 .btn-fab > .icon {
   vertical-align: middle;
-  font-size: 2.6em;
+  font-size: 2.8em;
 }
 .btn-fab > .icon.icon-open {
   display: none;
@@ -11355,8 +11354,6 @@ body.header-none:before {
   width: 100%;
   z-index: 2;
   background: rgba(255, 255, 255, 0.95);
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 }
@@ -11369,6 +11366,8 @@ body.header-none:before {
 }
 #header .title,
 .header-app .title {
+  background: #ffffff;
+  color: #32934e;
   position: absolute;
   left: 0;
   width: 100%;
@@ -11402,7 +11401,7 @@ body.header-none:before {
   color: white;
 }
 body.in-forest #header {
-  background: #49a763;
+  background: #32934e;
   color: white;
   -webkit-transition: background-color 500ms linear;
 }
@@ -11758,11 +11757,8 @@ body.show-sidenav .sidenav {
   transition: background-position-y 0.5s linear;
 }
 .page.dashboard .header .score-implode .score.level-0 .score-icon {
-  width: 80%;
-  height: 80%;
-  top: 10%;
-  left: 10%;
-  border-radius: 0;
+  width: 100%;
+  height: 100%;
 }
 .page.dashboard .header .score-implode .score:after {
   content: "";
