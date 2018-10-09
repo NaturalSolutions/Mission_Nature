@@ -2536,7 +2536,7 @@ output {
   padding-top: 7px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #555555;
+  color: #8d7f84;
 }
 .form-control {
   display: block;
@@ -2545,7 +2545,7 @@ output {
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #555555;
+  color: #8d7f84;
   background-color: #ffffff;
   background-image: none;
   border: 1px solid #cccccc;
@@ -4367,7 +4367,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   font-size: 14px;
   font-weight: normal;
   line-height: 1;
-  color: #555555;
+  color: #8d7f84;
   text-align: center;
   background-color: transparent;
   border: 1px solid #cccccc;
@@ -4501,7 +4501,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-  color: #555555;
+  color: #8d7f84;
   background-color: #ffffff;
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
@@ -8121,7 +8121,7 @@ fieldset[disabled] .form-control {
 .checkbox label {
   display: block;
   padding-left: 0;
-  color: #555555;
+  color: #8d7f84;
 }
 .radio input[type="checkbox"],
 .checkbox input[type="checkbox"] {
@@ -8745,7 +8745,7 @@ select.input-lg {
   font-style: normal;
   font-size: 1.4em;
   /* Preferred icon size */
-  display: inline-block;
+  display: inline;
   width: 1em;
   height: 1em;
   line-height: 1em;
@@ -8929,6 +8929,157 @@ body:not(.with-help) .btn-inner-border:before {
 }
 ul.form-control {
   list-style: none;
+}
+.bg-gray {
+  background-color: #8d7f84;
+  color: #ffffff;
+}
+.dropdown-menu > li > a.bg-gray {
+  color: #ffffff;
+  background-color: #8d7f84;
+  border-color: transparent;
+}
+.dropdown-menu > li > a.bg-gray:focus,
+.dropdown-menu > li > a.bg-gray.focus {
+  color: #ffffff;
+  background-color: #73666b;
+  border-color: rgba(0, 0, 0, 0);
+}
+.dropdown-menu > li > a.bg-gray:hover {
+  color: #ffffff;
+  background-color: #73666b;
+  border-color: rgba(0, 0, 0, 0);
+}
+.dropdown-menu > li > a.bg-gray:active,
+.dropdown-menu > li > a.bg-gray.active,
+.open > .dropdown-toggle.dropdown-menu > li > a.bg-gray {
+  color: #ffffff;
+  background-color: #73666b;
+  border-color: rgba(0, 0, 0, 0);
+}
+.dropdown-menu > li > a.bg-gray:active:hover,
+.dropdown-menu > li > a.bg-gray.active:hover,
+.open > .dropdown-toggle.dropdown-menu > li > a.bg-gray:hover,
+.dropdown-menu > li > a.bg-gray:active:focus,
+.dropdown-menu > li > a.bg-gray.active:focus,
+.open > .dropdown-toggle.dropdown-menu > li > a.bg-gray:focus,
+.dropdown-menu > li > a.bg-gray:active.focus,
+.dropdown-menu > li > a.bg-gray.active.focus,
+.open > .dropdown-toggle.dropdown-menu > li > a.bg-gray.focus {
+  color: #ffffff;
+  background-color: #605559;
+  border-color: rgba(0, 0, 0, 0);
+}
+.dropdown-menu > li > a.bg-gray:active,
+.dropdown-menu > li > a.bg-gray.active,
+.open > .dropdown-toggle.dropdown-menu > li > a.bg-gray {
+  background-image: none;
+}
+.dropdown-menu > li > a.bg-gray.disabled,
+.dropdown-menu > li > a.bg-gray[disabled],
+fieldset[disabled] .dropdown-menu > li > a.bg-gray,
+.dropdown-menu > li > a.bg-gray.disabled:hover,
+.dropdown-menu > li > a.bg-gray[disabled]:hover,
+fieldset[disabled] .dropdown-menu > li > a.bg-gray:hover,
+.dropdown-menu > li > a.bg-gray.disabled:focus,
+.dropdown-menu > li > a.bg-gray[disabled]:focus,
+fieldset[disabled] .dropdown-menu > li > a.bg-gray:focus,
+.dropdown-menu > li > a.bg-gray.disabled.focus,
+.dropdown-menu > li > a.bg-gray[disabled].focus,
+fieldset[disabled] .dropdown-menu > li > a.bg-gray.focus,
+.dropdown-menu > li > a.bg-gray.disabled:active,
+.dropdown-menu > li > a.bg-gray[disabled]:active,
+fieldset[disabled] .dropdown-menu > li > a.bg-gray:active,
+.dropdown-menu > li > a.bg-gray.disabled.active,
+.dropdown-menu > li > a.bg-gray[disabled].active,
+fieldset[disabled] .dropdown-menu > li > a.bg-gray.active {
+  background-color: #8d7f84;
+  border-color: transparent;
+}
+.dropdown-menu > li > a.bg-gray .badge {
+  color: #8d7f84;
+  background-color: #ffffff;
+}
+.dropdown-menu > li > a.bg-gray:focus,
+.dropdown-menu > li > a.bg-gray.focus {
+  color: #ffffff;
+  background-color: #8d7f84;
+  border-color: transparent;
+}
+.dropdown-menu > li > a.bg-gray:hover {
+  color: #ffffff;
+  background-color: #8d7f84;
+  border-color: transparent;
+}
+.dropdown-menu > li > a.bg-gray:active,
+.dropdown-menu > li > a.bg-gray.active,
+.open > .dropdown-toggle.dropdown-menu > li > a.bg-gray {
+  color: #ffffff;
+  background-color: #8d7f84;
+  border-color: transparent;
+}
+.dropdown-menu > li > a.bg-gray:active:hover,
+.dropdown-menu > li > a.bg-gray.active:hover,
+.open > .dropdown-toggle.dropdown-menu > li > a.bg-gray:hover,
+.dropdown-menu > li > a.bg-gray:active:focus,
+.dropdown-menu > li > a.bg-gray.active:focus,
+.open > .dropdown-toggle.dropdown-menu > li > a.bg-gray:focus,
+.dropdown-menu > li > a.bg-gray:active.focus,
+.dropdown-menu > li > a.bg-gray.active.focus,
+.open > .dropdown-toggle.dropdown-menu > li > a.bg-gray.focus {
+  color: #ffffff;
+  background-color: #8d7f84;
+  border-color: transparent;
+}
+.dropdown-menu > li > a.bg-gray:active,
+.dropdown-menu > li > a.bg-gray.active,
+.open > .dropdown-toggle.dropdown-menu > li > a.bg-gray {
+  background-image: none;
+}
+.dropdown-menu > li > a.bg-gray.disabled,
+.dropdown-menu > li > a.bg-gray[disabled],
+fieldset[disabled] .dropdown-menu > li > a.bg-gray,
+.dropdown-menu > li > a.bg-gray.disabled:hover,
+.dropdown-menu > li > a.bg-gray[disabled]:hover,
+fieldset[disabled] .dropdown-menu > li > a.bg-gray:hover,
+.dropdown-menu > li > a.bg-gray.disabled:focus,
+.dropdown-menu > li > a.bg-gray[disabled]:focus,
+fieldset[disabled] .dropdown-menu > li > a.bg-gray:focus,
+.dropdown-menu > li > a.bg-gray.disabled.focus,
+.dropdown-menu > li > a.bg-gray[disabled].focus,
+fieldset[disabled] .dropdown-menu > li > a.bg-gray.focus,
+.dropdown-menu > li > a.bg-gray.disabled:active,
+.dropdown-menu > li > a.bg-gray[disabled]:active,
+fieldset[disabled] .dropdown-menu > li > a.bg-gray:active,
+.dropdown-menu > li > a.bg-gray.disabled.active,
+.dropdown-menu > li > a.bg-gray[disabled].active,
+fieldset[disabled] .dropdown-menu > li > a.bg-gray.active {
+  background-color: #8d7f84;
+  border-color: transparent;
+}
+.dropdown-menu > li > a.bg-gray .badge {
+  color: #8d7f84;
+  background-color: #ffffff;
+}
+.text-gray,
+.dropdown-menu > li > a.text-gray {
+  color: #8d7f84;
+}
+.modal.theme-gray .modal-content {
+  background-color: #8d7f84;
+  color: #ffffff;
+}
+.donutchart-gray .circle {
+  border-color: #8d7f84;
+}
+.donutchart-gray .cap {
+  background: #8d7f84;
+}
+.spinner-gray {
+  stroke: #8d7f84;
+}
+.btn.bg-gray {
+  color: #ffffff;
 }
 .bg-yellow {
   background-color: #ffcd06;
@@ -10139,30 +10290,30 @@ fieldset[disabled] .dropdown-menu > li > a.bg-gray-light.active {
   color: #444444;
 }
 .bg-gray {
-  background-color: #555555;
+  background-color: #8d7f84;
   color: #444444;
 }
 .dropdown-menu > li > a.bg-gray {
   color: #444444;
-  background-color: #555555;
+  background-color: #8d7f84;
   border-color: transparent;
 }
 .dropdown-menu > li > a.bg-gray:focus,
 .dropdown-menu > li > a.bg-gray.focus {
   color: #444444;
-  background-color: #3c3c3c;
+  background-color: #73666b;
   border-color: rgba(0, 0, 0, 0);
 }
 .dropdown-menu > li > a.bg-gray:hover {
   color: #444444;
-  background-color: #3c3c3c;
+  background-color: #73666b;
   border-color: rgba(0, 0, 0, 0);
 }
 .dropdown-menu > li > a.bg-gray:active,
 .dropdown-menu > li > a.bg-gray.active,
 .open > .dropdown-toggle.dropdown-menu > li > a.bg-gray {
   color: #444444;
-  background-color: #3c3c3c;
+  background-color: #73666b;
   border-color: rgba(0, 0, 0, 0);
 }
 .dropdown-menu > li > a.bg-gray:active:hover,
@@ -10175,7 +10326,7 @@ fieldset[disabled] .dropdown-menu > li > a.bg-gray-light.active {
 .dropdown-menu > li > a.bg-gray.active.focus,
 .open > .dropdown-toggle.dropdown-menu > li > a.bg-gray.focus {
   color: #444444;
-  background-color: #2a2a2a;
+  background-color: #605559;
   border-color: rgba(0, 0, 0, 0);
 }
 .dropdown-menu > li > a.bg-gray:active,
@@ -10201,29 +10352,29 @@ fieldset[disabled] .dropdown-menu > li > a.bg-gray:active,
 .dropdown-menu > li > a.bg-gray.disabled.active,
 .dropdown-menu > li > a.bg-gray[disabled].active,
 fieldset[disabled] .dropdown-menu > li > a.bg-gray.active {
-  background-color: #555555;
+  background-color: #8d7f84;
   border-color: transparent;
 }
 .dropdown-menu > li > a.bg-gray .badge {
-  color: #555555;
+  color: #8d7f84;
   background-color: #444444;
 }
 .dropdown-menu > li > a.bg-gray:focus,
 .dropdown-menu > li > a.bg-gray.focus {
   color: #444444;
-  background-color: #555555;
+  background-color: #8d7f84;
   border-color: transparent;
 }
 .dropdown-menu > li > a.bg-gray:hover {
   color: #444444;
-  background-color: #555555;
+  background-color: #8d7f84;
   border-color: transparent;
 }
 .dropdown-menu > li > a.bg-gray:active,
 .dropdown-menu > li > a.bg-gray.active,
 .open > .dropdown-toggle.dropdown-menu > li > a.bg-gray {
   color: #444444;
-  background-color: #555555;
+  background-color: #8d7f84;
   border-color: transparent;
 }
 .dropdown-menu > li > a.bg-gray:active:hover,
@@ -10236,7 +10387,7 @@ fieldset[disabled] .dropdown-menu > li > a.bg-gray.active {
 .dropdown-menu > li > a.bg-gray.active.focus,
 .open > .dropdown-toggle.dropdown-menu > li > a.bg-gray.focus {
   color: #444444;
-  background-color: #555555;
+  background-color: #8d7f84;
   border-color: transparent;
 }
 .dropdown-menu > li > a.bg-gray:active,
@@ -10262,29 +10413,29 @@ fieldset[disabled] .dropdown-menu > li > a.bg-gray:active,
 .dropdown-menu > li > a.bg-gray.disabled.active,
 .dropdown-menu > li > a.bg-gray[disabled].active,
 fieldset[disabled] .dropdown-menu > li > a.bg-gray.active {
-  background-color: #555555;
+  background-color: #8d7f84;
   border-color: transparent;
 }
 .dropdown-menu > li > a.bg-gray .badge {
-  color: #555555;
+  color: #8d7f84;
   background-color: #444444;
 }
 .text-gray,
 .dropdown-menu > li > a.text-gray {
-  color: #555555;
+  color: #8d7f84;
 }
 .modal.theme-gray .modal-content {
-  background-color: #555555;
+  background-color: #8d7f84;
   color: #444444;
 }
 .donutchart-gray .circle {
-  border-color: #555555;
+  border-color: #8d7f84;
 }
 .donutchart-gray .cap {
-  background: #555555;
+  background: #8d7f84;
 }
 .spinner-gray {
-  stroke: #555555;
+  stroke: #8d7f84;
 }
 .btn.bg-gray {
   color: #444444;
