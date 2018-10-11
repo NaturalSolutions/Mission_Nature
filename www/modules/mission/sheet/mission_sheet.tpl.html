@@ -1,5 +1,5 @@
     <div class="inner">
-    
+
     <% var photos = [];
         var image;
         for(var i=1; i<5; i++) {
@@ -10,17 +10,21 @@
         <ul class="swiper-wrapper">
             <% photos.forEach(function(photo) { %>
                 <li class="swiper-slide">
-                    <img src="<%= photo %>" style="width:100%; height: auto;" />
+                    <img src="<%= photo %>" class="image" />
                 </li>
             <% }); %>
         </ul>
+        <div class="swiper-pagination"></div>
     </div>
 
+    <!--
     <% var posterURL = './images/taxon/poster/'+data.mission.poster; %>
     <div class="poster" style="background-image:url('<%= posterURL %>');">
         <img src="<%= posterURL %>" />
-    </div>
-    <div class="status accept floating floating-right">
+    </div> <
+    -->
+    
+    <div class="status accept floating floating-right" style="z-index: 1;">
         <button type="button" class="btn btn-accept btn-fab btn-default btn-sm">
             <span class="icon icomoon">check</span>
         </button>
@@ -119,11 +123,11 @@
     </div>
 </div>
 <script>
-        var mySwiper = new Swiper ('.swiper-container', {
-            pagination: {
-                el: '.swiper-pagination',
-            },
-            direction: 'horizontal',
-            loop: false,
-        })
-        </script>
+    var mySwiper = new Swiper ('.swiper-container', {
+       pagination: {
+            el: '.swiper-pagination',
+        },
+        direction: 'horizontal',
+        loop: false,
+    });
+</script>

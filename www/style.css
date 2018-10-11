@@ -11354,6 +11354,7 @@ fieldset[disabled] .dropdown-menu > li > a.bg-blue-royal.active {
   right: 1rem;
 }
 .btn-fab {
+  z-index: 1;
   padding: 0;
   border-radius: 50%;
   border: none;
@@ -12056,26 +12057,27 @@ body.show-sidenav .sidenav {
   left: 33%;
   top: 35%;
 }
-.page-mission_sheet .slide-container {
-  position: relative;
+.page-mission_sheet .swiper-container .swiper-wrapper {
+  padding-left: 0%;
+  padding-right: 0%;
 }
-.page-mission_sheet .slide-container .slide-button-left {
-  position: absolute;
-  top: 50%;
-  left: 0%;
-  transform: translate(0%, -50%);
-  -ms-transform: translate(0%, -50%);
-  color: #fff!important;
-  background-color: black!important;
+.page-mission_sheet .swiper-container .swiper-wrapper .swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
-.page-mission_sheet .slide-container .slide-button-right {
-  position: absolute;
-  top: 50%;
-  right: 0%;
-  transform: translate(0%, -50%);
-  -ms-transform: translate(0%, -50%);
-  color: #fff!important;
-  background-color: black!important;
+.page-mission_sheet .swiper-container .swiper-wrapper .swiper-slide .image {
+  width: 100%;
+  height: auto;
 }
 .page-mission_sheet .poster {
   background: no-repeat center;
