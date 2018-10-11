@@ -28,6 +28,15 @@ module.exports = Marionette.LayoutView.extend({
     };
   },
 
+  gePhotos: function() {
+    var photos = [];
+    var image = new Image();
+    for(var i=1; i<5; i++) {
+      image.src = "../../../images/taxon/poster/0" + i + ".jpg";
+      photos.push(image);
+    }
+  },
+
   regions: {
     observations: '.observations'
   },

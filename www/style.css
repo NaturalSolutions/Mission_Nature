@@ -12056,6 +12056,27 @@ body.show-sidenav .sidenav {
   left: 33%;
   top: 35%;
 }
+.page-mission_sheet .slide-container {
+  position: relative;
+}
+.page-mission_sheet .slide-container .slide-button-left {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  color: #fff!important;
+  background-color: black!important;
+}
+.page-mission_sheet .slide-container .slide-button-right {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  color: #fff!important;
+  background-color: black!important;
+}
 .page-mission_sheet .poster {
   background: no-repeat center;
   background-size: cover;
