@@ -128,6 +128,7 @@ function init() {
             departementIds: missionData.departements,
             difficulty: missionData.difficulty,
             environments: missionData.environments,
+            find: missionData.find,
             plural: missionData.plural,
             taxon: {
               /* for(x = 0, taxons, x++) {
