@@ -12058,10 +12058,10 @@ body.show-sidenav .sidenav {
   top: 35%;
 }
 .page-mission_sheet .swiper-container .swiper-wrapper {
-  padding-left: 0%;
-  padding-right: 0%;
+  margin: 0%;
 }
 .page-mission_sheet .swiper-container .swiper-wrapper .swiper-slide {
+  padding-bottom: 1.3em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -12078,6 +12078,11 @@ body.show-sidenav .sidenav {
 .page-mission_sheet .swiper-container .swiper-wrapper .swiper-slide .image {
   width: 100%;
   height: auto;
+}
+.page-mission_sheet .swiper-container .swiper-wrapper .swiper-slide .title {
+  position: absolute;
+  z-index: 9999;
+  bottom: 0%;
 }
 .page-mission_sheet .poster {
   background: no-repeat center;

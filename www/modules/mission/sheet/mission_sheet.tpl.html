@@ -9,13 +9,15 @@
             photos.push(image);
         } %>
     <div class="swiper-container">
-        <ul class="swiper-wrapper">
+        <div class="swiper-wrapper">
             <% photos.forEach(function(photo) { %>
-                <li class="swiper-slide">
+                <div class="swiper-slide" title="my text">
                     <img src="<%= photo %>" class="image" />
-                </li>
+                    <div class="title">
+                            <button type="button" class="btn-taxon">OK</button>
+                    </div>
+                </div>
             <% }); %>
-        </ul>
         <div class="swiper-pagination"></div>
     </div>
 
