@@ -124,22 +124,15 @@ function init() {
             id: missionData.id,
             num: missionData.num,
             title: missionData.title,
+            species: missionData.species,
             seasons: missionData.seasons,
-            departementIds: missionData.departements,
             difficulty: missionData.difficulty,
             environments: missionData.environments,
             find: missionData.find,
             plural: missionData.plural,
-            taxon: {
-              /* for(x = 0, taxons, x++) {
-              title[x]: missionData.taxon.title[x],
-              scientific_name[x]: missionData.taxon.scientific_name[x],
-              cd_nom[x]: missionData.taxon.cd_nom[x],
-              family[x]: missionData.taxon.family[x],
-              description[x]: missionData.taxon.description[x],
-              url[x]: missionData.taxon.url[x],
-              characteristic[x]: missionData.taxon.characteristic[x]  
-              }*/
+            description: missionData.description,
+            caracteristic: missionData.caracteristic,
+            taxon: missionData.taxon/*{
               title: missionData.taxon.title,
               scientific_name: missionData.taxon.scientific_name,
               cd_nom: missionData.taxon.cd_nom,
@@ -147,7 +140,7 @@ function init() {
               description: missionData.taxon.description,
               url: missionData.taxon.url,
               characteristic: missionData.taxon.characteristic
-            }
+            }*/
           });
           missionCollection.add(mission);
         });

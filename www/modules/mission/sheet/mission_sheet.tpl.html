@@ -65,13 +65,13 @@
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#mission-sheet-accordion"
                         href="#collapse1">
                         <span class="icon icomoon">taxon</span> <span class="text">
-                            <%= data.mission.taxon.title %></span>
+                            <%= data.mission.species %></span>
                     </a>
                 </h4>
             </div>
             <div id="collapse1" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                    <%= data.mission.taxon.description %>
+                    <%= data.mission.description %>
                     <div>
                         <button type="button" class="btn btn-block btn-default btn-sheet">Fiche espèce</button>
                     </div>
@@ -90,7 +90,7 @@
             </div>
             <div id="collapse2" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                    <img class="img-responsive" src="./images/taxon/map/<%= data.mission.map %>" />
+                        <%= data.mission.description %> <!--<img class="img-responsive" src="./images/taxon/map/<%= data.mission.map %>" /> -->
                 </div>
             </div>
         </div>
@@ -106,7 +106,7 @@
             </div>
             <div id="collapse3" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                    <%= data.mission.taxon.characteristic %>
+                    <%= data.mission.caracteristic %>
                 </div>
             </div>
         </div>
