@@ -12057,6 +12057,15 @@ body.show-sidenav .sidenav {
   left: 33%;
   top: 35%;
 }
+.page-mission_sheet .swiper-container .swiper-pagination {
+  bottom: 90%;
+}
+.page-mission_sheet .swiper-container .swiper-pagination .swiper-pagination-bullet {
+  opacity: 0.5;
+}
+.page-mission_sheet .swiper-container .swiper-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+}
 .page-mission_sheet .swiper-container .swiper-wrapper {
   margin: 0%;
 }
@@ -12079,6 +12088,9 @@ body.show-sidenav .sidenav {
   height: auto;
 }
 .page-mission_sheet .swiper-container .swiper-wrapper .swiper-slide .btn-taxon {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
   position: absolute;
   z-index: 9999;
   bottom: 0%;

@@ -14,7 +14,6 @@ module.exports = Marionette.LayoutView.extend({
   events: {
     'click .btn-accept': 'onAcceptClick',
     'click .btn-sheet': 'openWindow',
-    'click .btn-taxon': 'openWindow',
     'click .btn-back': 'onBackClick'
   },
   attributes: function() {

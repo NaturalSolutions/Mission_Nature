@@ -1,4 +1,4 @@
-    <div class="inner">
+<div class="inner">
 
     <%  var photos = [];
         var image;
@@ -6,18 +6,22 @@
             image = "./images/taxon/poster/" + data.mission.taxon[i].id + ".jpg";
             photos.push({
                 img: image, 
-                title: data.mission.taxon[i].title
+                title: data.mission.taxon[i].title,
+                url: data.mission.taxon[i].url
             });
         }
     %>
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <% photos.forEach(function(photo) { %>
-                <div class="swiper-slide" title="my text">
-                    <img src="<%= photo.img %>" class="image" />
-                    <button type="button" class="btn-taxon"><%= photo.title %></button>
-                </div>
+            <div class="swiper-slide" title="myText">
+                <img src="<%= photo.img %>" class="image" />
+                <a href="<%= photo.url %>" class="btn-taxon" target="_blank"><%= photo.title %></a>
+            </div>
             <% }); %>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
         <div class="swiper-pagination"></div>
     </div>
 
@@ -27,7 +31,7 @@
         <img src="<%= posterURL %>" />
     </div> <
     -->
-    
+
     <div class="status accept floating floating-right" style="z-index: 1;">
         <button type="button" class="btn btn-accept btn-fab btn-default btn-sm">
             <span class="icon icomoon">check</span>
@@ -90,7 +94,8 @@
             </div>
             <div id="collapse2" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                        <%= data.mission.description %> <!--<img class="img-responsive" src="./images/taxon/map/<%= data.mission.map %>" /> -->
+                    <%= data.mission.description %>
+                    <!--<img class="img-responsive" src="./images/taxon/map/<%= data.mission.map %>" /> -->
                 </div>
             </div>
         </div>
@@ -128,10 +133,12 @@
 </div>
 <script>
     var mySwiper = new Swiper ('.swiper-container', {
-       pagination: {
-            el: '.swiper-pagination',
-        },
+        prevButton: '.swiper-button-prev',
+        nextButton: '.swiper-button-next',
+        pagination: '.swiper-pagination',
         direction: 'horizontal',
         loop: false,
+        slidesPerView: 1,
     });
+    mySwiper.update();
 </script>
