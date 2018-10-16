@@ -1,21 +1,21 @@
     <div class="inner">
 
     <%  var photos = [];
-        var id = data.mission.id;
-        var isDigit = id < 10 ? '0' : '';
         var image;
-        for(var i=1; i<4; i++) {
-            image = "./images/taxon/poster/" + isDigit + id + "_0" + i + ".jpg";
-            photos.push(image);
-        } %>
+        for(var i=0; i<data.mission.taxon.length - 1; i++) {
+            image = "./images/taxon/poster/" + data.mision.taxon[i].id + ".jpg";
+            photos.push({
+                img: image, 
+                title: 'data.mission.taxon[i - 1].title'
+            });
+        }
+    %>
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <% photos.forEach(function(photo) { %>
                 <div class="swiper-slide" title="my text">
-                    <img src="<%= photo %>" class="image" />
-                    <div class="title">
-                            <button type="button" class="btn-taxon">OK</button>
-                    </div>
+                    <img src="<%= photo.img %>" class="image" />
+                    <button type="button" class="btn-taxon"><%= photo.title %></button>
                 </div>
             <% }); %>
         <div class="swiper-pagination"></div>

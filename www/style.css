@@ -12061,7 +12061,6 @@ body.show-sidenav .sidenav {
   margin: 0%;
 }
 .page-mission_sheet .swiper-container .swiper-wrapper .swiper-slide {
-  padding-bottom: 1.3em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -12079,10 +12078,18 @@ body.show-sidenav .sidenav {
   width: 100%;
   height: auto;
 }
-.page-mission_sheet .swiper-container .swiper-wrapper .swiper-slide .title {
+.page-mission_sheet .swiper-container .swiper-wrapper .swiper-slide .btn-taxon {
   position: absolute;
   z-index: 9999;
   bottom: 0%;
+  background-color: #4CAF50;
+  /* Green */
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 .page-mission_sheet .poster {
   background: no-repeat center;
