@@ -2,11 +2,11 @@
 
     <%  var photos = [];
         var image;
-        for(var i=0; i<data.mission.taxon.length - 1; i++) {
-            image = "./images/taxon/poster/" + data.mision.taxon[i].id + ".jpg";
+        for(var i=0; i<data.mission.taxon.length; i++) {
+            image = "./images/taxon/poster/" + data.mission.taxon[i].id + ".jpg";
             photos.push({
                 img: image, 
-                title: 'data.mission.taxon[i - 1].title'
+                title: data.mission.taxon[i].title
             });
         }
     %>
