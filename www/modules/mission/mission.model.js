@@ -22,6 +22,7 @@ var Model = Backbone.Model.extend({
     find: '',
     seasons: [],//[{"startAt":"05","endAt":"11"}],
     taxon: [{
+      id: '',
       cd_nom: '',
       title: '',
       family: '',
