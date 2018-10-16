@@ -20,6 +20,13 @@
         ],
         "taxon": [
             {
+                "id": "0",
+                "cd_nom": "0",
+                "title": "je ne sais pas",
+                "family": "inconue",
+                "url": "inconue"
+            },
+            {
                 "id": "1",
                 "cd_nom": "3696",
                 "title": "hirondelle rustique",
@@ -32,7 +39,7 @@
                 "title": "hirondelle de fen\u00eatre",
                 "family": "Hirundinid\u00e9s",
                 "url": "http:\/\/biodiversite-foret.fr\/les-especes-2\/lepidopteres\/damier-du-frene\/"
-            }
+            }            
         ]
     }
 ]
