@@ -11,20 +11,24 @@ var Model = Backbone.Model.extend({
     externId: '',
     num: '0',
     title: '',
+    species: '',
     poster: '',
     difficulty: 0,//0 == unset
     difficultyName: '',
-    departementIds: [],
-    criterias: [],
-    seasons: [],//[{"startAt":"05","endAt":"11"}],
     environments: [],
-    taxon: {
+    criterias: [],
+    description: '',
+    caracteristic: '',
+    find: '',
+    seasons: [],//[{"startAt":"05","endAt":"11"}],
+    taxon: [{
+      id: '',
+      cd_nom: '',
       title: '',
       family: '',
-      description: '',
       url: '',
-      characteristic: ''
     },
+    ]
   },
   //Usefull to preserve equality between get() and toJSON()
   //TODO: remove that, it may be confusing
