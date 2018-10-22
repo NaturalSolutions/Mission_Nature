@@ -1,8 +1,9 @@
 <div class="inner">
+    <!--
 
     <%  var photos = [];
         var image;
-        for(var i=0; i<data.mission.taxon.length; i++) {
+        for(var i=1; i<data.mission.taxon.length; i++) {
             image = "./images/taxon/poster/" + data.mission.taxon[i].id + ".jpg";
             photos.push({
                 img: image, 
@@ -24,13 +25,12 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-pagination"></div>
     </div>
+    -->
 
-    <!--
     <% var posterURL = './images/taxon/poster/'+data.mission.poster; %>
     <div class="poster" style="background-image:url('<%= posterURL %>');">
         <img src="<%= posterURL %>" />
-    </div> <
-    -->
+    </div>
 
     <div class="status accept floating floating-right" style="z-index: 1;">
         <button type="button" class="btn btn-accept btn-fab btn-default btn-sm">
@@ -131,6 +131,7 @@
         </div>
     </div>
 </div>
+<!--
 <script>
     var mySwiper = new Swiper ('.swiper-container', {
         prevButton: '.swiper-button-prev',
@@ -142,3 +143,4 @@
     });
     mySwiper.update();
 </script>
+-->

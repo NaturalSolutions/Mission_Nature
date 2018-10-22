@@ -135,7 +135,7 @@ module.exports = Marionette.Object.extend({
       preventDestroy: true
     });
   },
-
+/*
   missionsTraining: function() {
     var Mission = require('../mission/mission.model');
     var missions = new Backbone.Collection(Mission.collection.getInstance().where({difficulty: 0}));
@@ -146,7 +146,8 @@ module.exports = Marionette.Object.extend({
       preventDestroy: true
     });
   },
-
+*/
+/*
   _missionsAroundMe: function(options) {
     var rgMain = main.getInstance().rgMain;
     var state = options.state || {};
@@ -155,7 +156,7 @@ module.exports = Marionette.Object.extend({
       rgMain.currentView.setState(state.name, state.args);
       return false;
     }
-
+*/
     /*var user = User.getCurrent();
 
     if (state.name != 'manually') {
@@ -163,7 +164,7 @@ module.exports = Marionette.Object.extend({
           state.name = 'localize';
       else
           state.name = 'list';
-    }*/
+    }
 
     rgMain.show(new MissionsAroundMe({
       name: 'missionsAroundMe',
@@ -206,6 +207,7 @@ module.exports = Marionette.Object.extend({
       }
     });
   },
+  */
   profile: function() {
     var user = User.getCurrent();
 

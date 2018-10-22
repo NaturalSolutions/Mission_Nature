@@ -12092,14 +12092,14 @@ body.show-sidenav .sidenav {
   -moz-appearance: button;
   appearance: button;
   position: absolute;
+  bottom: 10%;
+  left: 5%;
   z-index: 9999;
-  bottom: 0%;
-  background-color: #4CAF50;
-  /* Green */
+  background-color: rgba(21, 24, 21, 0.6);
   color: white;
-  padding: 10px 30px;
+  padding: 10px 20px;
+  font-weight: normal;
   text-align: center;
-  text-decoration: none;
   display: inline-block;
   font-size: 16px;
 }
