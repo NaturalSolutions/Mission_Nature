@@ -17,11 +17,14 @@ var ClassDef = Marionette.LayoutView.extend({
   },
   template: require('./dashboard.tpl.html'),
   className: 'page dashboard ns-full-height',
+
+  // affichage score sur clic dashboard
+/*
   events: {
     'click .header': 'onHeaderClick',
     'click .js-btn-time-forest': 'onTimeForestClick'
   },
-
+*/
   curTab: null,
   tabs: {
     missions: {
