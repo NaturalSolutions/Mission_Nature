@@ -11877,7 +11877,7 @@ body.show-sidenav .sidenav {
 }
 .page.dashboard .header .score-implode {
   padding-top: 30px;
-  padding-bottom: 8px;
+  padding-bottom: 30px;
 }
 @media (max-height: 480px) {
   .page.dashboard .header .score-implode {
@@ -12172,7 +12172,7 @@ body.show-sidenav .sidenav {
   vertical-align: top;
 }
 .page-mission_sheet .accordion {
-  margin: 0 12px;
+  margin: 12px;
 }
 .page-mission_sheet .accordion .panel-body {
   font-size: 1.6rem;

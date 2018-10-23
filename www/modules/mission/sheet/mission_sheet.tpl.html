@@ -25,12 +25,6 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-pagination"></div>
     </div>
-    -->
-
-    <% var posterURL = './images/taxon/poster/'+data.mission.poster; %>
-    <div class="poster" style="background-image:url('<%= posterURL %>');">
-        <img src="<%= posterURL %>" />
-    </div>
 
     <div class="status accept floating floating-right" style="z-index: 1;">
         <button type="button" class="btn btn-accept btn-fab btn-default btn-sm">
@@ -62,6 +56,11 @@
                 <%= i18n.t('mission.deltaLong', {count: data.mission.inSeason.end.delta+1}) %></span>
         </span>
     </div>
+-->
+    <% var posterURL = './images/taxon/poster/'+data.mission.poster; %>
+    <div class="poster" style="background-image:url('<%= posterURL %>');">
+        <img src="<%= posterURL %>" />
+    </div>
     <div class="panel-group accordion" id="mission-sheet-accordion" role="tablist">
         <div class="panel panel-default">
             <div class="panel-heading" role="tab">
@@ -82,7 +81,7 @@
                 </div>
             </div>
         </div>
-        <div class="panel panel-default panel-location">
+        <div class="panel panel-default">
             <div class="panel-heading" role="tab">
                 <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#mission-sheet-accordion"
@@ -120,11 +119,41 @@
                 <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#mission-sheet-accordion"
                         href="#collapse4">
-                        <span class="icon icomoon">camera</span> <span class="text">Mes observations</span>
+                        <span class="icon material">warning</span> <span class="text">À ne pas confondre !</span>
                     </a>
                 </h4>
             </div>
             <div id="collapse4" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                    <%= data.mission.caracteristic %>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#mission-sheet-accordion"
+                        href="#collapse5">
+                        <span class="icon material">language</span> <span class="text">Sources</span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse5" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                    <%= data.mission.caracteristic %>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#mission-sheet-accordion"
+                        href="#collapse6">
+                        <span class="icon icomoon">camera</span> <span class="text">Mes observations</span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse6" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body observations">
                 </div>
             </div>
