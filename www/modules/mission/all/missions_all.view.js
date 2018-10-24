@@ -38,7 +38,7 @@ module.exports = Marionette.CompositeView.extend({
     this.listenTo(Footer.getInstance(), 'btn:clue:click', function(e) {
       e.preventDefault();
       var ids = self.collection.pluck('id');
-//      Router.getInstance().navigate('clue?missionIds='+ids.join(), {trigger:true});
+      Router.getInstance().navigate('clue?missionIds='+ids.join(), {trigger:true});
     });
 
     var queryHash = window.location.hash;

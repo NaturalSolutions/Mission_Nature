@@ -1,22 +1,25 @@
-/*
 'use strict';
+
 var Backbone = require('backbone'),
   Marionette = require('backbone.marionette'),
   _ = require('lodash'),
-  Observation = require('../../observation/observation.model'),
   Router = require('../../routing/router'),
+  TaxonListItem = require('../taxon_list/taxon_list_item.view'),
   User = require('../../profile/user.model.js'),
   Header = require('../../header/header'),
   Help = require('../../main/help.model'),
   Footer = require('../../footer/footer.view');
 
 module.exports = Marionette.LayoutView.extend({
-  template: require('./mission_sheet.tpl.html'),
+  template: require('./mission_home.tpl.html'),
+ // childView: TaxonListItem,
+//  childViewContainer: '.items',
   events: {
     'click .btn-accept': 'onAcceptClick',
-    'click .btn-sheet': 'openWindow',
+//    'click .btn-sheet': 'openWindow',
     'click .btn-back': 'onBackClick'
   },
+
   attributes: function() {
     var user = User.getCurrent();
     var classNames = 'page page-mission_sheet';
@@ -45,6 +48,7 @@ module.exports = Marionette.LayoutView.extend({
     };
 
     this.listenTo(user, 'change:acceptedMissions', this.onAcceptChange);
+    /*
     this.listenTo(Observation.collection.getInstance(), 'add', function(observation) {
       observation.set({
         'missionId': self.model.get('id'),
@@ -53,6 +57,7 @@ module.exports = Marionette.LayoutView.extend({
       });
       observation.save();
     });
+    */
 
     this.listenTo(Footer.getInstance(), 'btn:clue:click', function(e) {
       e.preventDefault();
@@ -60,11 +65,12 @@ module.exports = Marionette.LayoutView.extend({
     });
 
   },
-
+/*
   openWindow: function(){
     window.open(this.model.get('taxon').url, '_blank');
   },
 
+  
   onRender: function() {
     var user = User.getCurrent();
     var observations = Observation.collection.getInstance();
@@ -78,7 +84,7 @@ module.exports = Marionette.LayoutView.extend({
     }));
 
   },
-
+*/
   serializeData: function() {
     return {
       mission: this.model.toJSON()
@@ -107,4 +113,3 @@ module.exports = Marionette.LayoutView.extend({
     var self = this;
   }
 });
-*/
