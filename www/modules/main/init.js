@@ -33,6 +33,7 @@ var Backbone = require('backbone'),
   Departement = require('../main/departement.model'),
   Help = require('../main/help.model'),
   Mission = require('../mission/mission.model'),
+  Taxon = require('../taxons/taxons.model'),
   Session = require('../main/session.model'),
   Utilities = require('../main/utilities'),
   Dialog = require('bootstrap-dialog'),
@@ -120,6 +121,25 @@ function init() {
             season.startAt = season.startAt.toDate();
             season.endAt = season.endAt.toDate();
           });
+          // try new collection of taxon in each collection of mission
+          var taxonCollection = Taxon.collection.getInstance();
+          _.forEach(missionData.taxon, function(taxonData) {
+            var taxon = new Taxon.Model({
+              id: taxonData.id,
+              cd_nom: taxonData.cd_nom,
+              title: taxonData.title,
+              family: taxonData.family,
+              url: taxonData.url,
+              description: taxonData.description,
+              characteristic: taxonData.characteristic,
+              environments: taxonData.environments,
+              environment_description: taxonData.environment_description,
+              not_confuse: taxonData.not_confuse,
+              sources: taxonData.sources
+            });
+            taxonCollection.add(taxon);
+          });
+          
           var mission = new Mission.Model({
             id: missionData.id,
             num: missionData.num,
@@ -132,15 +152,7 @@ function init() {
             plural: missionData.plural,
             description: missionData.description,
             caracteristic: missionData.caracteristic,
-            taxon: missionData.taxon/*{
-              title: missionData.taxon.title,
-              scientific_name: missionData.taxon.scientific_name,
-              cd_nom: missionData.taxon.cd_nom,
-              family: missionData.taxon.family,
-              description: missionData.taxon.description,
-              url: missionData.taxon.url,
-              characteristic: missionData.taxon.characteristic
-            }*/
+            taxon: taxonCollection
           });
           missionCollection.add(mission);
         });
