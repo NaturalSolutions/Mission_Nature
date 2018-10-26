@@ -82,12 +82,12 @@ module.exports = Marionette.Object.extend({
         rgMain.currentView.setTab(tab);
   },
 
-  missionHome: function(id) {
+  missionSheet: function(id) {
     id = _.parseInt(id);
     var MissionModel = require('../mission/mission.model');
     var mission = MissionModel.collection.getInstance().get(id);
 
-    var View = require('../mission/home/mission_home.view');
+    var View = require('../mission/sheet/mission_sheet.view');
     main.getInstance().rgMain.show(new View({
       model: mission
     }), {
@@ -95,12 +95,12 @@ module.exports = Marionette.Object.extend({
     });
   },
 
-  missionSheet: function(id) {
+  missionHome: function(id) {
     id = _.parseInt(id);
     var MissionModel = require('../mission/mission.model');
     var mission = MissionModel.collection.getInstance().get(id);
 
-    var View = require('../mission/sheet/mission_sheet.view');
+    var View = require('../mission/home/mission_home.view');
     main.getInstance().rgMain.show(new View({
       model: mission
     }), {

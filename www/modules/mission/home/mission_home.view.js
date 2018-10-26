@@ -10,10 +10,10 @@ var Backbone = require('backbone'),
   Help = require('../../main/help.model'),
   Footer = require('../../footer/footer.view');
 
-module.exports = Marionette.LayoutView.extend({
+module.exports = Marionette.CompositeView.extend({
   template: require('./mission_home.tpl.html'),
- // childView: TaxonListItem,
-//  childViewContainer: '.items',
+  childView: TaxonListItem,
+  childViewContainer: '.items',
   events: {
     'click .btn-accept': 'onAcceptClick',
 //    'click .btn-sheet': 'openWindow',
@@ -31,11 +31,11 @@ module.exports = Marionette.LayoutView.extend({
       'class': classNames
     };
   },
-
+/*
   regions: {
     observations: '.observations'
   },
-
+*/
   initialize: function() {
     var self = this;
     var user = User.getCurrent();
@@ -70,7 +70,6 @@ module.exports = Marionette.LayoutView.extend({
     window.open(this.model.get('taxon').url, '_blank');
   },
 
-  
   onRender: function() {
     var user = User.getCurrent();
     var observations = Observation.collection.getInstance();
