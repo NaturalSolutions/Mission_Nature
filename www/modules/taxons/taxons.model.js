@@ -19,12 +19,14 @@ var Model = Backbone.Model.extend({
     environments_description: '',
     not_confuse: '',
     sources: '',
-    thumb: ''
+    thumb: '',
+    map: '',
+    poster: ''
   },
   //Usefull to preserve equality between get() and toJSON()
   //TODO: remove that, it may be confusing
   getDynAttrs: function() {
-    return ['map', 'thumb', 'poster', 'difficultyName', 'seasons'];
+    return ['map', 'thumb', 'poster'];
   },
   get: function(attr) {
     var self = this;

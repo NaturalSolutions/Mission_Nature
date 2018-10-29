@@ -86,10 +86,13 @@ module.exports = Marionette.Object.extend({
     id = _.parseInt(id);
     var MissionModel = require('../mission/mission.model');
     var mission = MissionModel.collection.getInstance().get(id);
+    mission.taxon = require('../taxons/taxons.model');
+    var taxon = mission.taxon.collection.getInstance().get(id);
+
 
     var View = require('../mission/sheet/mission_sheet.view');
     main.getInstance().rgMain.show(new View({
-      model: mission
+      model: taxon
     }), {
       preventDestroy: true
     });

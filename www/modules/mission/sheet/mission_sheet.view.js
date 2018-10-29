@@ -80,7 +80,7 @@ module.exports = Marionette.LayoutView.extend({
 
   serializeData: function() {
     return {
-      mission: this.model.toJSON()
+      taxon: this.model.toJSON()
     };
   },
 
