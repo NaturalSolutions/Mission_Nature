@@ -18,13 +18,14 @@ var Model = Backbone.Model.extend({
     environments: [],
     environments_description: '',
     not_confuse: '',
-    sources: ''
+    sources: '',
+    thumb: ''
   },
   //Usefull to preserve equality between get() and toJSON()
   //TODO: remove that, it may be confusing
-  /*getDynAttrs: function() {
+  getDynAttrs: function() {
     return ['map', 'thumb', 'poster', 'difficultyName', 'seasons'];
-  },*/
+  },
   get: function(attr) {
     var self = this;
     if (self.getDynAttrs().indexOf(attr) > -1) {
@@ -37,9 +38,9 @@ var Model = Backbone.Model.extend({
     var self = this;
     var result = Backbone.Model.prototype.toJSON.apply(self, arguments);
 
-    _.forEach(self.getDynAttrs(), function(attr) {
+    /*_.forEach(self.getDynAttrs(), function(attr) {
       result[attr] = self.get(attr);
-    });
+    });*/
 
     /*result.inSeason = self.inSeason(new Date());
     result.isInSeason = result.inSeason.isMatch;

@@ -154,6 +154,7 @@ function init() {
             caracteristic: missionData.caracteristic,
             taxon: taxonCollection
           });
+          console.log(mission.title);
           missionCollection.add(mission);
         });
         deferred.resolve();

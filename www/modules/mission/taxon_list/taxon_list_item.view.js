@@ -19,7 +19,7 @@ var View = Marionette.ItemView.extend({
 
   serializeData: function() {
     return {
-      mission: this.model.toJSON()
+      taxon: this.model.toJSON()
     };
   },
 

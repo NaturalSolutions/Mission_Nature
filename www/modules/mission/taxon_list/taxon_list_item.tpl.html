@@ -1,24 +1,17 @@
-<p>c'est moi</p>
-<!--
+<% if(data.taxon.id > 0) { %>
 <div class="media-left thumb">
-    <a class="js-link-mission" href="#mission/<%= data.mission.id %>">
-        <img class="media-object" src="./images/taxon/thumb/<%= data.mission.thumb %>" />
+    <a class="js-link-mission" href="#mission/taxon/<%= data.taxon.id %>">
+		<img class="media-object" src="./images/taxon/thumb/0<%= data.taxon.id %>.jpg" />
     </a>
 </div>
 <div class="media-body text">
-	<a class="js-link-mission" href="#mission/<%= data.mission.id %>">
+	<a class="js-link-mission" href="#mission/taxon/<%= data.taxon.id %>">
 	    <div class="media-heading title">
-	    	<span class="badge-circle num"><%= data.mission.num %></span> 
-	    	<div class="text"><%= data.mission.title %></div> 
+	    	
+	    	<div class="text"><%= data.taxon.title %></div> 
 	    </div>
 	    <div class="meta">
-	    	<span class="taxon"><%= data.mission.taxon.species %></span> 
-	    	<span class="season text-primary">
-	    		<span class="icon icomoon">time</span> 
-	    		<span class="period"><%= data.mission.displaySeason %></span>
-            	<span class="delta"><%= i18n.t('mission.deltaLong', {count: data.mission.inSeason.end.delta+1})%>
-            	</span>
-	    	</span>
+	    	<span class="taxon"><%= data.taxon.family %></span>
 	    </div>
 		<div class="options">
 			<div class="badge-circle no-border bg-blue accept">
@@ -27,8 +20,6 @@
 		    <div class="badge-circle no-border bg-orange-light complete">
 		    	<span class="icon icomoon">palms</span>
 		    </div>
-		    <div class="icon icomoon difficulty">difficulty_<%= data.mission.difficultyName %></div>
-	    </div>
 	</a>
 </div>
--->
+<% } %>

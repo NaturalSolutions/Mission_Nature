@@ -21,14 +21,7 @@ var Model = Backbone.Model.extend({
     caracteristic: '',
     find: '',
     seasons: [],//[{"startAt":"05","endAt":"11"}],
-    taxon: [{
-      id: '',
-      cd_nom: '',
-      title: '',
-      family: '',
-      url: '',
-    },
-    ]
+    taxon: []
   },
   //Usefull to preserve equality between get() and toJSON()
   //TODO: remove that, it may be confusing
