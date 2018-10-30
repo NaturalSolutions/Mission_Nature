@@ -1,6 +1,6 @@
 <div class="inner">
 
-    <% var posterURL = './images/taxon/poster/'+data.taxon.poster; %>
+    <% var posterURL = './images/taxon/poster/' + (data.taxon.id > 9 ? '' : '0') + data.taxon.id + '.jpg'; %>
     <div class="poster" style="background-image:url('<%= posterURL %>');">
         <img src="<%= posterURL %>" />
     </div>
@@ -43,7 +43,7 @@
             </div>
             <div id="collapse3" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                    <%= data.taxon.caracteristic %>
+                    <%= data.taxon.characteristic %>
                 </div>
             </div>
         </div>
@@ -93,16 +93,3 @@
         </div>
     </div>
 </div>
-<!--
-<script>
-    var mySwiper = new Swiper ('.swiper-container', {
-        prevButton: '.swiper-button-prev',
-        nextButton: '.swiper-button-next',
-        pagination: '.swiper-pagination',
-        direction: 'horizontal',
-        loop: false,
-        slidesPerView: 1,
-    });
-    mySwiper.update();
-</script>
--->

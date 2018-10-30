@@ -14,6 +14,11 @@ module.exports = Marionette.CompositeView.extend({
   template: require('./mission_home.tpl.html'),
   childView: TaxonListItem,
   childViewContainer: '.items',
+  childViewOptions: function() {
+    return {
+      mission_id: this.model.id
+    };
+   },
   events: {
     'click .btn-accept': 'onAcceptClick',
 //    'click .btn-sheet': 'openWindow',
@@ -65,6 +70,7 @@ module.exports = Marionette.CompositeView.extend({
     });
 
   },
+
 /*
   openWindow: function(){
     window.open(this.model.get('taxon').url, '_blank');

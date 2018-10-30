@@ -82,13 +82,13 @@ module.exports = Marionette.Object.extend({
         rgMain.currentView.setTab(tab);
   },
 
-  missionSheet: function(id) {
+  missionSheet: function(idm, id) {
     id = _.parseInt(id);
+    idm = _.parseInt(idm);
     var MissionModel = require('../mission/mission.model');
-    var mission = MissionModel.collection.getInstance().get(id);
+    var mission = MissionModel.collection.getInstance().get(idm);
     mission.taxon = require('../taxons/taxons.model');
     var taxon = mission.taxon.collection.getInstance().get(id);
-
 
     var View = require('../mission/sheet/mission_sheet.view');
     main.getInstance().rgMain.show(new View({

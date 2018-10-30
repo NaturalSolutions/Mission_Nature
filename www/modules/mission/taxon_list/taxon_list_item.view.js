@@ -15,11 +15,13 @@ var View = Marionette.ItemView.extend({
   },
   initialize: function(options) {
     this.options = options;
+    console.log("main_id = " + options.mission_id);
   },
 
   serializeData: function() {
     return {
-      taxon: this.model.toJSON()
+      taxon: this.model.toJSON(),
+      mission_id: this.options.mission_id
     };
   },
 
