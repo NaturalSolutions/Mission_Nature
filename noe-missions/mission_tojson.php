@@ -63,6 +63,7 @@ foreach ($missions_rows as $key => $mission_row) {
           'endAt' => $seasons[1],
         ),
       ),
+      'id_taxons' => $id_especes,
       'taxon' => $newArray,
     );
     $ouput[] = $mission_row;
