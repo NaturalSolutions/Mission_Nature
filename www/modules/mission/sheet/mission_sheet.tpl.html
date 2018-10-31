@@ -1,5 +1,5 @@
 <div class="inner">
-    <% var posterURL = './images/taxon/poster/' + (data.taxon.id > 9 ? '' : '0') + data.taxon.id + '.jpg'; %>
+    <% var posterURL = './images/mission_taxon/taxon/poster/' + (data.taxon.id > 9 ? '' : '0') + data.taxon.id + '.jpg'; %>
     <div class="poster" style="background-image:url('<%= posterURL %>');">
         <img src="<%= posterURL %>" />
     </div>
@@ -24,10 +24,17 @@
             </div>
         </div>
         <div class="panel panel-default">
-
+            <div class="panel-heading" role="tab">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#mission-sheet-accordion"
+                        href="#collapse2">
+                        <span class="icon icomoon">eye</span>Où trouver l'espèce ? <span class="text">
+                    </a>
+                </h4>
+            </div>
             <div id="collapse2" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                    <%= data.taxon.description %>
+                    <%= data.taxon.environment_description %>
                 </div>
             </div>
         </div>
