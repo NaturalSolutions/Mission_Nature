@@ -8,7 +8,8 @@ var Backbone = require('backbone'),
   User = require('../../profile/user.model.js'),
   Header = require('../../header/header'),
   Help = require('../../main/help.model'),
-  Footer = require('../../footer/footer.view');
+  Footer = require('../../footer/footer.view'),
+  taxonCollection = require('../../taxons/taxons.model');
 
 module.exports = Marionette.CompositeView.extend({
   template: require('./mission_home.tpl.html'),

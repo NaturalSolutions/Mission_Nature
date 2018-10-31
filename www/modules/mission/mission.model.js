@@ -7,20 +7,14 @@ var Backbone = require('backbone'),
 	i18n = require('i18next');
 
 var Model = Backbone.Model.extend({
-  defaults: {
-    externId: '',
+  defaults: { // removed externId / species / environments / criterias / description / caracteristic / find
     num: '0',
     title: '',
-    species: '',
     poster: '',
     difficulty: 0,//0 == unset
     difficultyName: '',
-    environments: [],
-    criterias: [],
-    description: '',
-    caracteristic: '',
-    find: '',
     seasons: [],//[{"startAt":"05","endAt":"11"}],
+    id_taxons: [],
     taxon: []
   },
   //Usefull to preserve equality between get() and toJSON()
@@ -47,7 +41,6 @@ var Model = Backbone.Model.extend({
     result.inSeason = self.inSeason(new Date());
     result.isInSeason = result.inSeason.isMatch;
     var season = result.seasons[0];
-    // console.log(season.startAt.getMonth(), season.endAt.getMonth());
     if ( season.startAt.getMonth() === 0 && season.endAt.getMonth() == 11 )
       result.displaySeasonShort = result.displaySeason = i18n.t('mission.season.fullyear');
     else {

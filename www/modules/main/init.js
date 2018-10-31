@@ -144,17 +144,12 @@ function init() {
             id: missionData.id,
             num: missionData.num,
             title: missionData.title,
-            species: missionData.species,
-            seasons: missionData.seasons,
-            difficulty: missionData.difficulty,
-            environments: missionData.environments,
-            find: missionData.find,
             plural: missionData.plural,
-            description: missionData.description,
-            caracteristic: missionData.caracteristic,
+            difficulty: missionData.difficulty,
+            seasons: missionData.seasons,
+            id_taxons: missionData.id_taxons,
             taxon: taxonCollection
           });
-          console.log(mission.title);
           missionCollection.add(mission);
         });
         deferred.resolve();

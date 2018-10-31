@@ -15,7 +15,6 @@ var View = Marionette.ItemView.extend({
   },
   initialize: function(options) {
     this.options = options;
-    console.log("main_id = " + options.mission_id);
   },
 
   serializeData: function() {

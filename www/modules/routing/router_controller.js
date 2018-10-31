@@ -109,23 +109,16 @@ module.exports = Marionette.Object.extend({
     var removables = [];
     taxons.forEach(function(taxon) {
       mission.attributes.id_taxons.forEach(function(id) {
-//        console.log(id, taxon.id);
         if (id == taxon.id)
           removables.push(taxon.id);
       });
     });
-    console.debug("removable", removables);
-    console.debug("taxonsbad before", taxonsbad);
     taxonsbad.remove(removables);
     var taxonsgood = [];
     taxonsbad.forEach(function(taxon) {
       taxonsgood.push(taxon);
     });
-    console.debug("taxonsbad after", taxonsbad);
-    console.debug("taxons before", taxons);
-//    if (removables.length)
     taxons.remove(taxonsgood);
-    console.debug("taxons after", taxons);
 
     var View = require('../mission/home/mission_home.view');
     main.getInstance().rgMain.show(new View({
