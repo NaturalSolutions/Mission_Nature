@@ -7,6 +7,7 @@ www/style.css.map
 www/templates.js
 .DS_Store
 npm-debug.log
+debug.log
 *~
 www-*
 *.sublime*
