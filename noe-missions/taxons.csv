@@ -1,4 +1,4 @@
-id;cd_nom;title;family;url;description;characteristic;environments;environment_description;not_confuse;sources
+id;cd_nom;title;family;url;description;characteristic;environment;environment_description;not_confuse;sources
 0;0;je ne sais pas;inconnu;inconnu;inconnu;inconnu;inconnu;inconnu;inconnu;inconnu
 1;3696;hirondelle rustique;Hirundinidés;http:\/\/biodiversite-foret.fr\/les-especes-2\/lepidopteres\/morio\/;description de l'hirondelle;caractéristique de l'hirondelle;milieux de vie (picto);description du milieux de vie;ne pas la confondre avec;tout sur l'hirondelle rustique
 2;459478;hirondelle de fenêtre;Hirundinidés;http:\/\/biodiversite-foret.fr\/les-especes-2\/lepidopteres\/damier-du-frene\/;description de l'hirondelle;caractéristique de l'hirondelle;milieux de vie (picto);description du milieux de vie;ne pas la confondre avec;tout sur l'hirondelle de fenêtre
