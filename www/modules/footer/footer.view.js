@@ -20,9 +20,9 @@ var View = Marionette.LayoutView.extend({
   events: {
     'click .capture-photo-js': 'capturePhoto',
     'submit form': 'uploadPhoto',
-    'click .forest-time-js': 'forestTime',
-    'click .btn-clue': 'onBtnClueClick',
-    'click .btn-help': 'toggleHelp'
+  //  'click .forest-time-js': 'forestTime',
+//    'click .btn-clue': 'onBtnClueClick',
+  //  'click .btn-help': 'toggleHelp'
   },
   /*triggers: {
     'click .btn-clue': 'btn:clue:click'
@@ -32,7 +32,7 @@ var View = Marionette.LayoutView.extend({
     this.Main = require('../main/main.view.js');
 
     this.listenTo(User.collection.getInstance(), 'change:current', this.onCurrentUserChange);
-    this.listenTo(User.getCurrent().getTimeForest(), 'change:total', this.displayTimeForest);
+//    this.listenTo(User.getCurrent().getTimeForest(), 'change:total', this.displayTimeForest);
 
     /*this.on('btn:clue:click', function(e) {
       //Hack: enable to 
@@ -121,7 +121,8 @@ var View = Marionette.LayoutView.extend({
 
     if (window.cordova) {
       //TODO put tag projet in config
-      var tagprojet = 'noe-obf';
+      var tagprojet = 'mission-nature';
+//      var tagprojet = 'noe-obf';
       var fsFail = function(error) {
         console.log('failed with error code: ' + error.code);
       };

@@ -104,21 +104,18 @@ module.exports = Marionette.Object.extend({
     var mission = MissionModel.collection.getInstance().get(id);
     mission.taxon = require('../taxons/taxons.model');
     var taxons = mission.taxon.collection.getInstance().clone();
-    var taxonsbad = mission.taxon.collection.getInstance().clone();
-
     var removables = [];
     taxons.forEach(function(taxon) {
+      var isPresent = false;
       mission.attributes.id_taxons.forEach(function(id) {
         if (id == taxon.id)
-          removables.push(taxon.id);
+          isPresent = true;
       });
+      if (!isPresent)
+        removables.push(taxon);
     });
-    taxonsbad.remove(removables);
-    var taxonsgood = [];
-    taxonsbad.forEach(function(taxon) {
-      taxonsgood.push(taxon);
-    });
-    taxons.remove(taxonsgood);
+    if (removables.length)
+      taxons.remove(removables);
 
     var View = require('../mission/home/mission_home.view');
     main.getInstance().rgMain.show(new View({

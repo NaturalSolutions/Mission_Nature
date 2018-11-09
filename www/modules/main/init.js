@@ -132,14 +132,13 @@ function init() {
               url: taxonData.url,
               description: taxonData.description,
               characteristic: taxonData.characteristic,
-              environments: taxonData.environments,
+              environment: taxonData.environment,
               environment_description: taxonData.environment_description,
               not_confuse: taxonData.not_confuse,
               sources: taxonData.sources
             });
             taxonCollection.add(taxon);
-          });
-          
+          });          
           var mission = new Mission.Model({
             id: missionData.id,
             num: missionData.num,
@@ -147,6 +146,7 @@ function init() {
             plural: missionData.plural,
             difficulty: missionData.difficulty,
             seasons: missionData.seasons,
+            introduction: missionData.introduction,
             id_taxons: missionData.id_taxons,
             taxon: taxonCollection
           });
@@ -273,7 +273,7 @@ function init() {
             obs.photos.forEach(function(photo){
               var absolutePath = photo.url.indexOf('file://');
               if (absolutePath !== -1)
-                photo.url = 'cdvfile://localhost/persistent/noe-obf/'+photo.url.substr(photo.url.lastIndexOf('/') + 1);
+                photo.url = 'cdvfile://localhost/persistent/mission-nature/'+photo.url.substr(photo.url.lastIndexOf('/') + 1);
               });
           });
       });

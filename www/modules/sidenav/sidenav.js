@@ -42,8 +42,8 @@ var View = Marionette.LayoutView.extend({
     var target = "_blank";
     var options = "location=yes";
     var currentId = e.currentTarget.id;
-    var trad = i18n.t('sidenav.link.'+currentId);
-    var url = "http://biodiversite-foret.fr/appli/"+trad+"/";
+//    var trad = i18n.t('sidenav.link.'+currentId);
+    var url = "http://www.parc-naturel-normandie-maine.fr/";
 
     var inAppBrowserRef;
     inAppBrowserRef = window.open(url, target, options);
