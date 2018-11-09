@@ -1,0 +1,105 @@
+<div class="inner">
+    <% var posterURL = './images/mission_taxon/taxon/poster/' + (data.taxon.id > 9 ? '' : '0') + data.taxon.id + '.jpg'; %>
+    <div class="poster" style="background-image:url('<%= posterURL %>');">
+        <img src="<%= posterURL %>" />
+    </div>
+    <div class="panel-group accordion" id="mission-sheet-accordion" role="tablist">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#mission-sheet-accordion"
+                        href="#collapse1">
+                        <span class="icon icomoon">taxon</span> <span class="text">
+                            <%= data.taxon.title %></span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                    <%= data.taxon.description %>
+                    <div>
+                        <button type="button" class="btn btn-block btn-default btn-sheet">Fiche espèce</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#mission-sheet-accordion"
+                        href="#collapse2">
+                        <span class="icon material">room</span> Où trouver l'espèce ? <span class="text">
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                    <div>
+                        <img class="img-environment" src="./images/mission_taxon/taxon/thumb/01.jpg" />
+                        <div class="img-title"><%= data.taxon.environment %></div>
+                    </div>
+                    <%= data.taxon.environment_description %>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#mission-sheet-accordion"
+                        href="#collapse3">
+                        <span class="icon icomoon">eye</span>Comment l'identifier ? <span class="text">
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse3" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                    <%= data.taxon.characteristic %>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#mission-sheet-accordion"
+                        href="#collapse4">
+                        <span class="icon material">warning</span> <span class="text">À ne pas confondre !</span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse4" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                    <%= data.taxon.not_confuse %>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#mission-sheet-accordion"
+                        href="#collapse5">
+                        <span class="icon material">language</span> <span class="text">Sources</span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse5" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                    <%= data.taxon.sources %>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#mission-sheet-accordion"
+                        href="#collapse6">
+                        <span class="icon icomoon">camera</span> <span class="text">Mes observations</span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse6" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body observations">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

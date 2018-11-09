@@ -1,0 +1,75 @@
+<div class="header text-center">
+	<div class="score-explode container">
+		<ul class="list-unstyled">
+			<li class="media level">
+				<div class="media-left thumb">
+					<img class="thumb-icon" src="images/score/level_<%= data.user.level %>_awake.png" />
+				</div>
+				<div class="media-body text media-middle">
+					<div class="value"><%= i18n.t('user.score.level.'+data.user.level+'.label') %></div>
+					<div class="description"><%= i18n.t('user.score.level.'+data.user.level+'.description') %></div>
+				</div>
+			</li>
+			<% if ( data.user.palmName ) { %>
+			<li class="media palm">
+				<div class="media-left thumb">
+					<img class="thumb-icon" src="images/score/palm_<%= data.user.palmName %>.png" />
+				</div>
+				<div class="media-body text media-middle">
+					<div class="value"><%= i18n.t('user.score.palm.'+data.user.palmName+'.label') %></div>
+					<div class="description"><%= i18n.t('user.score.palm.'+data.user.palmName+'.description') %></div>
+				</div>
+			</li>
+			<% } %>
+			<li class="media time">
+				<div class="media-left thumb">
+					<div class="thumb-icon user-sky user-sky-<%= data.user.timeOnMissionLevel %> user-sky-sun"></div>
+				</div>
+				<div class="media-body text media-middle">
+					<div class="value"><%= i18n.t('user.score.timeOnMission.'+data.user.timeOnMissionLevel+'.label') %></div>
+					<div class="description"><%= i18n.t('user.score.timeOnMission.'+data.user.timeOnMissionLevel+'.description') %></div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="score-implode">
+		<div class="score level-<%= data.user.level %>">
+			<div class="score-icon user-sky user-sky-<%= data.user.timeOnMissionLevel %> user-sky-sun">
+			</div>
+			<% if ( data.user.palmName ) { %>
+			<img class="score-icon" src="images/score/palm_<%= data.user.palmName %>.png" />
+			<% } %>
+			<img class="score-icon" src="images/score/level_<%= data.user.level %>_awake.png" />
+		</div>
+		<!--
+
+			<div class="time-forest pos-relative js-btn-time-forest">
+			<div class="text-center visible-in-forest">
+				<b><%= i18n.t('pages.dashboard.timeForest.enabled') %></b>
+				<div class="text-primary count js-count-time-forest"></div>
+			</div>
+			<div class="text-center hidden-in-forest">
+				<b><%= i18n.t('pages.dashboard.timeForest.disabled') %></b>
+				<div class="text-gray count js-count-time-forest"></div>
+			</div>
+			<button type="button" class="btn btn-fab bg-primary floating floating-right">
+			<span class="icon-close icon material">av_timer</span>
+          <% var spinnerTpl = require('../spinner/spinner-forest.tpl.html'); %>
+          <%= spinnerTpl({className:'spinner-forest spinner-green icon-right loader visible-in-forest'}) %>
+     		</button>
+		</div>
+	-->
+	</div>
+</div>
+<!-- Fake Nav tabs -->
+<ul class="nav nav-tabs page-nav-tabs nav-justified" role="tablist">
+<% _.forEach(data.tabs, function(tab, tabName) { %>
+	<li class="tab tab-<%= tabName %>">
+		<a href="#dashboard/<%= tabName %>"><%= i18n.t('pages.dashboard.tabs.'+ tabName) %> <% if(tab.badge){ %><span class="badge badge-circle no-border bg-pink"><%= tab.badge %></span><% } %></a>
+	</li>
+<% }); %>
+</ul>
+<!-- Fake Tab panes -->
+<div class="container">
+    <div class="tab-content"></div>
+</div>
