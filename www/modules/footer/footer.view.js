@@ -22,7 +22,7 @@ var View = Marionette.LayoutView.extend({
     'submit form': 'uploadPhoto',
   //  'click .forest-time-js': 'forestTime',
 //    'click .btn-clue': 'onBtnClueClick',
-  //  'click .btn-help': 'toggleHelp'
+    'click .btn-help': 'toggleHelp'
   },
   /*triggers: {
     'click .btn-clue': 'btn:clue:click'

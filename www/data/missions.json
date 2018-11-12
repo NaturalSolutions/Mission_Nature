@@ -39,7 +39,7 @@
                 "url": "http:\\\/\\\/biodiversite-foret.fr\\\/les-especes-2\\\/lepidopteres\\\/morio\\\/",
                 "description": "description de l'hirondelle",
                 "characteristic": "caract\u00e9ristique de l'hirondelle",
-                "environment": "milieux de vie (picto)",
+                "environment": "villages",
                 "environment_description": "description du milieux de vie",
                 "not_confuse": "ne pas la confondre avec",
                 "sources": "tout sur l'hirondelle rustique"
@@ -52,7 +52,7 @@
                 "url": "http:\\\/\\\/biodiversite-foret.fr\\\/les-especes-2\\\/lepidopteres\\\/damier-du-frene\\\/",
                 "description": "description de l'hirondelle",
                 "characteristic": "caract\u00e9ristique de l'hirondelle",
-                "environment": "milieux de vie (picto)",
+                "environment": "villages",
                 "environment_description": "description du milieux de vie",
                 "not_confuse": "ne pas la confondre avec",
                 "sources": "tout sur l'hirondelle de fen\u00eatre"
@@ -99,7 +99,7 @@
                 "url": "https:\\\/\\\/9gag.com",
                 "description": "gab desc",
                 "characteristic": "gab char",
-                "environment": "milieux humides",
+                "environment": "villages",
                 "environment_description": "azeroth",
                 "not_confuse": "pas confondre lol",
                 "sources": "les sources wesh"
@@ -112,7 +112,7 @@
                 "url": "https:\\\/\\\/9gag.com",
                 "description": "had desc",
                 "characteristic": "had char",
-                "environment": "milieux secs",
+                "environment": "villages",
                 "environment_description": "azeroth,iles bris\u00e9es",
                 "not_confuse": "pas confondre mdr",
                 "sources": "les sources mdr"
