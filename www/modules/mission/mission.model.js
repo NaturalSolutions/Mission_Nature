@@ -14,6 +14,7 @@ var Model = Backbone.Model.extend({
     difficulty: 0,//0 == unset
     difficultyName: '',
     seasons: [],//[{"startAt":"05","endAt":"11"}],
+    introduction: '',
     id_taxons: [],
     taxon: []
   },

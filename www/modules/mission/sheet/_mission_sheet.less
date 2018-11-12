@@ -1,53 +1,5 @@
 .page-mission_sheet {
-  .swiper-container {
-    .swiper-pagination {
-      bottom: 90%;
-      .swiper-pagination-bullet {
-        opacity: 0.5;
-      }
-      .swiper-pagination-bullet-active {
-        opacity: 1;
-      }
-    }
-    .swiper-wrapper {
-      margin: 0%;
-      .swiper-slide {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-        .image {
-          width: 100%;
-          height: auto;
-        }
-        .btn-taxon {
-          -webkit-appearance: button;
-          -moz-appearance: button;
-          appearance: button;
-          position: absolute;
-          bottom: 10%;
-          left: 5%;
-          z-index: 9999;
-          background-color: rgba(21, 24, 21, 0.6);
-          color: white;
-          padding: 10px 20px;
-          font-weight: normal;
-          text-align: center;
-          display: inline-block;
-          font-size: 16px;
-        }
-      }
-    }
-  }
-
+ 
   .poster {
     background: no-repeat center;
     background-size: cover;
@@ -59,6 +11,13 @@
       @media (max-height: 480px) {
         max-height: 200px;
       }
+    }
+  }
+  .text-area {
+    padding: 1em 2em 1.5em 2em;
+    text-align: center;
+    .text {
+      margin: 0%;
     }
   }
   .header {
@@ -73,7 +32,6 @@
       color: @gray-light;
       font-size: 2rem;
       font-weight: 400;
-//      text-shadow: 0 2px 9px rgba(0, 0, 0, 0.2);
       padding: 16px;
       padding-right: 90px;
       position: relative;
@@ -120,11 +78,16 @@
       font-size: 1.6rem;
       padding: 26px;
       .img-environment {
-        display: block;
-        margin-top: 0em;
-        margin-bottom: 1em;
+        display:block;
+        margin-bottom: 1.3em;
         margin-left: auto;
         margin-right: auto;
+        width: 100px;
+        height: auto;
+        border-radius: 50%;
+        background: no-repeat center;
+        background-size: cover;
+        .box-shadow(0 3px 3px rgba(0, 0, 0, 0.3));
       }
       .img-title {
         position: relative;
@@ -136,13 +99,6 @@
         margin-right: auto;
         margin-bottom: 1.3em;
         font-size: 16px;
-      }
-      img {
-        display:block;
-        margin-top: 1.3em;
-        margin-bottom: 1.3em;
-        margin-left: auto;
-        margin-right: auto;
       }
       .btn-block {
         margin-top: 20px;

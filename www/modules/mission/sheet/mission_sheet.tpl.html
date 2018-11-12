@@ -28,14 +28,14 @@
                 <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#mission-sheet-accordion"
                         href="#collapse2">
-                        <span class="icon icomoon">eye</span>Où trouver l'espèce ? <span class="text">
+                        <span class="icon material">room</span> Où trouver l'espèce ? <span class="text">
                     </a>
                 </h4>
             </div>
             <div id="collapse2" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
                     <div>
-                        <img class="img-environment" src="./images/mission_taxon/taxon/thumb/01.jpg" />
+                        <img class="img-environment" src="./images/milieux/<%= data.taxon.environment %>.png" />
                         <div class="img-title"><%= data.taxon.environment %></div>
                     </div>
                     <%= data.taxon.environment_description %>

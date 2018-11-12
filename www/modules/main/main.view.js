@@ -29,7 +29,7 @@ var Layout = Marionette.LayoutView.extend({
     this.dialogs = [];
     // this.addListeners();
     //this.listenTo(User.collection.getInstance(), 'change:current', this.onCurrentUserChange);
-    var currentPos = CurrentPos.model.getInstance();
+/*    var currentPos = CurrentPos.model.getInstance();
     currentPos.on('change', function() {
       var lat = _.get(currentPos.get('coords'), 'latitude', '');
       var lon = _.get(currentPos.get('coords'), 'longitude', '');
@@ -67,7 +67,7 @@ var Layout = Marionette.LayoutView.extend({
     var timeForest = User.getCurrent().get('timeForest');
     if(timeForest.get('isStart'))
       timeForest.start(timeForest.get('startTime'), timeForest.get('curCountTotalInit'));
-
+*/
     this.Help = require('./help.model');
     var queryHash = window.location.hash;
     var params = _.parseQueryHash(queryHash);

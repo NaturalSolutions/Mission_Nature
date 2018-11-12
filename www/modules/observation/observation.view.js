@@ -354,7 +354,8 @@ var Layout = Marionette.LayoutView.extend({
 
     if (window.cordova) {
       //TODO put tag projet in config
-      var tagprojet = 'noe-obf';
+      var tagprojet = 'mission-nature';
+//      var tagprojet = 'noe-obf';
       var copiedFile = function(fileEntry) {
         self.addPhoto(fileEntry.toInternalURL());
       };
