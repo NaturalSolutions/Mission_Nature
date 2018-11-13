@@ -8,6 +8,7 @@ var Backbone = require('backbone'),
   User = require('../profile/user.model'),
   Departement = require('../main/departement.model'),
   Mission = require('../mission/mission.model'),
+  Taxon = require('../taxons/taxons.model'),
   Session = require('../main/session.model'),
   config = require('../main/config'),
   Slideshow = require('./observation_slideshow.view.js'),
@@ -175,6 +176,29 @@ var Layout = Marionette.LayoutView.extend({
         },
         validators: ['required']
       },
+      cd_nom: {
+        type: 'DialogSelect',
+        options: {
+          dialogTitle: i18n.t('pages.observation.taxonDialogTitle'),
+          collection: Taxon.collection.getInstance(),
+          itemView: require('../mission/taxon_list/taxon_list_item.view'),
+          itemViewOptions: {
+            cancelLink: true
+          },
+          getSelectedLabel: function(model) {
+            var title = model.get('title');
+//            var taxonTitle = model.get('title');
+  //          if ( taxonTitle )
+    //          title += '<br /><small>'+taxonTitle+'</small>';
+            return title;
+          }
+        },
+        editorAttrs: {
+          placeholder: i18n.t('pages.observation.taxonPlaceholder')
+        },
+        validators: ['required']
+        
+      },
       departementId: {
         type: 'DialogSelect',
         options: {
@@ -206,12 +230,13 @@ var Layout = Marionette.LayoutView.extend({
       templateData: {
         observation: observation,
         mission: Mission.collection.getInstance(),
+        taxon: Taxon.collection.getInstance(), // ajout taxon.collection
         departement: Departement.collection.getInstance()
       }
     }).render();
     this.$el.append(this.formObs.$el);
     this.$progressBar = this.$el.find('.progress-bar');
-
+ 
     Backbone.Form.validators.errMessages.required = i18n.t('validation.errors.required');
 
     if (idToTransmit == this.observationModel.get('id')) {
@@ -409,7 +434,7 @@ var Layout = Marionette.LayoutView.extend({
     }
   },
 
-  checkGeolocation: function() {
+  checkGeolocation: function() { // popup après avoir appuyé sur "Enregistrement"
     var self = this;
     var dfd = $.Deferred();
     var geoStatus = this.observationModel.get('hasGeolocation');

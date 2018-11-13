@@ -19,8 +19,8 @@ module.exports = {
   // apiUrl: 'http://obfmobile.noe.org/obfmobileapi',
 
   //test desktop
-  coreUrl: '192.168.100.104',
-  apiUrl: '192.168.100.104/obfmobileapi',
+  coreUrl: 'http://51.75.120.240/mission_nature',
+  apiUrl: 'http://51.75.120.240/mission_nature/obfmobileapi',
   dateLabel: 'jj/mm/aaaa hh:mm:ss',
   dateFormats: ['DD/MM/YYYY', 'DD/MM/YYYY HH:mm:ss']
 };

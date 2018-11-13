@@ -17,6 +17,11 @@ module.exports = Marionette.CompositeView.extend({
 
   initialize: function(options) {
     var self = this;
+    this.header = {
+      titleKey: 'missions'
+    };
+    // FILTRE DES MISSIONS
+    /*
     if ( !options.filterable ) {
       this.header = {
         titleKey: 'missions'
@@ -34,7 +39,7 @@ module.exports = Marionette.CompositeView.extend({
         });
       });
     }
-
+    */
     this.listenTo(Footer.getInstance(), 'btn:clue:click', function(e) {
       e.preventDefault();
       var ids = self.collection.pluck('id');

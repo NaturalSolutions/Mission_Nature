@@ -164,7 +164,7 @@
     },
     "pages": {
         "home": {
-            "title": "Mission forêt avec Noé",
+            "title": "Mission Nature",
             "btns": {
                 "subscribe": "Inscription",
                 "logged": "Connexion",
@@ -200,9 +200,11 @@
             "completedBtnLabel": "accomplie"
         },
         "observation": {
-            "missionPlaceholder": "Missions",
+            "missionPlaceholder": "Mission",
+            "taxonPlaceholder": "Taxon",
             "departementPlaceholder": "Départements",
             "missionDialogTitle": "Sélectionner une mission",
+            "taxonDialogTitle": "Sélectionner un taxon",
             "departementDialogTitle": "Sélectionner un département",
             "btns": {
                 "save": "Enregistrer",
@@ -263,8 +265,8 @@
         }
     },
     "facebook":{
-        "message": "J'ai accompli une mission pour l'Observatoire de la Biodiversité des Forêts !",
-        "caption": "Mission Forêt Avec Noé",
+        "message": "J'ai accompli une mission pour le Parc Régional Normandie-Maine !",
+        "caption": "Mission Nature",
         "dialog":{
             "title": "Connexion",
             "message": "Vous devez être connecté à Facebook pour partager votre obs",
