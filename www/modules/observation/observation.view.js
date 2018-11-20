@@ -41,7 +41,7 @@ var Layout = Marionette.LayoutView.extend({
     'click .photo .img': 'onPhotoClick',
     'change .updateDept-js': 'updateField',
     'change .updateMission-js': 'updateField',
-    //'submit form#form-picture': 'uploadPhoto',
+    'submit form#form-picture': 'uploadPhoto',
     'click .capture-photo-js': 'capturePhoto'
   },
 
@@ -99,7 +99,9 @@ var Layout = Marionette.LayoutView.extend({
 
     this.session = Session.model.getInstance();
 
-    if (!this.observationModel.get('departementId')) {
+    // CA FOUT BORDEL
+
+/*    if (!this.observationModel.get('departementId')) {
       if (user.get('departementIds').length) {
         this.observationModel.set({
           departementId: user.get('departementIds')[0]
@@ -109,7 +111,7 @@ var Layout = Marionette.LayoutView.extend({
           departementId: user.get('city').dpt
         }).save();
     }
-
+*/
     var queryHash = window.location.hash;
     var params = _.parseQueryHash(queryHash);
     var currentUser = User.getCurrent();
@@ -359,6 +361,7 @@ var Layout = Marionette.LayoutView.extend({
 
   capturePhoto: function() {
     // Take picture using device camera and retrieve image as a local path
+    
     navigator.camera.getPicture(
       _.bind(this.onCapturePhotoSuccess, this),
       _.bind(this.onFail, this), {

@@ -9,9 +9,9 @@ var Backbone = require('backbone'),
 
 var View = Marionette.ItemView.extend({
   template: require('./taxon_list_item.tpl.html'),
-  className: 'media mission-list-item',
+  className: 'media taxon-list-item',
   events: {
-    'click .js-link-mission': 'onLinkClick'
+    'click .js-link-taxon': 'onLinkClick'
   },
   initialize: function(options) {
     this.options = options;

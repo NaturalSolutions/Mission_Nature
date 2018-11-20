@@ -27,7 +27,12 @@
   },{
   "id": "mission",
   "title": "Fiche mission",
-  "description": "<p>Cette fiche vous donnera les informations utiles pour identifier une espèce ou des éléments caractéristiques de la forêt.</p><p> Cliquez sur le bouton « accepter » &nbsp;<span type=\"button\" class=\"btn btn-fab btn-default btn-xs\" style=\"font-size: 7px; vertical-align: bottom;\"><span class=\"icon icomoon\">check</span></span> pour voir apparaître la mission dans votre tableau de bord. Prenez une photo en cliquant sur <span class=\"btn-xs btn-fab bg-orange\" style=\"font-size:7px; vertical-align: middle;\"><span class=\"icon-close icon material\">photo_camera</span></span> en bas à droite.</p><p> Les photos sont visibles sur la fiche et dans votre tableau de bord.<p>"
+  "description": "<p>Cette fiche vous donnera les informations utiles de la mission ainsi que les différentes espèces à trouver.</p><p> Cliquez sur le bouton « accepter » &nbsp;<span type=\"button\" class=\"btn btn-fab btn-default btn-xs\" style=\"font-size: 7px; vertical-align: bottom;\"><span class=\"icon icomoon\">check</span></span> pour voir apparaître la mission dans votre tableau de bord. Prenez une photo en cliquant sur <span class=\"btn-xs btn-fab bg-orange\" style=\"font-size:7px; vertical-align: middle;\"><span class=\"icon-close icon material\">photo_camera</span></span> en bas à droite.</p><p> Les photos sont visibles sur la fiche et dans votre tableau de bord.<p>"
+  }
+  ,{
+  "id": "taxon",
+  "title": "Fiche espèce",
+  "description": "<p>Cette fiche vous donnera les informations relatives à l'espèce et divers indices pour la trouver !</p>"
   }
   ,{
   "id": "clue",

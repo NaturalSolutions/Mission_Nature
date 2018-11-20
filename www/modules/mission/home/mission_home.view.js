@@ -14,7 +14,7 @@ var Backbone = require('backbone'),
 module.exports = Marionette.CompositeView.extend({
   template: require('./mission_home.tpl.html'),
   childView: TaxonListItem,
-  childViewContainer: '.items',
+  childViewContainer: '.item',
   childViewOptions: function() {
     return {
       mission_id: this.model.id
@@ -27,7 +27,7 @@ module.exports = Marionette.CompositeView.extend({
 
   attributes: function() {
     var user = User.getCurrent();
-    var classNames = 'page page-mission_sheet';
+    var classNames = 'page page-mission_home';
     if (user.hasCompletedMission(this.model))
       classNames += ' is-complete';
     else if (user.hasAcceptedMission(this.model))
