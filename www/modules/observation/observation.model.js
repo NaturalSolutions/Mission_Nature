@@ -64,7 +64,7 @@ var ObservationModel = Backbone.Model.extend({
     var self = this;
     var result = Backbone.Model.prototype.toJSON.apply(self, arguments);
 
-    _.forEach(['mission', 'departement'], function(attr) {
+    _.forEach(['mission'/*, 'departement'*/], function(attr) {
       result[attr] = self.get(attr);
     }, this);
 
@@ -93,7 +93,7 @@ var ObservationModel = Backbone.Model.extend({
       id: missionId
     });
   },
-  getDepartement: function() {
+/*  getDepartement: function() {
     var self = this;
     var departementId = self.get('departementId');
     if (!departementId)
@@ -103,7 +103,7 @@ var ObservationModel = Backbone.Model.extend({
 
     return departements.get(departementId);
   }
-  /*getDeptId: function() {
+  getDeptId: function() {
     var self = this;
     var dept = self.get('departement');
     if (!dept)

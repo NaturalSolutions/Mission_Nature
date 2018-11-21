@@ -22,9 +22,6 @@
 			</li>
 			<% } %>
 			<li class="media time">
-				<div class="media-left thumb">
-					<div class="thumb-icon user-sky user-sky-<%= data.user.timeOnMissionLevel %> user-sky-sun"></div>
-				</div>
 				<div class="media-body text media-middle">
 					<div class="value"><%= i18n.t('user.score.timeOnMission.'+data.user.timeOnMissionLevel+'.label') %></div>
 					<div class="description"><%= i18n.t('user.score.timeOnMission.'+data.user.timeOnMissionLevel+'.description') %></div>
@@ -34,8 +31,6 @@
 	</div>
 	<div class="score-implode">
 		<div class="score level-<%= data.user.level %>">
-			<div class="score-icon user-sky user-sky-<%= data.user.timeOnMissionLevel %> user-sky-sun">
-			</div>
 			<% if ( data.user.palmName ) { %>
 			<img class="score-icon" src="images/score/palm_<%= data.user.palmName %>.png" />
 			<% } %>

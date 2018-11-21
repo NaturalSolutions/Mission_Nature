@@ -15,7 +15,7 @@ var Backbone = require('backbone'),
   Router = require('../routing/router'),
   Session = require('./session.model'),
   User = require('../profile/user.model'),
-  Departement = require('./departement.model'),
+//  Departement = require('./departement.model'),
   Help = require('./help.model'),
   CurrentPos = require('../localize/current_position.model');
 

@@ -5,7 +5,7 @@ var Marionette = require('backbone.marionette'),
     _ = require('lodash'),
     Router = require('../../routing/router'),
     User = require('../../profile/user.model'),
-    departement = require('../../main/departement.model'),
+//    departement = require('../../main/departement.model'),
     Header = require('../../header/header');
 
 module.exports = Marionette.LayoutView.extend({
@@ -27,8 +27,8 @@ module.exports = Marionette.LayoutView.extend({
   },
 
   onShow: function() {
-    this.$el.find('input.js-autocomplete').autocomplete({
-      source: departement.collection.getInstance().toJSON(),
+/*    this.$el.find('input.js-autocomplete').autocomplete({
+//      source: departement.collection.getInstance().toJSON(),
       appendTo: this.$el.find('.js-autocomplete-results'),
       _renderItem: function(ul, item) {
         var $li = $('<li />');
@@ -44,7 +44,7 @@ module.exports = Marionette.LayoutView.extend({
         user.save();
         Router.getInstance().navigate('#missions/aroundme', {trigger: true});
       }
-    });
+    });*/
   },
 
   onGeolocClick: function() {

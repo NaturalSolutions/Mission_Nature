@@ -6,7 +6,7 @@ var Backbone = require('backbone'),
   _ = require('lodash'),
   ObsModel = require('../observation/observation.model'),
   User = require('../profile/user.model'),
-  Departement = require('../main/departement.model'),
+//  Departement = require('../main/departement.model'),
   Mission = require('../mission/mission.model'),
   Taxon = require('../taxons/taxons.model'),
   Session = require('../main/session.model'),
@@ -39,7 +39,7 @@ var Layout = Marionette.LayoutView.extend({
   events: {
     'submit form.infos': 'onFormSubmit',
     'click .photo .img': 'onPhotoClick',
-    'change .updateDept-js': 'updateField',
+//    'change .updateDept-js': 'updateField',
     'change .updateMission-js': 'updateField',
     'submit form#form-picture': 'uploadPhoto',
     'click .capture-photo-js': 'capturePhoto'
@@ -49,7 +49,7 @@ var Layout = Marionette.LayoutView.extend({
     var user = this.user = User.getCurrent();
     this.observationModel = this.model;
     this.listenTo(this.observationModel, 'change:photos', this.render, this);
-    this.listenTo(this.observationModel, 'change:departement', this.render, this);
+//    this.listenTo(this.observationModel, 'change:departement', this.render, this);
     this.listenTo(this.observationModel, 'change:shared', this.render, this);
 
     var mainView = Main.getInstance();
@@ -111,7 +111,7 @@ var Layout = Marionette.LayoutView.extend({
           departementId: user.get('city').dpt
         }).save();
     }
-*/
+
     var queryHash = window.location.hash;
     var params = _.parseQueryHash(queryHash);
     var currentUser = User.getCurrent();
@@ -122,6 +122,7 @@ var Layout = Marionette.LayoutView.extend({
     //   }
     // );
     helps.someHelp(params);
+    */
   },
 
   serializeData: function() {
@@ -135,7 +136,7 @@ var Layout = Marionette.LayoutView.extend({
   onRender: function() {
     this.$el.attr('data-cid', this.cid);
 
-    var isSaved = (this.observationModel.get('missionId') && this.observationModel.get('departementId'));
+    var isSaved = (this.observationModel.get('missionId'));
     if (!isSaved)
       this.setFormStatus('unsaved');
     else {
@@ -201,7 +202,7 @@ var Layout = Marionette.LayoutView.extend({
         validators: ['required']
         
       },
-      departementId: {
+/*      departementId: {
         type: 'DialogSelect',
         options: {
           dialogTitle: i18n.t('pages.observation.departementDialogTitle'),
@@ -213,11 +214,11 @@ var Layout = Marionette.LayoutView.extend({
         },
         editorAttrs: {
           placeholder: i18n.t('pages.observation.departementPlaceholder')
-          /*selectedvalue: this.observationModel.get('departementId'),
-          disabled: this.observationModel.get('shared') ? true : false*/
+          selectedvalue: this.observationModel.get('departementId'),
+          disabled: this.observationModel.get('shared') ? true : false
         },
         validators: ['required']
-      },
+      },*/
     };
     var observation = this.observationModel.toJSON();
 
@@ -232,8 +233,8 @@ var Layout = Marionette.LayoutView.extend({
       templateData: {
         observation: observation,
         mission: Mission.collection.getInstance(),
-        taxon: Taxon.collection.getInstance(), // ajout taxon.collection
-        departement: Departement.collection.getInstance()
+        taxon: Taxon.collection.getInstance()//, ajout taxon.collection
+//        departement: Departement.collection.getInstance()
       }
     }).render();
     this.$el.append(this.formObs.$el);
@@ -267,14 +268,14 @@ var Layout = Marionette.LayoutView.extend({
   },
 
   onDomRefresh: function(options) {
-    // var user = User.getCurrent();
+/*    // var user = User.getCurrent();
     if (this.user.get('city')) {
       this.observationModel.set({
         departementId: this.user.get('city').dpt
       }).save();
-      this.observationModel.get('departement');
+//      this.observationModel.get('departement');
     }
-
+*/
     //this.$el.find('select').selectPlaceholder();
     /*var user = User.getCurrent();
     console.log('onDomRefresh');
@@ -485,12 +486,12 @@ var Layout = Marionette.LayoutView.extend({
     var dfd = $.Deferred();
 
     var missionId = this.observationModel.get('missionId');
-    var departementId = this.observationModel.get('departementId');
+//    var departementId = this.observationModel.get('departementId');
     var mission = Mission.collection.getInstance().get(missionId);
     var isInSeason = mission.isInSeason();
-    var isInDepartement = mission.isInDepartement(departementId);
+//    var isInDepartement = mission.isInDepartement(departementId);
 
-    if ( isInSeason && isInDepartement )
+    if ( isInSeason )
       dfd.resolve();
     else {
       Dialog.confirm({
@@ -512,14 +513,17 @@ var Layout = Marionette.LayoutView.extend({
     var self = this;
     var formValues = self.formObs.getValue();
     var missionId = _.parseInt(formValues.missionId);
+    var taxonId = _.parseInt(formValues.cd_nom); //ajout taxonId ?
     var mission = Mission.collection.getInstance().get(missionId);
 
     this.checkGeolocation().then(
       function() {
         self.observationModel.set({
           missionId: missionId,
-          cd_nom: mission.get('taxon').cd_nom,
-          departementId: formValues.departementId
+          cd_nom: taxonId //modif cd_nom
+
+//          cd_nom: mission.get('taxon').cd_nom //,
+//          departementId: formValues.departementId
         }).save();
         self.setFormStatus('saved');
       },
@@ -565,11 +569,12 @@ var Layout = Marionette.LayoutView.extend({
           value: self.observationModel.get('date')
         }]
       },
-      field_observation_code_dept: {
+/*      field_observation_code_dept: {
         und: [{
           value: self.observationModel.get('departementId')
         }]
       },
+      */
       field_observation_id_mission: {
         und: [{
           value: self.observationModel.get('missionId')

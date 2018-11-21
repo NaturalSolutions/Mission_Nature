@@ -132,7 +132,7 @@ module.exports = Marionette.Object.extend({
 
     var missions = Mission.collection.getInstance().clone();
     var params = MissionsAllFilter.getFilters() || {};
-    var departement = params.departement;
+//    var departement = params.departement;
     var startAt = params.startAt;
     var endAt = params.endAt;
     var removables = [];
@@ -140,8 +140,8 @@ module.exports = Marionette.Object.extend({
       var isMatch = true;
       if (isMatch && mission.get('difficulty') < 1)
         isMatch = false;
-      if (isMatch && departement && !mission.isInDepartement(departement.id))
-        isMatch = false;
+//      if (isMatch && departement && !mission.isInDepartement(departement.id))
+  //      isMatch = false;
       if (isMatch && (startAt || endAt) && !mission.isInSeason(startAt, endAt))
         isMatch = false;
       if (!isMatch)

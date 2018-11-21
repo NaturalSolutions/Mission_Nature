@@ -30,7 +30,7 @@ var Backbone = require('backbone'),
   TimeForest = require('../time_forest/time_forest.model'),
   Log = require('../logs/log.model'),
   City = require('../localize/city.model'),
-  Departement = require('../main/departement.model'),
+//  Departement = require('../main/departement.model'),
   Help = require('../main/help.model'),
   Mission = require('../mission/mission.model'),
   Taxon = require('../taxons/taxons.model'),
@@ -164,7 +164,7 @@ function init() {
     return City.model.getInstance().load();
   };
 
-  var getDepartements = function() {
+/*  var getDepartements = function() {
     var deferred = $.Deferred();
     var departementCollection = new Departement.collection.getInstance();
 
@@ -188,6 +188,7 @@ function init() {
 
     return deferred;
   };
+  */
 
   var gethelp = function(){
     var deferred = $.Deferred();
@@ -290,7 +291,7 @@ function init() {
     Backbone.history.start();
   });
 
-  $.when(getI18n(), getMissions(), getCities(), getDepartements(), gethelp(), getUser(), getObservations(), getLogs(), getTimeForest())
+  $.when(getI18n(), getMissions(), getCities(), /*getDepartements(),*/ gethelp(), getUser(), getObservations(), getLogs(), getTimeForest())
     .done(function() {
       if (window.cordova)
         checkUrlFile();

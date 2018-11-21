@@ -204,14 +204,14 @@ var UserModel = Backbone.Model.extend({
 
     return missions.indexOf(id) > -1;
   },
-  getDepartement: function() {
+/*  getDepartement: function() {
     if ( !this.get('departementIds') || !this.get('departementIds')[0] )
       return null;
     var Departement = require('../main/departement.model');
     var id = this.get('departementIds')[0];
 
     return Departement.collection.getInstance().get(id);
-  },
+  },*/
 
   computeScore: function() {
     var self = this;

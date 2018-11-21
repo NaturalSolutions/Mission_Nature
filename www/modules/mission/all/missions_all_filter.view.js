@@ -2,8 +2,8 @@
 var Marionette = require('backbone.marionette'),
   _ = require('lodash'),
   Header = require('../../header/header'),
-  Router = require('../../routing/router'),
-  Departement = require('../../main/departement.model');
+  Router = require('../../routing/router');
+//  Departement = require('../../main/departement.model');
 var filters = null;
 var View = Marionette.LayoutView.extend({
   header: {
@@ -28,22 +28,23 @@ var View = Marionette.LayoutView.extend({
   },
   serializeData: function() {
     var self = this;
-    return {
+/*    return {
       departement: self.filters.departement
     };
+    */
   },
   onRender: function() {
     var self = this;
   },
   onShow: function() {
     var self = this;
-    self.$el.find('input.js-autocomplete').autocomplete({
+/*    self.$el.find('input.js-autocomplete').autocomplete({
       source: Departement.collection.getInstance().toJSON(),
       appendTo: self.$el.find('.js-autocomplete-result'),
       change: function(e, ui) {
         self.filters.departement = ui.item;
       }
-    });
+    });*/
     self.$el.find('.js-datetimepicker').datetimepicker({
       locale: 'fr',
       format: 'DD/MM/YYYY',
