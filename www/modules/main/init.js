@@ -27,7 +27,7 @@ var Backbone = require('backbone'),
   intervalPlural = require('i18next-intervalplural-postprocessor'),
   sprintf = require('i18next-sprintf-postprocessor'),
   User = require('../profile/user.model'),
-  TimeForest = require('../time_forest/time_forest.model'),
+//  TimeForest = require('../time_forest/time_forest.model'),
   Log = require('../logs/log.model'),
   City = require('../localize/city.model'),
 //  Departement = require('../main/departement.model'),
@@ -243,7 +243,7 @@ function init() {
 
     return deferred;
   };
-
+/*
   var getTimeForest = function() {
     var deferred = $.Deferred();
     var collection = TimeForest.collection.getInstance();
@@ -265,7 +265,7 @@ function init() {
 
     return deferred;
   };
-
+*/
   var checkUrlFile = function(){
     /* jshint ignore:start */
     if (device.platform === 'iOS'){
@@ -291,7 +291,7 @@ function init() {
     Backbone.history.start();
   });
 
-  $.when(getI18n(), getMissions(), getCities(), /*getDepartements(),*/ gethelp(), getUser(), getObservations(), getLogs(), getTimeForest())
+  $.when(getI18n(), getMissions(), getCities(), /*getDepartements(),*/ gethelp(), getUser(), getObservations(), getLogs()/*, getTimeForest()*/)
     .done(function() {
       if (window.cordova)
         checkUrlFile();

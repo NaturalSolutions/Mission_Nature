@@ -2,6 +2,7 @@
 var Marionette = require('backbone.marionette'),
   _ = require('lodash'),
   Header = require('../../header/header'),
+  $ = require('jquery'),
   Router = require('../../routing/router');
 //  Departement = require('../../main/departement.model');
 var filters = null;
@@ -38,6 +39,7 @@ var View = Marionette.LayoutView.extend({
   },
   onShow: function() {
     var self = this;
+
 /*    self.$el.find('input.js-autocomplete').autocomplete({
       source: Departement.collection.getInstance().toJSON(),
       appendTo: self.$el.find('.js-autocomplete-result'),
@@ -68,7 +70,15 @@ var View = Marionette.LayoutView.extend({
   },
   onBtnSearchClick: function() {
     var self = this;
+    var chkArray = [];
+    $('.check:checked').each(function() {
+      console.log($(this).val());
+      chkArray.push($(this).val());
+    });
+    self.filters.milieux = chkArray;
+
     filters = self.filters;
+    console.log(self.filters);
     Router.getInstance().navigate('missions/all', {
       trigger: true
     });

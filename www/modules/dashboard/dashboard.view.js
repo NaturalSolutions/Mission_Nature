@@ -54,7 +54,7 @@ var ClassDef = Marionette.LayoutView.extend({
     this.currentUser = User.getCurrent();
     this.listenTo(this.currentUser.get('timeForest'), 'change:progressLog', this.setUserSky);
     this.listenTo(User.collection.getInstance(), 'change:current', this.onCurrentUserChange);
-    this.listenTo(this.currentUser.getTimeForest(), 'change:total', this.displayTimeForest);
+//    this.listenTo(this.currentUser.getTimeForest(), 'change:total', this.displayTimeForest);
 
   },
 
@@ -74,11 +74,11 @@ var ClassDef = Marionette.LayoutView.extend({
     var self = this;
     this.displayTab();
     this.setUserSky();
-    this.displayTimeForest();
+//    this.displayTimeForest();
   },
 
   onCurrentUserChange: function(newUser, prevUser) {
-    this.stopListening(prevUser.getTimeForest());
+//    this.stopListening(prevUser.getTimeForest());
     this.listenTo(newUser.getTimeForest(), 'change:total', this.displayTimeForest);
     this.render();
   },

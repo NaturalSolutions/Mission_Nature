@@ -1,3 +1,9 @@
+Node version: v8.11.3
+
+Cordova version: 7.1.0
+
+Config.xml file: 
+
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="org.noe.MissionForetAvecNoe" version="0.1.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Mission Nature</name>
@@ -70,7 +76,7 @@
         <splash height="1334" src="res/ios/screen/Default-667h.png" width="750" />
         <splash height="2208" src="res/ios/screen/Default-736h.png" width="1242" />
     </platform>
-    <engine name="android" spec="^6.3.0" />
+    <engine name="android" spec="^7.1.2" />
     <plugin name="cordova-plugin-x-socialsharing" spec="~5.0.8" />
     <plugin name="cordova-plugin-camera" spec="~2.2.0" />
     <plugin name="cordova-plugin-console" spec="~1.0.3" />
@@ -99,3 +105,16 @@
     </plugin>
     <plugin name="cordova-plugin-compat" spec="^1.2.0" />
 </widget>
+
+
+Plugins: 
+
+cordova-android-support-gradle-release,cordova-plugin-camera,cordova-plugin-compat,cordova-plugin-console,cordova-plugin-crosswalk-webview,cordova-plugin-customurlscheme,cordova-plugin-device,cordova-plugin-file,cordova-plugin-file-transfer,cordova-plugin-geolocation,cordova-plugin-inappbrowser,cordova-plugin-network-information,cordova-plugin-splashscreen,cordova-plugin-statusbar,cordova-plugin-whitelist,cordova-plugin-x-socialsharing,ionic-plugin-keyboard
+
+Error retrieving Android platform information: 
+Android SDK is not set up properly. Make sure that the Android SDK 'tools' and 'platform-tools' directories are in the PATH variable. 
+
+Error: cmd: Command failed with exit code 1 Error output:
+'android' n'est pas reconnu en tant que commande interne
+ou externe, un programme ex�cutable ou un fichier de commandes.
+
