@@ -55,6 +55,14 @@ module.exports = Marionette.CompositeView.extend({
       Router.getInstance().navigate('clue?missionId='+self.model.get('id'), {trigger:true});
     });
 
+    var queryHash = window.location.hash;
+    var params = _.parseQueryHash(queryHash);
+
+    var currentUser = User.getCurrent();
+    var helps = Help.collection.getInstance();
+
+    helps.someHelp(params);
+
   },
 
   serializeData: function() {

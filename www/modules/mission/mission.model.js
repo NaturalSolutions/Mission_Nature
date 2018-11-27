@@ -7,7 +7,7 @@ var Backbone = require('backbone'),
 	i18n = require('i18next');
 
 var Model = Backbone.Model.extend({
-  defaults: { // removed externId / species / environments / criterias / description / caracteristic / find
+  defaults: { // removed externId / species / environments / criterias / description / caracteristic / find / map
     num: '0',
     title: '',
     poster: '',
@@ -21,7 +21,7 @@ var Model = Backbone.Model.extend({
   //Usefull to preserve equality between get() and toJSON()
   //TODO: remove that, it may be confusing
   getDynAttrs: function() {
-    return ['map', 'thumb', 'poster', 'difficultyName', 'seasons'];
+    return [/*'map', */ 'thumb', 'poster', 'difficultyName', 'seasons'];
   },
   get: function(attr) {
     var self = this;
@@ -55,12 +55,14 @@ var Model = Backbone.Model.extend({
 
     return result;
   },
+  /*
   getMap: function() {
     var self = this;
     var id = self.get('id');
 
     return (id < 10 ? '0' : '') + id + '.png';
   },
+  */
   getThumb: function() {
     var self = this;
     var id = self.get('id');

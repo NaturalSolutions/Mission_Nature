@@ -141,9 +141,9 @@
         "level": {
             "title": "Bravo !",
             "message": {
-                "level_1": "Vous êtes maintenant écureuil",
-                "level_2": "Vous êtes maintenant chouette",
-                "level_3": "Vous êtes maintenant loup"
+                "level_1": "Vous êtes maintenant niveau 1",
+                "level_2": "Vous êtes maintenant niveau 2",
+                "level_3": "Vous êtes maintenant niveau 3"
             },
             "button": "Continuer"
         },

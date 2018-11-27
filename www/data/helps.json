@@ -21,14 +21,14 @@
   }, {
     "id": "missionsall",
     "title": "Toutes les missions",
-    "description": "<p>L’ensemble des missions est disponible ici. Cliquez sur <span class=\"btn btn-xs btn-default\" style=\"font-size: 7px;\"><span class=\"icon icomoon\" style=\"font-size: 17px;\">khebab</span></span> en haut à droite pour filtrer ces missions par milieu et par mois.</p>"
+    "description": "<p>L’ensemble des missions est disponible ici. Cliquez sur <span class=\"btn btn-xs btn-default\" style=\"font-size: 7px;\"><span class=\"icon icomoon\" style=\"font-size: 17px;\">khebab</span></span> en haut à droite pour filtrer ces missions par mois.</p>"
 
   }, {
     "id": "mission",
     "title": "Fiche mission",
     "description": "<p>Cette fiche vous donnera les informations utiles de la mission ainsi que les différentes espèces à trouver.</p><p> Cliquez sur le bouton « accepter » &nbsp;<span type=\"button\" class=\"btn btn-fab btn-default btn-xs\" style=\"font-size: 7px; vertical-align: bottom;\"><span class=\"icon icomoon\">check</span></span> pour voir apparaître la mission dans votre tableau de bord. Prenez une photo en cliquant sur <span class=\"btn-xs btn-fab bg-orange\" style=\"font-size:7px; vertical-align: middle;\"><span class=\"icon-close icon material\">photo_camera</span></span> en bas à droite.</p><p> Les photos sont visibles sur la fiche et dans votre tableau de bord.<p>"
   }, {
-    "id": "taxon",
+    "id": "missionsheet",
     "title": "Fiche espèce",
     "description": "<p>Cette fiche vous donnera les informations relatives à l'espèce et divers indices pour la trouver !</p>"
   }, {

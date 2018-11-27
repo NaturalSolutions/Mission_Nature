@@ -184,7 +184,7 @@ var Layout = Marionette.LayoutView.extend({
         options: {
           dialogTitle: i18n.t('pages.observation.taxonDialogTitle'),
           collection: Taxon.collection.getInstance(),
-          itemView: require('../mission/taxon_list/taxon_list_item.view'),
+          itemView: require('../mission/taxon_filter/taxon_filter_item.view'),
           itemViewOptions: {
             cancelLink: true
           },
@@ -193,6 +193,7 @@ var Layout = Marionette.LayoutView.extend({
 //            var taxonTitle = model.get('title');
   //          if ( taxonTitle )
     //          title += '<br /><small>'+taxonTitle+'</small>';
+            console.log("titre : " + title + " id : " + model.get('id'));
             return title;
           }
         },

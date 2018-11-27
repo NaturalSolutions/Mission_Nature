@@ -58,6 +58,14 @@ module.exports = Marionette.LayoutView.extend({
       Router.getInstance().navigate('clue?missionId='+self.model.get('id'), {trigger:true});
     });
 
+    var queryHash = "missionsheet";
+    var params = _.parseQueryHash(queryHash);
+
+    var currentUser = User.getCurrent();
+    var helps = Help.collection.getInstance();
+
+    helps.someHelp(params);
+
   },
 
   openWindow: function(){
