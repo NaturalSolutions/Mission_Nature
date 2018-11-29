@@ -28,10 +28,6 @@ var View = Marionette.ItemView.extend({
     var user = User.getCurrent();
     var isComplete = this.model.get('complete');
 
-    console.log(this.options.mission_id);
-    
-    console.log(this.model);
-
     if (user.hasCompletedMission(this.model))
     this.$el.addClass('is-complete');
     else if (user.hasAcceptedMission(this.model))

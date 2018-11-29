@@ -48,7 +48,7 @@ module.exports = Marionette.LayoutView.extend({
       observation.set({
         'missionId': self.model.get('id'),
 //        'departementId': _.get(User.getCurrent().get('departement'), 'id', null),
-        'cd_nom': self.model.cd_nom
+        'cd_nom': self.model.get('cd_nom')
       });
       observation.save();
     });

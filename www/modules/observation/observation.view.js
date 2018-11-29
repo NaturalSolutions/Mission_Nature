@@ -198,10 +198,10 @@ var Layout = Marionette.LayoutView.extend({
           }
         },
         editorAttrs: {
-          placeholder: i18n.t('pages.observation.taxonPlaceholder')
+          placeholder: i18n.t('pages.observation.taxonPlaceholder'),
+          selectedvalue: this.observationModel.get('cd_nom')
         },
-        validators: ['required']
-        
+        validators: ['required']        
       },
 /*      departementId: {
         type: 'DialogSelect',
@@ -238,6 +238,9 @@ var Layout = Marionette.LayoutView.extend({
 //        departement: Departement.collection.getInstance()
       }
     }).render();
+    
+    var formValues = this.formObs.getValue();
+    console.log(formValues);
     this.$el.append(this.formObs.$el);
     this.$progressBar = this.$el.find('.progress-bar');
  
@@ -506,7 +509,6 @@ var Layout = Marionette.LayoutView.extend({
         }
       });
     }
-
     return dfd;
   },
 
@@ -514,14 +516,14 @@ var Layout = Marionette.LayoutView.extend({
     var self = this;
     var formValues = self.formObs.getValue();
     var missionId = _.parseInt(formValues.missionId);
-    var taxonId = _.parseInt(formValues.cd_nom); //ajout taxonId ?
+    var cd_nom = _.parseInt(formValues.cd_nom); //ajout taxonId ?
     var mission = Mission.collection.getInstance().get(missionId);
 
     this.checkGeolocation().then(
       function() {
         self.observationModel.set({
           missionId: missionId,
-          cd_nom: taxonId //modif cd_nom
+          cd_nom: cd_nom //modif cd_nom
 
 //          cd_nom: mission.get('taxon').cd_nom //,
 //          departementId: formValues.departementId
@@ -564,7 +566,8 @@ var Layout = Marionette.LayoutView.extend({
     //data expected by the server
     var data = {
       type: 'observation',
-      title: 'mission_' + self.observationModel.get('missionId') + '_' + self.observationModel.get('date') + '_' + this.user.get('externId'),
+      title: 'taxon_' + self.observationModel.get('cd_nom') + '_' + self.observationModel.get('date') + '_' + this.user.get('externId'),
+//      title: 'mission_' + self.observationModel.get('missionId') + '_' + self.observationModel.get('date') + '_' + this.user.get('externId'),
       field_observation_timestamp: {
         und: [{
           value: self.observationModel.get('date')
