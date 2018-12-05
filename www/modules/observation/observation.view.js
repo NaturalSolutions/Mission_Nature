@@ -238,13 +238,9 @@ var Layout = Marionette.LayoutView.extend({
 //        departement: Departement.collection.getInstance()
       }
     }).render();
-<<<<<<< HEAD
-    console.log(this.formObs);
-=======
     
     var formValues = this.formObs.getValue();
     console.log(formValues);
->>>>>>> 9c3cec0ea31651403210b9eea091b435847d47bc
     this.$el.append(this.formObs.$el);
     this.$progressBar = this.$el.find('.progress-bar');
  
@@ -524,10 +520,6 @@ var Layout = Marionette.LayoutView.extend({
     var formValues = self.formObs.getValue();
     var missionId = _.parseInt(formValues.missionId);
     var cd_nom = _.parseInt(formValues.cd_nom); //ajout taxonId ?
-<<<<<<< HEAD
-//    console.debug(observationModel);
-=======
->>>>>>> 9c3cec0ea31651403210b9eea091b435847d47bc
     var mission = Mission.collection.getInstance().get(missionId);
 
     this.checkGeolocation().then(

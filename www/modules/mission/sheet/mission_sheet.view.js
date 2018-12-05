@@ -48,11 +48,6 @@ module.exports = Marionette.LayoutView.extend({
     this.listenTo(Observation.collection.getInstance(), 'add', function (observation) {
       observation.set({
         'missionId': self.model.get('id'),
-<<<<<<< HEAD
-        //        'departementId': _.get(User.getCurrent().get('departement'), 'id', null),
-=======
-//        'departementId': _.get(User.getCurrent().get('departement'), 'id', null),
->>>>>>> 9c3cec0ea31651403210b9eea091b435847d47bc
         'cd_nom': self.model.get('cd_nom')
       });
       observation.save();
