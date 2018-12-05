@@ -14,7 +14,10 @@ var Model = Backbone.Model.extend({
     environment_description: '',
     not_confuse: '',
     sources: ''
-  },
+  },/*
+  getEnvironment: function() {
+
+  }*/
 });
 
 var Collection = Backbone.Collection.extend({

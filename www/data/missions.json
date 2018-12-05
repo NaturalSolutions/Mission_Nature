@@ -4,14 +4,14 @@
         "num": "1",
         "title": "A tire d\u2019aile en ville ou en campagne!",
         "plural": 0,
-        "difficulty": 1,
+        "difficulty": 2,
         "seasons": [
             {
-                "startAt": "09",
-                "endAt": "04"
+                "startAt": "03",
+                "endAt": "09"
             }
         ],
-        "introduction": "Les hirondelles sont des oiseaux tr\u00e8s malins, oui oui.",
+        "introduction": "L\u2019Hirondelle de fen\u00eatre et l\u2019Hirondelle rustique sont les hirondelles que l\u2019on rencontre le plus souvent sur notre territoire. Elles sont intimement li\u00e9es \u00e0 l\u2019Homme, puisque ces esp\u00e8ces utilisent nos habitations pour pouvoir faire leurs nids, dans les coins de nos fen\u00eatres ou au niveau des poutres des vieilles granges.",
         "id_taxons": [
             "0",
             "1",
@@ -36,86 +36,26 @@
                 "cd_nom": "3696",
                 "title": "hirondelle rustique",
                 "family": "Hirundinid\u00e9s",
-                "url": "http:\\\/\\\/biodiversite-foret.fr\\\/les-especes-2\\\/lepidopteres\\\/morio\\\/",
-                "description": "description de l'hirondelle",
-                "characteristic": "caract\u00e9ristique de l'hirondelle",
-                "environment": "villages",
-                "environment_description": "description du milieux de vie",
-                "not_confuse": "ne pas la confondre avec",
-                "sources": "tout sur l'hirondelle rustique"
+                "url": "https:\/\/inpn.mnhn.fr\/espece\/cd_nom\/3696",
+                "description": "L\u2019Hirondelle rustique est une campagnarde, pr\u00e9f\u00e9rant faire son nid dans les granges et zones rurales. Elle conna\u00eet un fort d\u00e9clin depuis les ann\u00e9es 1950\u00a0\u00e0 cause de l\u2019activit\u00e9 humaine\u00a0: diminution des insectes du fait d'une utilisation trop importante de pesticides, les ph\u00e9nom\u00e8nes des changements climatiques sur l\u2019alimentation des jeunes, ou encore la r\u00e9novation des b\u00e2timents avec destruction volontaire des nids, malgr\u00e9 la loi qui les prot\u00e8ge. Pourtant, les hirondelles sont des insectivores acharn\u00e9s, surtout quand elles ont une nich\u00e9 \u00e0 nourrir ! Elles participent donc \u00e0 la r\u00e9duction des populations de mouches, moustiques, taons, pucerons\u2026 ",
+                "characteristic": "L\u2019Hirondelle rustique poss\u00e8de une longue queue tr\u00e8s \u00e9chancr\u00e9e avec deux longs filets \u00e0 la diff\u00e9rence de l\u2019Hirondelle de fen\u00eatre. Autre particularit\u00e9, la couleur rouge-brique de sa gorges et la couleur blanch\u00e2tre de son ventre pouvant virer au blanc cr\u00e8me.",
+                "environment": "5",
+                "environment_description": "L\u2019Hirondelle rustique est le plus souvent un oiseau des campagnes, recherchant des plafonds avec des solives dans les \u00e9tables, \u00e9curies et autres granges pour b\u00e2tir son nid. ",
+                "not_confuse": "Malgr\u00e9 sa silhouette similaire, le Martinet noir est le pi\u00e8ge \u00e0 \u00e9viter. L\u2019esp\u00e8ce est compl\u00e8tement noir avec de grandes ailes effil\u00e9es l\u00e9g\u00e8rement arqu\u00e9es. C\u2019est un oiseau principalement citadin et il a la particularit\u00e9 de ne jamais se poser au sol (sauf accident). ",
+                "sources": "https:\/\/www.lpo.fr\/actualites\/contre-les-moustiques-faites-une-place-aux-hirondelles,http:\/\/www.enquete-hirondelles.fr\/wp-content\/uploads\/2012\/05\/Identifier-les-hironelles-du-b%C3%A2ti.jpg,http:\/\/www.hirondelles.oiseaux.net\/migration.html,http:\/\/www.oiseaux.net\/oiseaux\/hirondelle.rustique.html,http:\/\/www.oiseaux.net\/oiseaux\/hirondelle.de.fenetre.html "
             },
             {
                 "id": "2",
                 "cd_nom": "459478",
                 "title": "hirondelle de fen\u00eatre",
                 "family": "Hirundinid\u00e9s",
-                "url": "http:\\\/\\\/biodiversite-foret.fr\\\/les-especes-2\\\/lepidopteres\\\/damier-du-frene\\\/",
-                "description": "description de l'hirondelle",
-                "characteristic": "caract\u00e9ristique de l'hirondelle",
-                "environment": "villages",
-                "environment_description": "description du milieux de vie",
-                "not_confuse": "ne pas la confondre avec",
-                "sources": "tout sur l'hirondelle de fen\u00eatre"
-            }
-        ]
-    },
-    {
-        "id": 2,
-        "num": "2",
-        "title": "Gabriel et Hadrien",
-        "plural": 0,
-        "difficulty": 2,
-        "seasons": [
-            {
-                "startAt": "04",
-                "endAt": "08"
-            }
-        ],
-        "introduction": "Une colocation d'enfer !",
-        "id_taxons": [
-            "0",
-            "3",
-            "4"
-        ],
-        "taxon": [
-            {
-                "id": "0",
-                "cd_nom": "0",
-                "title": "je ne sais pas",
-                "family": "inconnu",
-                "url": "inconnu",
-                "description": "inconnu",
-                "characteristic": "inconnu",
-                "environment": "inconnu",
-                "environment_description": "inconnu",
-                "not_confuse": "inconnu",
-                "sources": "inconnu"
-            },
-            {
-                "id": "3",
-                "cd_nom": "45467",
-                "title": "Gabriel Girard",
-                "family": "Humanoides",
-                "url": "https:\\\/\\\/9gag.com",
-                "description": "gab desc",
-                "characteristic": "gab char",
-                "environment": "villages",
-                "environment_description": "azeroth",
-                "not_confuse": "pas confondre lol",
-                "sources": "les sources wesh"
-            },
-            {
-                "id": "4",
-                "cd_nom": "4667",
-                "title": "Hadrien Grenacs",
-                "family": "Humanoides",
-                "url": "https:\\\/\\\/9gag.com",
-                "description": "had desc",
-                "characteristic": "had char",
-                "environment": "villages",
-                "environment_description": "azeroth,iles bris\u00e9es",
-                "not_confuse": "pas confondre mdr",
-                "sources": "les sources mdr"
+                "url": "https:\/\/inpn.mnhn.fr\/espece\/cd_nom\/459478",
+                "description": "L\u2019Hirondelle de fen\u00eatre est une citadine, pr\u00e9f\u00e9rant, comme son nom l\u2019indique, faire son nid dans les encadrements des fen\u00eatres de nos villages et villes. Elle conna\u00eet, comme sa cousine l\u2019Hirondelle rustique, un d\u00e9clin\u00a0\u00e0 cause de l\u2019Homme. Autre particularit\u00e9, les deux esp\u00e8ces se regroupent souvent \u00e0 la fin de l\u2019\u00e9t\u00e9 (fin septembre) en de grands rassemblements sur des fils \u00e9lectriques afin de migrer par groupes vers l\u2019Afrique. Le top d\u00e9part est encore aujourd\u2019hui un myst\u00e8re, mais la destination reste la m\u00eame.",
+                "characteristic": "L\u2019Hirondelle de fen\u00eatre, plus petites que l\u2019Hirondelle rustique,  poss\u00e8de une queue beaucoup moins \u00e9chancr\u00e9e, sans filets. La gorge, le ventre et le croupion sont d\u2019un blanc pur assez caract\u00e9ristique. En vol, elle se reconna\u00eet facilement par la couleur blanche de son croupion que ne poss\u00e8de pas l\u2019Hirondelle rustique. ",
+                "environment": "10",
+                "environment_description": "l\u2019Hirondelle des fen\u00eatres est plut\u00f4t un oiseau des villes, recherchant des coins de fen\u00eatres o\u00f9 installer son nid.",
+                "not_confuse": "Malgr\u00e9 sa silhouette similaire, le Martinet noir est le pi\u00e8ge \u00e0 \u00e9viter. L\u2019esp\u00e8ce est compl\u00e8tement noir avec de grandes ailes effil\u00e9es l\u00e9g\u00e8rement arqu\u00e9es. C\u2019est un oiseau principalement citadin et il a la particularit\u00e9 de ne jamais se poser au sol (sauf accident). ",
+                "sources": "https:\/\/www.lpo.fr\/actualites\/contre-les-moustiques-faites-une-place-aux-hirondelles,http:\/\/www.enquete-hirondelles.fr\/wp-content\/uploads\/2012\/05\/Identifier-les-hironelles-du-b%C3%A2ti.jpg,http:\/\/www.hirondelles.oiseaux.net\/migration.html,http:\/\/www.oiseaux.net\/oiseaux\/hirondelle.rustique.html,http:\/\/www.oiseaux.net\/oiseaux\/hirondelle.de.fenetre.html "
             }
         ]
     }

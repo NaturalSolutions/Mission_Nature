@@ -1,4 +1,5 @@
 <div class="header text-center">
+	<!--
 	<div class="score-explode container">
 		<ul class="list-unstyled">
 			<li class="media level">
@@ -29,12 +30,17 @@
 			</li>
 		</ul>
 	</div>
+-->
 	<div class="score-implode">
 		<div class="score level-<%= data.user.level %>">
 			<% if ( data.user.palmName ) { %>
 			<img class="score-icon" src="images/score/palm_<%= data.user.palmName %>.png" />
 			<% } %>
 			<img class="score-icon" src="images/score/level_<%= data.user.level %>_awake.png" />
+		</div>
+		<div class="score-name">
+			<div class="value">Vous êtes niveau <%= data.user.level %> : <%= i18n.t('user.score.level.'+data.user.level+'.label') %></div>
+			<div class="description"><%= i18n.t('user.score.level.'+data.user.level+'.description') %></div>
 		</div>
 		<!--
 

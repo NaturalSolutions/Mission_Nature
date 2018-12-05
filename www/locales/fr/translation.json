@@ -78,19 +78,19 @@
             "level": {
                 "0": {
                     "label": "Apprenti",
-                    "description": ""
+                    "description": "Accomplir une mission de niveau débutant pour progresser"
                 },
                 "1": {
-                    "label": "Ecureuil",
-                    "description": "Au moins une mission de niveau débutant"
+                    "label": "Débutant",
+                    "description": "Accomplir une mission de niveau confirmé pour progresser"
                 },
                 "2": {
-                    "label": "Chouette",
-                    "description": "Au moins une mission de niveau confirmé"
+                    "label": "Confirmé",
+                    "description": "Accomplir une mission de niveau expert pour progresser"
                 },
                 "3": {
-                    "label": "Loup",
-                    "description": "Au moins une mission de niveau expert"
+                    "label": "Expert",
+                    "description": "Vous êtes au niveau maximum"
                 }
             },
             "palm": {

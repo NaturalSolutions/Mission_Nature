@@ -11,7 +11,7 @@ var Model = Backbone.Model.extend({
     num: '0',
     title: '',
     poster: '',
-    difficulty: 0,//0 == unset
+    difficulty: '',//0 == unset
     difficultyName: '',
     seasons: [],//[{"startAt":"05","endAt":"11"}],
     introduction: '',
@@ -102,6 +102,20 @@ var Model = Backbone.Model.extend({
     });
 
     return seasons;
+  },
+  isinDifficulty: function(difficulties) {
+    var self = this;
+    var isPresent = false;
+
+    console.log(self.difficulty);
+    self.forEach(function(mission) {
+      isPresent = false;
+      difficulties.forEach(function(diff) {
+        if (self.mission.attributes.difficulty == diff)
+          isPresent = true;
+      });
+    });
+    return isPresent;
   },
   isInDepartement: function(ids) {
     var self = this;

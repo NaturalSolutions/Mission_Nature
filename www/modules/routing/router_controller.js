@@ -129,23 +129,26 @@ module.exports = Marionette.Object.extend({
   missionsAll: function() {
     var Mission = require('../mission/mission.model');
     var MissionsAllFilter = require('../mission/all/missions_all_filter.view');
-
     var missions = Mission.collection.getInstance().clone();
     var params = MissionsAllFilter.getFilters() || {};
-//    var departement = params.departement;
+
+    var difficulty = params.difficulty;
     var startAt = params.startAt;
     var endAt = params.endAt;
     var removables = [];
     missions.forEach(function(mission) {
       var isMatch = true;
-      if (isMatch && mission.get('difficulty') < 1)
+      if (isMatch && difficulty) {
         isMatch = false;
-//      if (isMatch && departement && !mission.isInDepartement(departement.id))
-  //      isMatch = false;
+        difficulty.forEach(function(diff) {
+          if (diff == mission.attributes.difficulty)
+            isMatch = true;
+       });
+      }
       if (isMatch && (startAt || endAt) && !mission.isInSeason(startAt, endAt))
         isMatch = false;
       if (!isMatch)
-          removables.push(mission);
+        removables.push(mission);
     });
 
     if (removables.length)

@@ -1,3 +1,2 @@
-id;num;title;plural;difficulty;Saison (mois);introduction;taxons: 1,2,3;;;;;
-1;1;"A tire d’aile en ville ou en campagne!";0;1;03-09;"Les hirondelles sont des oiseaux très malins, oui oui.";0,1,2;;;;;
-2;2;"Gabriel et Hadrien";0;2;04-08;"Une colocation d'enfer !";0,3,4;;;;;
+id;numéro de la mission;titre;plural (laisser 0);difficulté;saisons (mois);texte d'introduction;id des taxons
+1;1;A tire d’aile en ville ou en campagne!;0;2;03-09;L’Hirondelle de fenêtre et l’Hirondelle rustique sont les hirondelles que l’on rencontre le plus souvent sur notre territoire. Elles sont intimement liées à l’Homme, puisque ces espèces utilisent nos habitations pour pouvoir faire leurs nids, dans les coins de nos fenêtres ou au niveau des poutres des vieilles granges.;0,1,2

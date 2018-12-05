@@ -1,6 +1,6 @@
 <?php
 $missions_rows = file_get_contents('./missions.csv');
-$missions_rows = explode(";;;;;\r\n", $missions_rows);
+$missions_rows = explode("\r\n", $missions_rows);
 array_shift($missions_rows);
 $ouput = array();
 // Set your CSV feed

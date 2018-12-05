@@ -72,13 +72,13 @@ var View = Marionette.LayoutView.extend({
     var self = this;
     var chkArray = [];
     $('.check:checked').each(function() {
-      console.log($(this).val());
+//      console.log($(this).val());
       chkArray.push($(this).val());
     });
-    self.filters.milieux = chkArray;
+    self.filters.difficulty = chkArray;
 
     filters = self.filters;
-    console.log(self.filters);
+//    console.log(self.filters);
     Router.getInstance().navigate('missions/all', {
       trigger: true
     });

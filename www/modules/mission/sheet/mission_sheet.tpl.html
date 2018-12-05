@@ -18,7 +18,7 @@
                 <div class="panel-body">
                     <%= data.taxon.description %>
                     <div>
-                        <button type="button" class="btn btn-block btn-default btn-sheet">Fiche espèce</button>
+                        <button type="button" id="url" class="btn btn-block btn-default btn-sheet">Fiche espèce</button>
                     </div>
                 </div>
             </div>
@@ -34,11 +34,8 @@
             </div>
             <div id="collapse2" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                    <div>
-                        <img class="img-environment" src="./images/milieux/<%= data.taxon.environment %>.png" />
-                        <div class="img-title"><%= data.taxon.environment %></div>
-                    </div>
-                    <%= data.taxon.environment_description %>
+                    <span class="badge badge-pill"><%= data.taxon.environment %></span>
+                    <div><%= data.taxon.environment_description %></div>                    
                 </div>
             </div>
         </div>
@@ -82,9 +79,11 @@
                 </h4>
             </div>
             <div id="collapse5" class="panel-collapse collapse" role="tabpanel">
-                <div class="panel-body">
-                    <%= data.taxon.sources %>
-                </div>
+                <ul class="list-group list-group-flush">
+                    <% for(var i = 0; i < data.taxon.sources.length; i++) { %>
+                        <li class="list-group-item btn-sheet" id="sources"><%= data.taxon.sources[i] %></li>
+                    <% }; %>
+                </ul>
             </div>
         </div>
         <div class="panel panel-default">
