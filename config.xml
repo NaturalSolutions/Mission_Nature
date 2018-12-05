@@ -6,7 +6,7 @@
     </description>
     <author email="obf@noe.org" href="http://www.noe.org/">Noé</author>
     <content src="index.html" />
-    <access origin="http://51.75.120.240/*" />
+    <access origin="http://149.202.129.99/*" />
     <access origin="cdvfile://*" />
     <access origin="https://graph.facebook.com/*" />
     <preference name="DisallowOverscroll" value="true" />
