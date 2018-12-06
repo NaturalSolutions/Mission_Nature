@@ -99,8 +99,6 @@ var Layout = Marionette.LayoutView.extend({
 
     this.session = Session.model.getInstance();
 
-    // CA FOUT BORDEL
-
 /*    if (!this.observationModel.get('departementId')) {
       if (user.get('departementIds').length) {
         this.observationModel.set({
@@ -190,10 +188,6 @@ var Layout = Marionette.LayoutView.extend({
           },
           getSelectedLabel: function(model) {
             var title = model.get('title');
-//            var taxonTitle = model.get('title');
-  //          if ( taxonTitle )
-    //          title += '<br /><small>'+taxonTitle+'</small>';
-            console.log("titre : " + title + " cd_nom : " + model.get('cd_nom'));
             return title;
           }
         },
@@ -203,23 +197,6 @@ var Layout = Marionette.LayoutView.extend({
         },
         validators: ['required']        
       },
-/*      departementId: {
-        type: 'DialogSelect',
-        options: {
-          dialogTitle: i18n.t('pages.observation.departementDialogTitle'),
-          collection: Departement.collection.getInstance(),
-          itemView: DepartementItemView,
-          getSelectedLabel: function(model) {
-            return model.get('title');
-          }
-        },
-        editorAttrs: {
-          placeholder: i18n.t('pages.observation.departementPlaceholder')
-          selectedvalue: this.observationModel.get('departementId'),
-          disabled: this.observationModel.get('shared') ? true : false
-        },
-        validators: ['required']
-      },*/
     };
     var observation = this.observationModel.toJSON();
 
@@ -227,20 +204,14 @@ var Layout = Marionette.LayoutView.extend({
       model: this.observationModel,
       template: require('./form_observation.tpl.html'),
       schema: formSchema,
-      /*data: {
-        mission: mission.collection.getInstance(),
-        dept: Departement.collection.getInstance()
-      },*/
       templateData: {
         observation: observation,
         mission: Mission.collection.getInstance(),
         taxon: Taxon.collection.getInstance()//, ajout taxon.collection
-//        departement: Departement.collection.getInstance()
       }
     }).render();
     
     var formValues = this.formObs.getValue();
-    console.log(formValues);
     this.$el.append(this.formObs.$el);
     this.$progressBar = this.$el.find('.progress-bar');
  
@@ -428,14 +399,11 @@ var Layout = Marionette.LayoutView.extend({
     if (errors)
       return false;
 
-//    console.log(this.formObs);
-
     if (this.$el.hasClass('form-status-unsaved')) {
       this.saveObs();
     } else if ( navigator.onLine ) {
       if (this.$el.hasClass('form-status-shared-0')) {
         this.checkBounds().done(function() {
-//          console.log("ouioui");
           self.sendObs();
         });
       } else if (this.$el.hasClass('form-status-shared-1'))
@@ -493,10 +461,8 @@ var Layout = Marionette.LayoutView.extend({
     var dfd = $.Deferred();
 
     var missionId = this.observationModel.get('missionId');
-//    var departementId = this.observationModel.get('departementId');
     var mission = Mission.collection.getInstance().get(missionId);
     var isInSeason = mission.isInSeason();
-//    var isInDepartement = mission.isInDepartement(departementId);
 
     if ( isInSeason )
       dfd.resolve();
@@ -521,7 +487,7 @@ var Layout = Marionette.LayoutView.extend({
     var self = this;
     var formValues = self.formObs.getValue();
     var missionId = _.parseInt(formValues.missionId);
-    var cd_nom = _.parseInt(formValues.cd_nom); //ajout taxonId ?
+    var cd_nom = _.parseInt(formValues.cd_nom); //ajout taxon_cdnom
     var mission = Mission.collection.getInstance().get(missionId);
 
     this.checkGeolocation().then(
@@ -529,9 +495,6 @@ var Layout = Marionette.LayoutView.extend({
         self.observationModel.set({
           missionId: missionId,
           cd_nom: cd_nom //modif cd_nom
-
-//          cd_nom: mission.get('taxon').cd_nom //,
-//          departementId: formValues.departementId
         }).save();
         self.setFormStatus('saved');
       },
@@ -546,9 +509,7 @@ var Layout = Marionette.LayoutView.extend({
     this.$el.find('form').removeClass('loading');
   },
 
-
   // Save in server time_forest : update user with new time (field_time_forest)
-
 
   sendObs: function(e) {
     var self = this;
@@ -558,11 +519,7 @@ var Layout = Marionette.LayoutView.extend({
 
     self.$el.addClass('sending block-ui');
     this.$el.find('form').addClass('loading');
-
-//    console.log(self.observationModel);
     var formValues = self.formObs.getValue();
-    console.log(formValues);
-//    console.log(self.observationModel);
 
     //clear data photos
     var clearPhoto = function(args) {
@@ -576,19 +533,12 @@ var Layout = Marionette.LayoutView.extend({
     //data expected by the server
     var data = {
       type: 'observation',
-      title: 'mission_' + self.observationModel.get('missionId') + 'taxon_' + self.observationModel.get('cd_nom') + '_' + self.observationModel.get('date') + '_' + this.user.get('externId'),
-//      title: 'mission_' + self.observationModel.get('missionId') + '_' + self.observationModel.get('date') + '_' + this.user.get('externId'),
+      title: 'mission_' + self.observationModel.get('missionId') + '_taxon_' + self.observationModel.get('cd_nom') + '_' + self.observationModel.get('date') + '_' + this.user.get('externId'),
       field_observation_timestamp: {
         und: [{
           value: self.observationModel.get('date')
         }]
       },
-/*      field_observation_code_dept: {
-        und: [{
-          value: self.observationModel.get('departementId')
-        }]
-      },
-      */
       field_observation_id_mission: {
         und: [{
           value: self.observationModel.get('missionId')

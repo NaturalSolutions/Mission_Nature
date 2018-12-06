@@ -91,8 +91,6 @@ module.exports = Marionette.LayoutView.extend({
       collection: new Backbone.Collection(observations)
     }));
 
-//   console.log(this.model.get('sources'));
-
     switch (this.model.get('environment')) {
       case "affleurements rocheux":
         this.$el.find('.badge').addClass("grey");
