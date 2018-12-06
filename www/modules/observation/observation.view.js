@@ -428,6 +428,8 @@ var Layout = Marionette.LayoutView.extend({
     if (errors)
       return false;
 
+//    console.log(this.formObs);
+
     if (this.$el.hasClass('form-status-unsaved')) {
       this.saveObs();
     } else if ( navigator.onLine ) {
@@ -560,6 +562,7 @@ var Layout = Marionette.LayoutView.extend({
 //    console.log(self.observationModel);
     var formValues = self.formObs.getValue();
     console.log(formValues);
+//    console.log(self.observationModel);
 
     //clear data photos
     var clearPhoto = function(args) {
@@ -573,7 +576,7 @@ var Layout = Marionette.LayoutView.extend({
     //data expected by the server
     var data = {
       type: 'observation',
-      title: 'taxon_' + self.observationModel.get('cd_nom') + '_' + self.observationModel.get('date') + '_' + this.user.get('externId'),
+      title: 'mission_' + self.observationModel.get('missionId') + 'taxon_' + self.observationModel.get('cd_nom') + '_' + self.observationModel.get('date') + '_' + this.user.get('externId'),
 //      title: 'mission_' + self.observationModel.get('missionId') + '_' + self.observationModel.get('date') + '_' + this.user.get('externId'),
       field_observation_timestamp: {
         und: [{
@@ -591,7 +594,7 @@ var Layout = Marionette.LayoutView.extend({
           value: self.observationModel.get('missionId')
         }]
       },
-      field_observation_cd_nom: {
+      field_cd_nom: {
         und: [{
           value: self.observationModel.get('cd_nom')
         }]

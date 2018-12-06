@@ -71,10 +71,12 @@ module.exports = Marionette.LayoutView.extend({
   },
 
   openWindow: function (ev) {
-    var id = $(ev.target).attr('id');
-    console.dir(ev.target);
-    console.log(id);
-//    window.open(this.model.get(id), '_blank');
+    var toOpen;
+    if (ev.currentTarget.id === "url")
+      toOpen = this.model.get('url');
+    else
+      toOpen = ev.currentTarget.innerHTML;
+    window.open(toOpen, '_blank');
   },
 
   onRender: function () {
@@ -91,7 +93,7 @@ module.exports = Marionette.LayoutView.extend({
 
 //   console.log(this.model.get('sources'));
 
-    switch (this.model.attributes.environment) {
+    switch (this.model.get('environment')) {
       case "affleurements rocheux":
         this.$el.find('.badge').addClass("grey");
         break;
@@ -119,7 +121,7 @@ module.exports = Marionette.LayoutView.extend({
       case "vergers":
         this.$el.find('.badge').addClass("yellow-light");
         break;
-      case "villages":
+      case "villages et zones urbaines":
         this.$el.find('.badge').addClass("orange-light");
         break;
       case "zones humides":

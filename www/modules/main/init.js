@@ -164,6 +164,7 @@ function init() {
                 taxonData.environment = "zones humides";
                   break;
                 default:
+                  console.log(taxonData.environment);
                   console.log("error : wrong environment number");
                   break;
               }

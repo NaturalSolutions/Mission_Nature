@@ -100,6 +100,7 @@ var initCustomeEditors = function() {
       function onChildClick(childView) {
         dialog.close();
         self.setValue(childView.model.get('id'));
+        self.setValue(childView.model.get('cd_nom'));
       }
     },
 
@@ -112,6 +113,9 @@ var initCustomeEditors = function() {
       this.schema.options.collection.forEach(function(model) {
         if ( model.get('id') == value )
           self.$el.html(self.schema.options.getSelectedLabel(model));
+        if ( model.get('cd_nom') == value )
+          self.$el.html(self.schema.options.getSelectedLabel(model));
+
       });
       if ( !this.$el.text() )
         this.$el.html(this.schema.editorAttrs.placeholder);

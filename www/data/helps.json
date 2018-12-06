@@ -21,7 +21,7 @@
   }, {
     "id": "missionsall",
     "title": "Toutes les missions",
-    "description": "<p>L’ensemble des missions est disponible ici. Cliquez sur <span class=\"btn btn-xs btn-default\" style=\"font-size: 7px;\"><span class=\"icon icomoon\" style=\"font-size: 17px;\">khebab</span></span> en haut à droite pour filtrer ces missions par mois.</p>"
+    "description": "<p>L’ensemble des missions est disponible ici. Cliquez sur <span class=\"btn btn-xs btn-default\" style=\"font-size: 7px;\"><span class=\"icon icomoon\" style=\"font-size: 17px;\">khebab</span></span> en haut à droite pour filtrer ces missions par mois et par difficulté.</p>"
 
   }, {
     "id": "mission",
