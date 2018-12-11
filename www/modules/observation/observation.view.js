@@ -158,6 +158,7 @@ var Layout = Marionette.LayoutView.extend({
       missionId: {
         type: 'DialogSelect',
         options: {
+          propName: "id",
           dialogTitle: i18n.t('pages.observation.missionDialogTitle'),
           collection: Mission.collection.getInstance(),
           itemView: require('../mission/list_item/mission_list_item.view'),
@@ -166,20 +167,22 @@ var Layout = Marionette.LayoutView.extend({
           },
           getSelectedLabel: function(model) {
             var title = model.get('title');
-            var taxonTitle = model.get('taxon').title;
+            /*var taxonTitle = model.get('taxon').title;
             if ( taxonTitle )
-              title += '<br /><small>'+taxonTitle+'</small>';
+              title += '<br /><small>'+taxonTitle+'</small>';*/
             return title; 
           }
         },
         editorAttrs: {
-          placeholder: i18n.t('pages.observation.missionPlaceholder')
+          placeholder: i18n.t('pages.observation.missionPlaceholder'),
+          selectedvalue: this.observationModel.get('missionId')
         },
         validators: ['required']
       },
       cd_nom: {
         type: 'DialogSelect',
         options: {
+          propName: "cd_nom",
           dialogTitle: i18n.t('pages.observation.taxonDialogTitle'),
           collection: Taxon.collection.getInstance(),
           itemView: require('../mission/taxon_filter/taxon_filter_item.view'),
