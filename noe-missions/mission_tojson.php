@@ -30,11 +30,12 @@ foreach ($missions_rows as $key => $mission_row) {
   $mission_row = explode(";", $mission_row);
   $id = (int) $mission_row[0];
   if ( $id ) {
-    $id_especes = explode(',', $mission_row[7]);
+    $id_especes = explode(',', $mission_row[8]);
     sort($id_especes);
-    $seasons = explode('-', $mission_row[5]);
-    $introduction = trim($mission_row[6], '"');
+    $seasons = explode('-', $mission_row[6]);
+    $introduction = trim($mission_row[7], '"');
     $title = trim($mission_row[2], '"');
+    $caption = trim($mission_row[3], '"');
     // Arrays use every new missions
     $keys = array();
     $newArray = array();
@@ -56,8 +57,9 @@ foreach ($missions_rows as $key => $mission_row) {
       'id' => $id,
       'num' => $mission_row[1],
       'title' => $title,
-      'plural' => (int) $mission_row[3],
-      'difficulty' => (int) $mission_row[4],
+      'caption' => $caption,
+      'plural' => (int) $mission_row[4],
+      'difficulty' => (int) $mission_row[5],
       'seasons' => array(
         array(
           'startAt' => $seasons[0],

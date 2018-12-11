@@ -10,6 +10,7 @@ var Model = Backbone.Model.extend({
   defaults: { // removed externId / species / environments / criterias / description / caracteristic / find / map
     num: '0',
     title: '',
+    caption: '',
     poster: '',
     difficulty: '',//0 == unset
     difficultyName: '',

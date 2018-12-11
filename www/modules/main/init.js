@@ -187,6 +187,7 @@ function init() {
             id: missionData.id,
             num: missionData.num,
             title: missionData.title,
+            caption: missionData.caption,
             plural: missionData.plural,
             difficulty: missionData.difficulty,
             seasons: missionData.seasons,
