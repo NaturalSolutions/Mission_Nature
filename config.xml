@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="org.noe.MissionForetAvecNoe" version="0.1.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="org.NormandieMaine.MissionNature" version="0.1.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Mission Nature</name>
     <description>
         Partez à la recherche des espèces de la nature avec Mission Nature !
     </description>
-    <author email="obf@noe.org" href="http://www.noe.org/">Noé</author>
+    <author email="info@parc-normandie-maine.fr" href="http://www.parc-naturel-normandie-maine.fr">NormandieMaine</author>
     <content src="index.html" />
     <access origin="http://149.202.129.99/*" />
     <access origin="cdvfile://*" />
@@ -14,10 +14,10 @@
     <preference name="StatusBarStyle" value="blackopaque" />
     <preference name="StatusBarBackgroundColor" value="#000000" />
     <allow-intent href="obfmobile:/*" />
-    <platform name="ios">
+   <!-- <platform name="ios">
         <allow-navigation href="http://biodiversite-foret.fr/*" />
         <allow-navigation href="https://biodiversite-foret.fr/*" />
-    </platform>
+    </platform> -->
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <preference name="iosPersistentFileLocation" value="Compatibility" />
     <feature name="StatusBar">
