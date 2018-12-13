@@ -58,7 +58,7 @@ var Layout = Marionette.LayoutView.extend({
         return false;
       mainView.addDialog({
         cssClass: 'theme-primary with-bg-forest user-score',
-        badgeClassNames: 'badge-circle bg-wood border-brown text-white',
+        badgeClassNames: 'badge-circle bg-wood text-white',
         badge: nbComputed + '<div class="text-xs text-bottom">' + i18n.t('mission.label', {
           count: nbComputed
         }) + '</div>',
@@ -213,8 +213,17 @@ var Layout = Marionette.LayoutView.extend({
         taxon: Taxon.collection.getInstance()//, ajout taxon.collection
       }
     }).render();
+/*
+    this.formObs.on('missionId:change', function(this.formObs, missionIdEditor) {
+      console.log("ok");
+      var missionId = missionIdEditor.getValue();
+      console.log(missionId);
+    });
+          newOptions = cd_nom[missionId];
+      
+        this.formObs.fields.city.editor.setOptions(newOptions);
+  */
     
-    var formValues = this.formObs.getValue();
     this.$el.append(this.formObs.$el);
     this.$progressBar = this.$el.find('.progress-bar');
  
