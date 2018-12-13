@@ -201,6 +201,7 @@
         },
         "observation": {
             "missionPlaceholder": "Mission",
+            "commentPlaceholer": "Commentaire",
             "taxonPlaceholder": "Taxon",
             "missionDialogTitle": "Sélectionner une mission",
             "taxonDialogTitle": "Sélectionner un taxon",

@@ -179,6 +179,14 @@ var Layout = Marionette.LayoutView.extend({
         },
         validators: ['required']
       },
+      comment: {
+        name: "comment",
+        control: "textarea",
+        editorAttrs: {
+          placeholder: 'Commentaire',
+          selectedvalue: this.observationModel.get('comment')
+        }
+      },
       cd_nom: {
         type: 'DialogSelect',
         options: {
@@ -506,7 +514,8 @@ var Layout = Marionette.LayoutView.extend({
       function() {
         self.observationModel.set({
           missionId: missionId,
-          cd_nom: cd_nom //modif cd_nom
+          cd_nom: cd_nom, //modif cd_nom
+          comment: formValues.comment
         }).save();
         self.setFormStatus('saved');
       },
@@ -559,6 +568,11 @@ var Layout = Marionette.LayoutView.extend({
       field_cd_nom: {
         und: [{
           value: self.observationModel.get('cd_nom')
+        }]
+      },
+      field_comment: {
+        und: [{
+          value: self.observationModel.get('comment')
         }]
       },
       field_lat_long: {

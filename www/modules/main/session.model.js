@@ -232,6 +232,7 @@ var SessionModel = Backbone.Model.extend({
             'missionId': obs[item].mission,
             'externId': obs[item].entity_id,
             'cd_nom': obs[item].cd_nom,
+            'comment': obs[item].comment,
 //            "departementId": obs[item].dept,
             "shared": 1
           });
