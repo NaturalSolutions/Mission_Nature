@@ -87,12 +87,11 @@ module.exports = Marionette.Object.extend({
     idm = _.parseInt(idm);
     var MissionModel = require('../mission/mission.model');
     var mission = MissionModel.collection.getInstance().get(idm);
-    mission.taxon = require('../taxons/taxons.model');
-    var taxon = mission.taxon.collection.getInstance().get(id);
 
     var View = require('../mission/sheet/mission_sheet.view');
     main.getInstance().rgMain.show(new View({
-      model: taxon
+      model: mission,
+      id: id
     }), {
       preventDestroy: true
     });
@@ -102,9 +101,9 @@ module.exports = Marionette.Object.extend({
     id = _.parseInt(id);
     var MissionModel = require('../mission/mission.model');
     var mission = MissionModel.collection.getInstance().get(id);
-    mission.taxon = require('../taxons/taxons.model');
-    var taxons = mission.taxon.collection.getInstance().clone();
-    var removables = [];
+   // mission.taxon = require('../taxons/taxons.model');
+ //   var taxons = mission.taxon.collection.getInstance().clone();
+  /*  var removables = [];
     taxons.forEach(function(taxon) {
       var isPresent = false;
       mission.attributes.id_taxons.forEach(function(id) {
@@ -116,11 +115,10 @@ module.exports = Marionette.Object.extend({
     });
     if (removables.length)
       taxons.remove(removables);
-
+*/
     var View = require('../mission/home/mission_home.view');
     main.getInstance().rgMain.show(new View({
-      model: mission,
-      collection: taxons
+      model: mission
     }), {
       preventDestroy: true
     });

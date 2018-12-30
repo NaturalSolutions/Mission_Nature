@@ -14,7 +14,7 @@
   }
   .text-area {
     padding: 1em 2em 1.5em 2em;
-    text-align: center;    
+    text-align: center;
     .caption {
       font-style: bold;
       color: #32934e;
@@ -44,25 +44,25 @@
       .icon {
         font-size: 1.2em;
         position: absolute;
-        transform: translateY(.1em);
+        transform: translateY(0.1em);
         color: inherit;
       }
       .text {
         display: block;
         margin-left: 1.6em;
       }
-    }    
+    }
   }
   .status {
-      text-align: center;
-      .translate(0, -40%);
-      margin-right: .8rem;
-      .text {
-        display: block;
-        font-size: 12px;
-        margin-top: 4px;
-      }
+    text-align: center;
+    .translate(0, -40%);
+    margin-right: 0.8rem;
+    .text {
+      display: block;
+      font-size: 12px;
+      margin-top: 4px;
     }
+  }
   .meta {
     padding: 16px 0 16px 20px;
     > span {
@@ -113,6 +113,49 @@
   &.is-complete {
     .status.accept {
       display: none;
+    }
+  }
+  .list-item {
+    .taxon-item {
+      overflow: visible;
+      padding: 10px;
+      .thumb {
+        img {
+          width: 70px;
+          height: auto;
+          border-radius: 50%;
+          background: no-repeat center;
+          background-size: cover;
+          .box-shadow(0 3px 3px rgba(0, 0, 0, 0.3));
+        }
+      }
+      .text {
+        position: relative;
+        vertical-align: middle;
+        border-bottom: 2px solid @gray-lighter;
+        border-top: 2px solid @gray-lighter;
+        text-align: center;
+        font-size: 16px;
+        > a {
+          display: block;
+          position: relative;
+        }
+        .title::first-letter {
+          text-transform: uppercase;
+        }
+        .family {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .bootstrap-dialog-message {
+    .taxon-list {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .taxon-list:first-child {
+      padding-top: 10px;
     }
   }
 }

@@ -35,8 +35,36 @@
         </span>
     </div>
     <div class="text-area">
-        <p class="caption"><%= data.mission.caption %></p>
-        <p class="text"><%= data.mission.introduction %></p>
+        <p class="caption">
+            <%= data.mission.caption %>
+        </p>
+        <p class="text">
+            <%= data.mission.introduction %>
+        </p>
+    </div>
+    <div class="list-item">
+        <% for (var i = 1; i < data.mission.taxon.length; i++) { { %>
+        <div class="taxon-item">
+            <div class="media-left thumb">
+                <a class="js-link-taxon" href="#mission/<%= data.mission.id %>/taxon/<%= data.mission.taxon[i].id %>">
+                    <img class="media-object" src="./images/mission_taxon/taxon/thumb/0<%= data.mission.taxon[i].id %>.jpg" />
+                </a>
+            </div>
+            <div class="media-body text">
+                <a class="js-link-taxon" href="#mission/<%= data.mission.id %>/taxon/<%= data.mission.taxon[i].id %>">
+                    <div class="media-heading title">
+                        <div class="title">
+                            <%= data.mission.taxon[i].title %>
+                        </div>
+                    </div>
+                    <div class="media-heading family">
+                        <span class="family">
+                            <%= data.mission.taxon[i].family %></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <% }} %>
     </div>
     <div class="container">
         <div class="item"></div>

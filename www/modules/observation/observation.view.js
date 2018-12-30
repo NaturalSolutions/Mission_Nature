@@ -68,6 +68,10 @@ var Layout = Marionette.LayoutView.extend({
       });
     });
 
+    this.listenTo(this.formObs, 'change:missionId', function(model, missionEditor) {
+      console.log("ok");
+    });
+
     this.listenTo(user, 'change:level', function(model, level) {
       if (!level)
         return false;
@@ -156,6 +160,7 @@ var Layout = Marionette.LayoutView.extend({
 
     var formSchema = {
       missionId: {
+        name: "id",
         type: 'DialogSelect',
         options: {
           propName: "id",
@@ -221,6 +226,19 @@ var Layout = Marionette.LayoutView.extend({
         taxon: Taxon.collection.getInstance()//, ajout taxon.collection
       }
     }).render();
+
+//    this.$el.find(".cd_nom").hide();
+    this.formObs.fields.cd_nom.$el.hide();
+    $('c234_missionId').change(function() {
+      console.log("ok");
+    });
+/*
+    form.on('inputType:change', function(form, editor) {         
+        form.fields['line'].$el.toggle();
+        form.fields['area'].$el.toggle();
+    });
+    */
+
 /*
     this.formObs.on('missionId:change', function(this.formObs, missionIdEditor) {
       console.log("ok");

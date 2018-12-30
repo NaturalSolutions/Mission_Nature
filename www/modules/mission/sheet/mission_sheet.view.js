@@ -72,9 +72,11 @@ module.exports = Marionette.LayoutView.extend({
   },
 
   openWindow: function (ev) {
+    var self = this;
+    var taxon = self.model.get('taxon');
     var toOpen;
     if (ev.currentTarget.id === "url")
-      toOpen = this.model.get('url');
+      toOpen = taxon[self.id].url;
     else
       toOpen = ev.currentTarget.innerHTML;
     window.open(toOpen, '_blank');
@@ -92,7 +94,9 @@ module.exports = Marionette.LayoutView.extend({
       collection: new Backbone.Collection(observations)
     }));
 
-    switch (this.model.get('environment')) {
+    var taxon = this.model.get('taxon');
+
+    switch (taxon[this.id].environment) {
       case "affleurements rocheux":
         this.$el.find('.badge').addClass("grey");
         break;
@@ -134,7 +138,8 @@ module.exports = Marionette.LayoutView.extend({
 
   serializeData: function () {
     return {
-      taxon: this.model.toJSON()
+      mission: this.model.toJSON(),
+      id: this.id
     };
   },
 

@@ -4,22 +4,13 @@ var Backbone = require('backbone'),
   Marionette = require('backbone.marionette'),
   _ = require('lodash'),
   Router = require('../../routing/router'),
-  TaxonListItem = require('../taxon_list/taxon_list_item.view'),
   User = require('../../profile/user.model.js'),
   Header = require('../../header/header'),
   Help = require('../../main/help.model'),
-  Footer = require('../../footer/footer.view'),
-  taxonCollection = require('../../taxons/taxons.model');
+  Footer = require('../../footer/footer.view');
 
 module.exports = Marionette.CompositeView.extend({
   template: require('./mission_home.tpl.html'),
-  childView: TaxonListItem,
-  childViewContainer: '.item',
-  childViewOptions: function() {
-    return {
-      mission_id: this.model.id
-    };
-   },
   events: {
     'click .btn-accept': 'onAcceptClick',
     'click .btn-back': 'onBackClick'
@@ -60,7 +51,6 @@ module.exports = Marionette.CompositeView.extend({
 
     var currentUser = User.getCurrent();
     var helps = Help.collection.getInstance();
-
     helps.someHelp(params);
 
   },

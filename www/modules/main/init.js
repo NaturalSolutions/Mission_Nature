@@ -33,7 +33,7 @@ var Backbone = require('backbone'),
   //  Departement = require('../main/departement.model'),
   Help = require('../main/help.model'),
   Mission = require('../mission/mission.model'),
-  Taxon = require('../taxons/taxons.model'),
+//  Taxon = require('../taxons/taxons.model'),
   Session = require('../main/session.model'),
   Utilities = require('../main/utilities'),
   Dialog = require('bootstrap-dialog'),
@@ -107,7 +107,51 @@ function init() {
       .then(function (missionDatas) {
         //var missionDatas = JSON.parse(response);
         var now = moment();
-        _.forEach(missionDatas, function (missionData) {
+        _.forEach(missionDatas, function (missionData) {          
+          _.forEach(missionData.taxon, function (taxon) {
+            taxon.sources = taxon.sources.split(",");
+            switch (taxon.environment) {
+              case "0":
+                taxon.environment = "inconnu";
+                break;
+              case "1":
+                taxon.environment = "affleurements rocheux";
+                break;
+              case "2":
+                taxon.environment = "forêts de conifères";
+                break;
+              case "3":
+                taxon.environment = "forêts de feuillus";
+                break;
+              case "4":
+                taxon.environment = "fourrés et boisements";
+                break;
+              case "5":
+                taxon.environment = "jardins et parcs";
+                break;
+              case "6":
+                taxon.environment = "landes sèches";
+                break;
+              case "7":
+                taxon.environment = "prairies";
+                break;
+              case "8":
+                taxon.environment = "rivières, mares et étangs";
+                break;
+              case "9":
+                taxon.environment = "vergers";
+                break;
+              case "10":
+                taxon.environment = "villages et zones urbaines";
+                break;
+              case "11":
+                taxon.environment = "zones humides";
+                break;
+              default:
+                console.log("wrong environment " + taxon.environment);
+                break;
+            }
+          });
           _.forEach(missionData.seasons, function (season) {
             season.startAt = moment(season.startAt, 'MM');
             season.endAt = moment(season.endAt, 'MM');
@@ -121,68 +165,6 @@ function init() {
             season.startAt = season.startAt.toDate();
             season.endAt = season.endAt.toDate();
           });
-          // try new collection of taxon in each collection of mission
-          var taxonCollection = Taxon.collection.getInstance();
-          _.forEach(missionData.taxon, function (taxonData) {
-              taxonData.sources = taxonData.sources.split(",");
-
-              switch (taxonData.environment) {
-                case "0":
-                  taxonData.environment = "inconnu";
-                  break;
-                case "1":
-                  taxonData.environment = "affleurements rocheux";
-                  break;
-                case "2":
-                  taxonData.environment = "forêts de conifères";
-                  break;
-                case "3":
-                taxonData.environment = "forêts de feuillus";
-                  break;
-                case "4":
-                taxonData.environment = "fourrés et boisements";
-                  break;
-                case "5":
-                taxonData.environment = "jardins et parcs";
-                  break;
-                case "6":
-                taxonData.environment = "landes sèches";
-                  break;
-                case "7":
-                taxonData.environment = "prairies";
-                  break;
-                case "8":
-                taxonData.environment = "rivières, mares et étangs";
-                  break;
-                case "9":
-                taxonData.environment = "vergers";
-                  break;
-                case "10":
-                taxonData.environment = "villages et zones urbaines";
-                  break;
-                case "11":
-                taxonData.environment = "zones humides";
-                  break;
-                default:
-                  console.log(taxonData.environment);
-                  console.log("error : wrong environment number");
-                  break;
-              }
-            var taxon = new Taxon.Model({
-              id: taxonData.id,
-              cd_nom: taxonData.cd_nom,
-              title: taxonData.title,
-              family: taxonData.family,
-              url: taxonData.url,
-              description: taxonData.description,
-              characteristic: taxonData.characteristic,
-              environment: taxonData.environment,
-              environment_description: taxonData.environment_description,
-              not_confuse: taxonData.not_confuse,
-              sources: taxonData.sources
-            });
-            taxonCollection.add(taxon);
-          });
           var mission = new Mission.Model({
             id: missionData.id,
             num: missionData.num,
@@ -193,11 +175,12 @@ function init() {
             seasons: missionData.seasons,
             introduction: missionData.introduction,
             id_taxons: missionData.id_taxons,
-            taxon: taxonCollection
+            taxon: missionData.taxon
           });
           missionCollection.add(mission);
         });
         deferred.resolve();
+        console.log(missionCollection);
       }, function (error) {
         console.log(error);
       });

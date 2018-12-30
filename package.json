@@ -64,6 +64,7 @@
     "backbone-validation": "^0.11.5",
     "backbone.localstorage": "^1.1.16",
     "backbone.marionette": "^2.4.3",
+    "backform": "^0.2.0",
     "bootstrap": "^3.3.5",
     "bootstrap-slider": "^5.0.12",
     "browserify-shim": "^3.8.9",

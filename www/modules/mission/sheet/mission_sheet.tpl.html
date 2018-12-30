@@ -1,5 +1,5 @@
 <div class="inner">
-    <% var posterURL = './images/mission_taxon/taxon/poster/' + (data.taxon.id > 9 ? '' : '0') + data.taxon.id + '.jpg'; %>
+    <% var posterURL = './images/mission_taxon/taxon/poster/' + (data.mission.taxon[data.id].id > 9 ? '' : '0') + data.mission.taxon[data.id].id + '.jpg'; %>
     <div class="poster" style="background-image:url('<%= posterURL %>');">
         <img src="<%= posterURL %>" />
     </div>
@@ -10,13 +10,13 @@
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#mission-sheet-accordion"
                         href="#collapse1">
                         <span class="icon icomoon">taxon</span> <span class="text">
-                            <%= data.taxon.title %></span>
+                            <%= data.mission.taxon[data.id].title %></span>
                     </a>
                 </h4>
             </div>
             <div id="collapse1" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                    <%= data.taxon.description %>
+                    <%= data.mission.taxon[data.id].description %>
                     <div>
                         <button type="button" id="url" class="btn btn-block btn-default btn-sheet">Fiche espèce</button>
                     </div>
@@ -34,8 +34,8 @@
             </div>
             <div id="collapse2" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                    <span class="badge badge-pill"><%= data.taxon.environment %></span>
-                    <div><%= data.taxon.environment_description %></div>                    
+                    <span class="badge badge-pill"><%= data.mission.taxon[data.id].environment %></span>
+                    <div><%= data.mission.taxon[data.id].environment_description %></div>                    
                 </div>
             </div>
         </div>
@@ -50,7 +50,7 @@
             </div>
             <div id="collapse3" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                    <%= data.taxon.characteristic %>
+                    <%= data.mission.taxon[data.id].characteristic %>
                 </div>
             </div>
         </div>
@@ -65,7 +65,7 @@
             </div>
             <div id="collapse4" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
-                    <%= data.taxon.not_confuse %>
+                    <%= data.mission.taxon[data.id].not_confuse %>
                 </div>
             </div>
         </div>
@@ -81,8 +81,8 @@
             <div id="collapse5" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-content">
                     <div class="list-group list-group-flush">
-                        <% for(var i = 0; i < data.taxon.sources.length; i++) { %>
-                            <div class="list-group-item btn-sheet" id="sources"><%= data.taxon.sources[i] %></div>
+                        <% for(var i = 0; i < data.mission.taxon[data.id].sources.length; i++) { %>
+                            <div class="list-group-item btn-sheet" id="sources"><%= data.mission.taxon[data.id].sources[i] %></div>
                         <% }; %>
                         </div>
                 </div>               
