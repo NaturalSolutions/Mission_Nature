@@ -7,75 +7,61 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-android-support-gradle-release": {
-      "ANDROID_SUPPORT_VERSION": "27.+",
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "cordova-plugin-camera": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "cordova-plugin-console": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "cordova-plugin-crosswalk-webview": {
-      "XWALK_VERSION": "23+",
-      "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
-      "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
-      "XWALK_MODE": "embedded",
-      "XWALK_MULTIPLEAPK": "true",
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "cordova-plugin-device": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "cordova-plugin-file-transfer": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "cordova-plugin-geolocation": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "org.noe.MissionNature"
     },
     "cordova-plugin-inappbrowser": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "cordova-plugin-network-information": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
+      "PACKAGE_NAME": "org.noe.MissionNature"
     },
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
+      "PACKAGE_NAME": "org.noe.MissionNature"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "org.noe.MissionNature"
+    },
+    "cordova-android-support-gradle-release": {
+      "ANDROID_SUPPORT_VERSION": "27.+",
+      "PACKAGE_NAME": "org.noe.MissionNature"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "org.noe.MissionNature"
+    },
+    "cordova-plugin-console": {
+      "PACKAGE_NAME": "org.noe.MissionNature"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "org.noe.MissionNature"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "org.noe.MissionNature"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "org.noe.MissionNature"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "org.noe.MissionNature"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "org.noe.MissionNature"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "org.noe.MissionNature"
     },
     "cordova-plugin-x-socialsharing": {
       "ANDROID_SUPPORT_V4_VERSION": "24.1.1+",
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "ionic-plugin-keyboard": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
+      "PACKAGE_NAME": "org.noe.MissionNature"
     },
     "cordova-plugin-customurlscheme": {
       "URL_SCHEME": "obfmobile",
       "ANDROID_SCHEME": " ",
       "ANDROID_HOST": " ",
       "ANDROID_PATHPREFIX": "/",
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "cordova-plugin-facebook4": {
-      "APP_ID": "146470505768742",
-      "APP_NAME": "Mission Nature",
-      "FACEBOOK_ANDROID_SDK_VERSION": "4.38.1",
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
+      "PACKAGE_NAME": "org.noe.MissionNature"
     }
   },
   "dependent_plugins": {
-    "cordova-plugin-file": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
     "es6-promise-plugin": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
+      "PACKAGE_NAME": "org.noe.MissionNature"
     }
   }
 }

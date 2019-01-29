@@ -59,7 +59,7 @@ module.exports = Marionette.LayoutView.extend({
         trigger: true
       });
     });
-
+/*
     var queryHash = "missionsheet";
     var params = _.parseQueryHash(queryHash);
 
@@ -67,7 +67,7 @@ module.exports = Marionette.LayoutView.extend({
     var helps = Help.collection.getInstance();
 
     helps.someHelp(params);
-
+*/
   },
 
   openWindow: function (ev) {

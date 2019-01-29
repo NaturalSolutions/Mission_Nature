@@ -1,36 +1,43 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
   {
-    "id": "cordova-plugin-camera.Camera",
-    "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
-    "pluginId": "cordova-plugin-camera",
+    "id": "cordova-plugin-statusbar.statusbar",
+    "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+    "pluginId": "cordova-plugin-statusbar",
     "clobbers": [
-      "Camera"
+      "window.StatusBar"
     ]
   },
   {
-    "id": "cordova-plugin-camera.CameraPopoverOptions",
-    "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
-    "pluginId": "cordova-plugin-camera",
+    "id": "cordova-plugin-inappbrowser.inappbrowser",
+    "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+    "pluginId": "cordova-plugin-inappbrowser",
     "clobbers": [
-      "CameraPopoverOptions"
+      "cordova.InAppBrowser.open",
+      "window.open"
     ]
   },
   {
-    "id": "cordova-plugin-camera.camera",
-    "file": "plugins/cordova-plugin-camera/www/Camera.js",
-    "pluginId": "cordova-plugin-camera",
+    "id": "cordova-plugin-splashscreen.SplashScreen",
+    "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+    "pluginId": "cordova-plugin-splashscreen",
     "clobbers": [
-      "navigator.camera"
+      "navigator.splashscreen"
     ]
   },
   {
-    "id": "cordova-plugin-camera.CameraPopoverHandle",
-    "file": "plugins/cordova-plugin-camera/www/CameraPopoverHandle.js",
-    "pluginId": "cordova-plugin-camera",
+    "id": "cordova-plugin-geolocation.geolocation",
+    "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
+    "pluginId": "cordova-plugin-geolocation",
     "clobbers": [
-      "CameraPopoverHandle"
+      "navigator.geolocation"
     ]
+  },
+  {
+    "id": "cordova-plugin-geolocation.PositionError",
+    "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+    "pluginId": "cordova-plugin-geolocation",
+    "runs": true
   },
   {
     "id": "cordova-plugin-device.device",
@@ -38,6 +45,23 @@ module.exports = [
     "pluginId": "cordova-plugin-device",
     "clobbers": [
       "device"
+    ]
+  },
+  {
+    "id": "cordova-plugin-network-information.network",
+    "file": "plugins/cordova-plugin-network-information/www/network.js",
+    "pluginId": "cordova-plugin-network-information",
+    "clobbers": [
+      "navigator.connection",
+      "navigator.network.connection"
+    ]
+  },
+  {
+    "id": "cordova-plugin-network-information.Connection",
+    "file": "plugins/cordova-plugin-network-information/www/Connection.js",
+    "pluginId": "cordova-plugin-network-information",
+    "clobbers": [
+      "Connection"
     ]
   },
   {
@@ -230,60 +254,45 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-plugin-geolocation.geolocation",
-    "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
-    "pluginId": "cordova-plugin-geolocation",
+    "id": "cordova-plugin-camera.Camera",
+    "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
+    "pluginId": "cordova-plugin-camera",
     "clobbers": [
-      "navigator.geolocation"
+      "Camera"
     ]
   },
   {
-    "id": "cordova-plugin-geolocation.PositionError",
-    "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
-    "pluginId": "cordova-plugin-geolocation",
+    "id": "cordova-plugin-camera.CameraPopoverOptions",
+    "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
+    "pluginId": "cordova-plugin-camera",
+    "clobbers": [
+      "CameraPopoverOptions"
+    ]
+  },
+  {
+    "id": "cordova-plugin-camera.camera",
+    "file": "plugins/cordova-plugin-camera/www/Camera.js",
+    "pluginId": "cordova-plugin-camera",
+    "clobbers": [
+      "navigator.camera"
+    ]
+  },
+  {
+    "id": "cordova-plugin-camera.CameraPopoverHandle",
+    "file": "plugins/cordova-plugin-camera/www/CameraPopoverHandle.js",
+    "pluginId": "cordova-plugin-camera",
+    "clobbers": [
+      "CameraPopoverHandle"
+    ]
+  },
+  {
+    "id": "ionic-plugin-keyboard.keyboard",
+    "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
+    "pluginId": "ionic-plugin-keyboard",
+    "clobbers": [
+      "cordova.plugins.Keyboard"
+    ],
     "runs": true
-  },
-  {
-    "id": "cordova-plugin-inappbrowser.inappbrowser",
-    "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
-    "pluginId": "cordova-plugin-inappbrowser",
-    "clobbers": [
-      "cordova.InAppBrowser.open",
-      "window.open"
-    ]
-  },
-  {
-    "id": "cordova-plugin-network-information.network",
-    "file": "plugins/cordova-plugin-network-information/www/network.js",
-    "pluginId": "cordova-plugin-network-information",
-    "clobbers": [
-      "navigator.connection",
-      "navigator.network.connection"
-    ]
-  },
-  {
-    "id": "cordova-plugin-network-information.Connection",
-    "file": "plugins/cordova-plugin-network-information/www/Connection.js",
-    "pluginId": "cordova-plugin-network-information",
-    "clobbers": [
-      "Connection"
-    ]
-  },
-  {
-    "id": "cordova-plugin-splashscreen.SplashScreen",
-    "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
-    "pluginId": "cordova-plugin-splashscreen",
-    "clobbers": [
-      "navigator.splashscreen"
-    ]
-  },
-  {
-    "id": "cordova-plugin-statusbar.statusbar",
-    "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
-    "pluginId": "cordova-plugin-statusbar",
-    "clobbers": [
-      "window.StatusBar"
-    ]
   },
   {
     "id": "es6-promise-plugin.Promise",
@@ -300,52 +309,33 @@ module.exports = [
     ]
   },
   {
-    "id": "ionic-plugin-keyboard.keyboard",
-    "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
-    "pluginId": "ionic-plugin-keyboard",
-    "clobbers": [
-      "cordova.plugins.Keyboard"
-    ],
-    "runs": true
-  },
-  {
     "id": "cordova-plugin-customurlscheme.LaunchMyApp",
     "file": "plugins/cordova-plugin-customurlscheme/www/android/LaunchMyApp.js",
     "pluginId": "cordova-plugin-customurlscheme",
     "clobbers": [
       "window.plugins.launchmyapp"
     ]
-  },
-  {
-    "id": "cordova-plugin-facebook4.FacebookConnectPlugin",
-    "file": "plugins/cordova-plugin-facebook4/www/facebook-native.js",
-    "pluginId": "cordova-plugin-facebook4",
-    "clobbers": [
-      "facebookConnectPlugin"
-    ]
   }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-  "cordova-android-support-gradle-release": "1.4.4",
-  "cordova-plugin-camera": "4.0.3",
+  "cordova-plugin-statusbar": "2.1.3",
+  "cordova-plugin-inappbrowser": "1.4.0",
+  "cordova-plugin-whitelist": "1.2.2",
+  "cordova-plugin-splashscreen": "3.2.2",
+  "cordova-android-support-gradle-release": "1.4.7",
+  "cordova-plugin-geolocation": "4.0.1",
   "cordova-plugin-console": "1.1.0",
-  "cordova-plugin-crosswalk-webview": "2.4.0",
   "cordova-plugin-device": "2.0.2",
+  "cordova-plugin-network-information": "2.0.1",
   "cordova-plugin-file": "6.0.1",
   "cordova-plugin-file-transfer": "1.7.1",
-  "cordova-plugin-geolocation": "4.0.1",
-  "cordova-plugin-inappbrowser": "1.5.0",
-  "cordova-plugin-network-information": "2.0.1",
-  "cordova-plugin-splashscreen": "4.0.0",
-  "cordova-plugin-statusbar": "2.2.0",
-  "cordova-plugin-whitelist": "1.3.0",
-  "es6-promise-plugin": "4.2.2",
-  "cordova-plugin-x-socialsharing": "5.4.3",
+  "cordova-plugin-camera": "4.0.3",
   "ionic-plugin-keyboard": "2.2.1",
-  "cordova-plugin-customurlscheme": "4.3.0",
-  "cordova-plugin-facebook4": "3.2.0"
+  "es6-promise-plugin": "4.2.2",
+  "cordova-plugin-x-socialsharing": "5.4.4",
+  "cordova-plugin-customurlscheme": "4.3.0"
 };
 // BOTTOM OF METADATA
 });

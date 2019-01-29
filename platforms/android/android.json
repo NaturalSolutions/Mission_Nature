@@ -9,39 +9,31 @@
         "parents": {
           "/*": [
             {
-              "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
+              "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
             },
             {
-              "xml": "<preference name=\"webView\" value=\"org.crosswalk.engine.XWalkWebViewEngine\" />",
+              "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
               "count": 1
             },
             {
-              "xml": "<preference name=\"xwalkVersion\" value=\"23+\" />",
+              "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
             },
             {
-              "xml": "<preference name=\"xwalkLiteVersion\" value=\"xwalk_core_library_canary:17+\" />",
+              "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
             },
             {
-              "xml": "<preference name=\"xwalkCommandLine\" value=\"--disable-pull-to-refresh-effect\" />",
-              "count": 1
-            },
-            {
-              "xml": "<preference name=\"xwalkMode\" value=\"embedded\" />",
-              "count": 1
-            },
-            {
-              "xml": "<preference name=\"xwalkMultipleApk\" value=\"true\" />",
-              "count": 1
-            },
-            {
-              "xml": "<preference name=\"android-minSdkVersion\" value=\"16\" />",
+              "xml": "<feature name=\"Geolocation\"><param name=\"android-package\" value=\"org.apache.cordova.geolocation.Geolocation\" /></feature>",
               "count": 1
             },
             {
               "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
               "count": 1
             },
             {
@@ -57,31 +49,7 @@
               "count": 1
             },
             {
-              "xml": "<feature name=\"Geolocation\"><param name=\"android-package\" value=\"org.apache.cordova.geolocation.Geolocation\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
+              "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
               "count": 1
             },
             {
@@ -89,35 +57,11 @@
               "count": 1
             },
             {
+              "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
+              "count": 1
+            },
+            {
               "xml": "<feature name=\"LaunchMyApp\"><param name=\"android-package\" value=\"nl.xservices.plugins.LaunchMyApp\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"FacebookConnectPlugin\"><param name=\"android-package\" value=\"org.apache.cordova.facebook.ConnectPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<access origin=\"https://m.facebook.com\" />",
-              "count": 1
-            },
-            {
-              "xml": "<access origin=\"https://graph.facebook.com\" />",
-              "count": 1
-            },
-            {
-              "xml": "<access origin=\"https://api.facebook.com\" />",
-              "count": 1
-            },
-            {
-              "xml": "<access origin=\"https://*.fbcdn.net\" />",
-              "count": 1
-            },
-            {
-              "xml": "<access origin=\"https://*.akamaihd.net\" />",
-              "count": 1
-            },
-            {
-              "xml": "<preference name=\"android-minSdkVersion\" value=\"15\" />",
               "count": 1
             }
           ]
@@ -126,18 +70,6 @@
       "AndroidManifest.xml": {
         "parents": {
           "/*": [
-            {
-              "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-              "count": 4
-            },
-            {
-              "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
-              "count": 2
-            },
-            {
-              "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
-              "count": 1
-            },
             {
               "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
               "count": 1
@@ -149,33 +81,19 @@
             {
               "xml": "<uses-feature android:name=\"android.hardware.location.gps\" />",
               "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+              "count": 4
             }
           ],
           "application": [
             {
               "xml": "<provider android:authorities=\"${applicationId}.provider\" android:exported=\"false\" android:grantUriPermissions=\"true\" android:name=\"org.apache.cordova.camera.FileProvider\"><meta-data android:name=\"android.support.FILE_PROVIDER_PATHS\" android:resource=\"@xml/camera_provider_paths\" /></provider>",
-              "count": 1
-            },
-            {
-              "xml": "<meta-data android:name=\"com.facebook.sdk.ApplicationId\" android:value=\"@string/fb_app_id\" />",
-              "count": 1
-            },
-            {
-              "xml": "<meta-data android:name=\"com.facebook.sdk.ApplicationName\" android:value=\"@string/fb_app_name\" />",
-              "count": 1
-            },
-            {
-              "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|screenLayout|screenSize|orientation\" android:label=\"@string/fb_app_name\" android:name=\"com.facebook.FacebookActivity\" />",
-              "count": 1
-            }
-          ],
-          "/manifest/application/activity": [
-            {
-              "xml": "<intent-filter><action android:name=\"android.intent.action.VIEW\" /><category android:name=\"android.intent.category.DEFAULT\" /><category android:name=\"android.intent.category.BROWSABLE\" /><data android:scheme=\"obfmobile\" /></intent-filter>",
-              "count": 1
-            },
-            {
-              "xml": "<intent-filter><action android:name=\"android.intent.action.VIEW\" /><category android:name=\"android.intent.category.DEFAULT\" /><category android:name=\"android.intent.category.BROWSABLE\" /><data android:host=\" \" android:pathPrefix=\"/\" android:scheme=\" \" /></intent-filter>",
               "count": 1
             }
           ],
@@ -190,18 +108,14 @@
               "xml": "<provider android:authorities=\"${applicationId}.sharing.provider\" android:exported=\"false\" android:grantUriPermissions=\"true\" android:name=\"nl.xservices.plugins.FileProvider\"><meta-data android:name=\"android.support.FILE_PROVIDER_PATHS\" android:resource=\"@xml/sharing_paths\" /></provider>",
               "count": 1
             }
-          ]
-        }
-      },
-      "res/values/facebookconnect.xml": {
-        "parents": {
-          "/*": [
+          ],
+          "/manifest/application/activity": [
             {
-              "xml": "<string name=\"fb_app_id\">146470505768742</string>",
+              "xml": "<intent-filter><action android:name=\"android.intent.action.VIEW\" /><category android:name=\"android.intent.category.DEFAULT\" /><category android:name=\"android.intent.category.BROWSABLE\" /><data android:scheme=\"obfmobile\" /></intent-filter>",
               "count": 1
             },
             {
-              "xml": "<string name=\"fb_app_name\">Mission Nature</string>",
+              "xml": "<intent-filter><action android:name=\"android.intent.action.VIEW\" /><category android:name=\"android.intent.category.DEFAULT\" /><category android:name=\"android.intent.category.BROWSABLE\" /><data android:host=\" \" android:pathPrefix=\"/\" android:scheme=\" \" /></intent-filter>",
               "count": 1
             }
           ]
@@ -210,108 +124,101 @@
     }
   },
   "installed_plugins": {
-    "cordova-android-support-gradle-release": {
-      "ANDROID_SUPPORT_VERSION": "27.+",
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "cordova-plugin-camera": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "cordova-plugin-console": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "cordova-plugin-crosswalk-webview": {
-      "XWALK_VERSION": "23+",
-      "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
-      "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
-      "XWALK_MODE": "embedded",
-      "XWALK_MULTIPLEAPK": "true",
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "cordova-plugin-device": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "cordova-plugin-file": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "cordova-plugin-file-transfer": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "cordova-plugin-geolocation": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "org.noe.MissionNature"
     },
     "cordova-plugin-inappbrowser": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "cordova-plugin-network-information": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
+      "PACKAGE_NAME": "org.noe.MissionNature"
     },
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
+      "PACKAGE_NAME": "org.noe.MissionNature"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "org.noe.MissionNature"
+    },
+    "cordova-android-support-gradle-release": {
+      "ANDROID_SUPPORT_VERSION": "27.+",
+      "PACKAGE_NAME": "org.noe.MissionNature"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "org.noe.MissionNature"
+    },
+    "cordova-plugin-console": {
+      "PACKAGE_NAME": "org.noe.MissionNature"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "org.noe.MissionNature"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "org.noe.MissionNature"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "org.noe.MissionNature"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "org.noe.MissionNature"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "org.noe.MissionNature"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "org.noe.MissionNature"
     },
     "es6-promise-plugin": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
+      "PACKAGE_NAME": "org.noe.MissionNature"
     },
     "cordova-plugin-x-socialsharing": {
       "ANDROID_SUPPORT_V4_VERSION": "24.1.1+",
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "ionic-plugin-keyboard": {
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
+      "PACKAGE_NAME": "org.noe.MissionNature"
     },
     "cordova-plugin-customurlscheme": {
       "URL_SCHEME": "obfmobile",
       "ANDROID_SCHEME": " ",
       "ANDROID_HOST": " ",
       "ANDROID_PATHPREFIX": "/",
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
-    },
-    "cordova-plugin-facebook4": {
-      "APP_ID": "146470505768742",
-      "APP_NAME": "Mission Nature",
-      "FACEBOOK_ANDROID_SDK_VERSION": "4.38.1",
-      "PACKAGE_NAME": "org.noe.MissionForetAvecNoe"
+      "PACKAGE_NAME": "org.noe.MissionNature"
     }
   },
   "dependent_plugins": {},
   "modules": [
     {
-      "id": "cordova-plugin-camera.Camera",
-      "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
-      "pluginId": "cordova-plugin-camera",
+      "id": "cordova-plugin-statusbar.statusbar",
+      "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+      "pluginId": "cordova-plugin-statusbar",
       "clobbers": [
-        "Camera"
+        "window.StatusBar"
       ]
     },
     {
-      "id": "cordova-plugin-camera.CameraPopoverOptions",
-      "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
-      "pluginId": "cordova-plugin-camera",
+      "id": "cordova-plugin-inappbrowser.inappbrowser",
+      "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+      "pluginId": "cordova-plugin-inappbrowser",
       "clobbers": [
-        "CameraPopoverOptions"
+        "cordova.InAppBrowser.open",
+        "window.open"
       ]
     },
     {
-      "id": "cordova-plugin-camera.camera",
-      "file": "plugins/cordova-plugin-camera/www/Camera.js",
-      "pluginId": "cordova-plugin-camera",
+      "id": "cordova-plugin-splashscreen.SplashScreen",
+      "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+      "pluginId": "cordova-plugin-splashscreen",
       "clobbers": [
-        "navigator.camera"
+        "navigator.splashscreen"
       ]
     },
     {
-      "id": "cordova-plugin-camera.CameraPopoverHandle",
-      "file": "plugins/cordova-plugin-camera/www/CameraPopoverHandle.js",
-      "pluginId": "cordova-plugin-camera",
+      "id": "cordova-plugin-geolocation.geolocation",
+      "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
+      "pluginId": "cordova-plugin-geolocation",
       "clobbers": [
-        "CameraPopoverHandle"
+        "navigator.geolocation"
       ]
+    },
+    {
+      "id": "cordova-plugin-geolocation.PositionError",
+      "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+      "pluginId": "cordova-plugin-geolocation",
+      "runs": true
     },
     {
       "id": "cordova-plugin-device.device",
@@ -319,6 +226,23 @@
       "pluginId": "cordova-plugin-device",
       "clobbers": [
         "device"
+      ]
+    },
+    {
+      "id": "cordova-plugin-network-information.network",
+      "file": "plugins/cordova-plugin-network-information/www/network.js",
+      "pluginId": "cordova-plugin-network-information",
+      "clobbers": [
+        "navigator.connection",
+        "navigator.network.connection"
+      ]
+    },
+    {
+      "id": "cordova-plugin-network-information.Connection",
+      "file": "plugins/cordova-plugin-network-information/www/Connection.js",
+      "pluginId": "cordova-plugin-network-information",
+      "clobbers": [
+        "Connection"
       ]
     },
     {
@@ -511,60 +435,45 @@
       ]
     },
     {
-      "id": "cordova-plugin-geolocation.geolocation",
-      "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
-      "pluginId": "cordova-plugin-geolocation",
+      "id": "cordova-plugin-camera.Camera",
+      "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
+      "pluginId": "cordova-plugin-camera",
       "clobbers": [
-        "navigator.geolocation"
+        "Camera"
       ]
     },
     {
-      "id": "cordova-plugin-geolocation.PositionError",
-      "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
-      "pluginId": "cordova-plugin-geolocation",
+      "id": "cordova-plugin-camera.CameraPopoverOptions",
+      "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
+      "pluginId": "cordova-plugin-camera",
+      "clobbers": [
+        "CameraPopoverOptions"
+      ]
+    },
+    {
+      "id": "cordova-plugin-camera.camera",
+      "file": "plugins/cordova-plugin-camera/www/Camera.js",
+      "pluginId": "cordova-plugin-camera",
+      "clobbers": [
+        "navigator.camera"
+      ]
+    },
+    {
+      "id": "cordova-plugin-camera.CameraPopoverHandle",
+      "file": "plugins/cordova-plugin-camera/www/CameraPopoverHandle.js",
+      "pluginId": "cordova-plugin-camera",
+      "clobbers": [
+        "CameraPopoverHandle"
+      ]
+    },
+    {
+      "id": "ionic-plugin-keyboard.keyboard",
+      "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
+      "pluginId": "ionic-plugin-keyboard",
+      "clobbers": [
+        "cordova.plugins.Keyboard"
+      ],
       "runs": true
-    },
-    {
-      "id": "cordova-plugin-inappbrowser.inappbrowser",
-      "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
-      "pluginId": "cordova-plugin-inappbrowser",
-      "clobbers": [
-        "cordova.InAppBrowser.open",
-        "window.open"
-      ]
-    },
-    {
-      "id": "cordova-plugin-network-information.network",
-      "file": "plugins/cordova-plugin-network-information/www/network.js",
-      "pluginId": "cordova-plugin-network-information",
-      "clobbers": [
-        "navigator.connection",
-        "navigator.network.connection"
-      ]
-    },
-    {
-      "id": "cordova-plugin-network-information.Connection",
-      "file": "plugins/cordova-plugin-network-information/www/Connection.js",
-      "pluginId": "cordova-plugin-network-information",
-      "clobbers": [
-        "Connection"
-      ]
-    },
-    {
-      "id": "cordova-plugin-splashscreen.SplashScreen",
-      "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
-      "pluginId": "cordova-plugin-splashscreen",
-      "clobbers": [
-        "navigator.splashscreen"
-      ]
-    },
-    {
-      "id": "cordova-plugin-statusbar.statusbar",
-      "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
-      "pluginId": "cordova-plugin-statusbar",
-      "clobbers": [
-        "window.StatusBar"
-      ]
     },
     {
       "id": "es6-promise-plugin.Promise",
@@ -581,49 +490,30 @@
       ]
     },
     {
-      "id": "ionic-plugin-keyboard.keyboard",
-      "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
-      "pluginId": "ionic-plugin-keyboard",
-      "clobbers": [
-        "cordova.plugins.Keyboard"
-      ],
-      "runs": true
-    },
-    {
       "id": "cordova-plugin-customurlscheme.LaunchMyApp",
       "file": "plugins/cordova-plugin-customurlscheme/www/android/LaunchMyApp.js",
       "pluginId": "cordova-plugin-customurlscheme",
       "clobbers": [
         "window.plugins.launchmyapp"
       ]
-    },
-    {
-      "id": "cordova-plugin-facebook4.FacebookConnectPlugin",
-      "file": "plugins/cordova-plugin-facebook4/www/facebook-native.js",
-      "pluginId": "cordova-plugin-facebook4",
-      "clobbers": [
-        "facebookConnectPlugin"
-      ]
     }
   ],
   "plugin_metadata": {
-    "cordova-android-support-gradle-release": "1.4.4",
-    "cordova-plugin-camera": "4.0.3",
+    "cordova-plugin-statusbar": "2.1.3",
+    "cordova-plugin-inappbrowser": "1.4.0",
+    "cordova-plugin-whitelist": "1.2.2",
+    "cordova-plugin-splashscreen": "3.2.2",
+    "cordova-android-support-gradle-release": "1.4.7",
+    "cordova-plugin-geolocation": "4.0.1",
     "cordova-plugin-console": "1.1.0",
-    "cordova-plugin-crosswalk-webview": "2.4.0",
     "cordova-plugin-device": "2.0.2",
+    "cordova-plugin-network-information": "2.0.1",
     "cordova-plugin-file": "6.0.1",
     "cordova-plugin-file-transfer": "1.7.1",
-    "cordova-plugin-geolocation": "4.0.1",
-    "cordova-plugin-inappbrowser": "1.5.0",
-    "cordova-plugin-network-information": "2.0.1",
-    "cordova-plugin-splashscreen": "4.0.0",
-    "cordova-plugin-statusbar": "2.2.0",
-    "cordova-plugin-whitelist": "1.3.0",
-    "es6-promise-plugin": "4.2.2",
-    "cordova-plugin-x-socialsharing": "5.4.3",
+    "cordova-plugin-camera": "4.0.3",
     "ionic-plugin-keyboard": "2.2.1",
-    "cordova-plugin-customurlscheme": "4.3.0",
-    "cordova-plugin-facebook4": "3.2.0"
+    "es6-promise-plugin": "4.2.2",
+    "cordova-plugin-x-socialsharing": "5.4.4",
+    "cordova-plugin-customurlscheme": "4.3.0"
   }
 }

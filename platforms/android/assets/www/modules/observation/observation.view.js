@@ -166,9 +166,9 @@ var Layout = Marionette.LayoutView.extend({
           },
           getSelectedLabel: function(model) {
             var title = model.get('title');
-          //  var taxonTitle = model.get('taxon').title;
-          //  if ( taxonTitle )
-          //    title += '<br /><small>'+taxonTitle+'</small>';
+            var taxonTitle = model.get('taxon').title;
+            if ( taxonTitle )
+              title += '<br /><small>'+taxonTitle+'</small>';
             return title; 
           }
         },
@@ -403,9 +403,9 @@ var Layout = Marionette.LayoutView.extend({
       this.saveObs();
     } else if ( navigator.onLine ) {
       if (this.$el.hasClass('form-status-shared-0')) {
-        this.checkBounds().done(function() {
+//        this.checkBounds().done(function() {
           self.sendObs();
-        });
+  ///      });
       } else if (this.$el.hasClass('form-status-shared-1'))
         this.shareObs();
     } else {
@@ -804,12 +804,12 @@ var Layout = Marionette.LayoutView.extend({
       method: "share",
       caption: i18n.t('facebook.caption'),
       href: mission.get('taxon').url,
-      //share_native: true, // iOS
-      // hashtag: "#Missionforet", // not implemented 09/2016
+    //  share_native: true, // iOS
+    //  hashtag: "#Missionforet", // not implemented 09/2016
       description: mission.get('taxon').description,
       picture: _.get(self.model.get('photos'), '[0].externUrl', ''),
-      //name: mission.get('title')
-      //message: 'First photo post',
+      name: mission.get('title'),
+    //  message: 'First photo post',
     };
     //window.facebookConnectPlugin.api();
     window.facebookConnectPlugin.showDialog(shareOptions,
@@ -874,7 +874,6 @@ var Layout = Marionette.LayoutView.extend({
     });
     */
   },
-
 });
 
 module.exports = {

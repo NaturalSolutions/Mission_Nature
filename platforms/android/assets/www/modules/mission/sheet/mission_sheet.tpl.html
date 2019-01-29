@@ -79,11 +79,13 @@
                 </h4>
             </div>
             <div id="collapse5" class="panel-collapse collapse" role="tabpanel">
-                <ul class="list-group list-group-flush list-group-">
-                    <% for(var i = 0; i < data.taxon.sources.length; i++) { %>
-                        <li class="list-group-item btn-sheet" id="sources"><%= data.taxon.sources[i] %></li>
-                    <% }; %>
-                </ul>
+                <div class="panel-content">
+                    <div class="list-group list-group-flush">
+                        <% for(var i = 0; i < data.taxon.sources.length; i++) { %>
+                            <div class="list-group-item btn-sheet" id="sources"><%= data.taxon.sources[i] %></div>
+                        <% }; %>
+                        </div>
+                </div>               
             </div>
         </div>
         <div class="panel panel-default">
