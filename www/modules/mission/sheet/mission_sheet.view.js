@@ -80,7 +80,6 @@ module.exports = Marionette.LayoutView.extend({
   },
 
   onRender: function () {
-    var self = this;
     var user = User.getCurrent();
     var observations = Observation.collection.getInstance();
     observations = observations.where({
@@ -97,6 +96,7 @@ module.exports = Marionette.LayoutView.extend({
   },
 
   setBadgeEnv: function() {
+    var self = this;
     _.forEach(this.model.get('environments'), function(env) {
       if( ! env.label)
         return;
