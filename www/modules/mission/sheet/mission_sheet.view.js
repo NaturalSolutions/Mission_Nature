@@ -80,6 +80,7 @@ module.exports = Marionette.LayoutView.extend({
   },
 
   onRender: function () {
+    var self = this;
     var user = User.getCurrent();
     var observations = Observation.collection.getInstance();
     observations = observations.where({
@@ -91,44 +92,53 @@ module.exports = Marionette.LayoutView.extend({
       collection: new Backbone.Collection(observations)
     }));
 
-    switch (this.model.get('environment')) {
-      case "affleurements rocheux":
-        this.$el.find('.badge').addClass("grey");
-        break;
-      case 'forêts de conifères':
-        this.$el.find('.badge').addClass("green");
-        break;
-      case "forêts de feuillus":
-        this.$el.find('.badge').addClass("green-light");
-        break;
-      case "fourrés et boisements":
-        this.$el.find('.badge').addClass("yellow");
-        break;
-      case "jardins et parcs":
-        this.$el.find('.badge').addClass("pink");
-        break;
-      case "landes sèches":
-        this.$el.find('.badge').addClass("orange");
-        break;
-      case "prairies":
-        this.$el.find('.badge').addClass("grey-light");
-        break;
-      case "rivières, mares et étangs":
-        this.$el.find('.badge').addClass("blue");
-        break;
-      case "vergers":
-        this.$el.find('.badge').addClass("yellow-light");
-        break;
-      case "villages et zones urbaines":
-        this.$el.find('.badge').addClass("orange-light");
-        break;
-      case "zones humides":
-        this.$el.find('.badge').addClass("blue-light");
-        break;
-      default:
-        console.log("wrong environment");
-        break;
-    }
+    this.setBadgeEnv();
+
+  },
+
+  setBadgeEnv: function() {
+    _.forEach(this.model.get('environments'), function(env) {
+      if( ! env.label)
+        return;
+      switch (env.label) {
+        case "affleurements rocheux":
+          self.$el.find('.badge-'+env.indice).addClass("grey");
+          break;
+        case 'forêts de conifères':
+          self.$el.find('.badge-'+env.indice).addClass("green");
+          break;
+        case "forêts de feuillus":
+          self.$el.find('.badge-'+env.indice).addClass("green-light");
+          break;
+        case "fourrés et boisements":
+          self.$el.find('.badge-'+env.indice).addClass("yellow");
+          break;
+        case "jardins et parcs":
+          self.$el.find('.badge-'+env.indice).addClass("pink");
+          break;
+        case "landes sèches":
+          self.$el.find('.badge-'+env.indice).addClass("orange");
+          break;
+        case "prairies":
+          self.$el.find('.badge-'+env.indice).addClass("grey-light");
+          break;
+        case "rivières, mares et étangs":
+          self.$el.find('.badge-'+env.indice).addClass("blue");
+          break;
+        case "vergers":
+          self.$el.find('.badge-'+env.indice).addClass("yellow-light");
+          break;
+        case "villages et zones urbaines":
+          self.$el.find('.badge-'+env.indice).addClass("orange-light");
+          break;
+        case "zones humides":
+          self.$el.find('.badge-'+env.indice).addClass("blue-light");
+          break;
+        default:
+          console.log("wrong environment");
+          break;
+      }
+    });
   },
 
   serializeData: function () {

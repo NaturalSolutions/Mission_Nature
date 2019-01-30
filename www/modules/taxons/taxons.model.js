@@ -10,7 +10,7 @@ var Model = Backbone.Model.extend({
     url: '',
     description: '',
     caracteristic: '',
-    environment: '',
+    environments: '',
     environment_description: '',
     not_confuse: '',
     sources: ''
