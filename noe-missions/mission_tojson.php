@@ -38,10 +38,13 @@ foreach ($missions_rows as $key => $mission_row) {
     // Arrays use every new missions
     $keys = array();
     $newArray = array();
+    print_r($id_especes);
     // Do the function 
     $data = csvtoarray($id_especes, $feed, ';');
     // Set number of elements (minus 1 because we shift off the first row)
     $count = count($data) - 1;
+    print_r($data);
+
     //Use first row for names
     $labels = array_shift($data);
     foreach ($labels as $label) {
@@ -72,7 +75,7 @@ foreach ($missions_rows as $key => $mission_row) {
   }
 }
 
-print_r($ouput);
+//print_r($ouput);
 file_put_contents('./missions.json', json_encode($ouput, JSON_PRETTY_PRINT));
 
 ?>

@@ -14,3 +14,10 @@ www-*
 .vscode
 .npm
 .idea
+
+www/data/*
+noe-missions/photos/*
+noe-missions/photos_full/*
+noe-missions/photos-thumb/*
+www/images/mission_taxon/mission/thumb/*
+www/images/mission_taxon/mission/poster/*
