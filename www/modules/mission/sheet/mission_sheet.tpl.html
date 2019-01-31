@@ -35,8 +35,6 @@
             <div id="collapse2" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
                     <% for(var i = 0; i < data.taxon.environments.length; i++) { %>
-                        <% console.log('data.taxon.environments: ', data.taxon.environments[i]); %>
-
                         <span class="badge badge-pill badge-<%= data.taxon.environments[i].indice %> "><%= data.taxon.environments[i].label %></span>
                     <% }; %>
                     <div><%= data.taxon.environment_description %></div>
