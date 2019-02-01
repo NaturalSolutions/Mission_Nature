@@ -138,7 +138,7 @@ module.exports = Marionette.Object.extend({
     var removables = [];
     missions.forEach(function(mission) {
       var isMatch = true;
-      if (isMatch && difficulty) {
+      if (isMatch && !_.isEmpty(difficulty)) {
         isMatch = false;
         difficulty.forEach(function(diff) {
           if (diff == mission.attributes.difficulty)
@@ -150,7 +150,6 @@ module.exports = Marionette.Object.extend({
       if (!isMatch)
         removables.push(mission);
     });
-
     if (removables.length)
         missions.remove(removables);
 
