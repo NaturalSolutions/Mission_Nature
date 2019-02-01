@@ -29,10 +29,6 @@ var View = Marionette.LayoutView.extend({
   },
   serializeData: function() {
     var self = this;
-/*    return {
-      departement: self.filters.departement
-    };
-    */
   },
   onRender: function() {
     var self = this;
@@ -40,13 +36,6 @@ var View = Marionette.LayoutView.extend({
   onShow: function() {
     var self = this;
 
-/*    self.$el.find('input.js-autocomplete').autocomplete({
-      source: Departement.collection.getInstance().toJSON(),
-      appendTo: self.$el.find('.js-autocomplete-result'),
-      change: function(e, ui) {
-        self.filters.departement = ui.item;
-      }
-    });*/
     self.$el.find('.js-datetimepicker').datetimepicker({
       locale: 'fr',
       format: 'DD/MM/YYYY',
