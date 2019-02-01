@@ -67,18 +67,23 @@ var View = Marionette.LayoutView.extend({
     });
     if (self.filters.startAt) $dpStart.data('DateTimePicker').date(self.filters.startAt);
     if (self.filters.endAt) $dpEnd.data('DateTimePicker').date(self.filters.endAt);
+
+    if (!_.isEmpty(self.filters.difficulty)){
+      self.filters.difficulty.forEach(function(dif){
+        var $check = self.$el.find('input[type=checkbox]').filter(function() {return this.value == dif; });
+        $check.prop('checked', true);
+      });
+    }
   },
   onBtnSearchClick: function() {
     var self = this;
     var chkArray = [];
     $('.check:checked').each(function() {
-//      console.log($(this).val());
       chkArray.push($(this).val());
     });
     self.filters.difficulty = chkArray;
 
     filters = self.filters;
-//    console.log(self.filters);
     Router.getInstance().navigate('missions/all', {
       trigger: true
     });
