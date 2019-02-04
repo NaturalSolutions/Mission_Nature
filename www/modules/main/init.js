@@ -153,6 +153,7 @@ function init() {
           });
           // try new collection of taxon in each collection of mission
           var taxonCollection = Taxon.collection.getInstance();
+          var taxMission = new (Taxon.collection.getClass())();
           _.forEach(missionData.taxon, function (taxonData) {
               taxonData.sources = taxonData.sources.split(",");
               taxonData.environments = [];
@@ -174,6 +175,7 @@ function init() {
               not_confuse: taxonData.not_confuse,
               sources: taxonData.sources
             });
+            taxMission.add(taxon);
             taxonCollection.add(taxon);
           });
           var mission = new Mission.Model({
@@ -185,7 +187,7 @@ function init() {
             seasons: missionData.seasons,
             introduction: missionData.introduction,
             id_taxons: missionData.id_taxons,
-            taxon: taxonCollection
+            taxon: taxMission
           });
           missionCollection.add(mission);
         });

@@ -49,6 +49,7 @@ var Layout = Marionette.LayoutView.extend({
     var user = this.user = User.getCurrent();
     this.observationModel = this.model;
     this.listenTo(this.observationModel, 'change:photos', this.render, this);
+    this.listenTo(this.observationModel, 'change:missionId', this.render, this);
 //    this.listenTo(this.observationModel, 'change:departement', this.render, this);
     this.listenTo(this.observationModel, 'change:shared', this.render, this);
 
@@ -132,6 +133,7 @@ var Layout = Marionette.LayoutView.extend({
   },
 
   onRender: function() {
+    var self = this;
     this.$el.attr('data-cid', this.cid);
 
     var isSaved = (this.observationModel.get('missionId'));
@@ -141,18 +143,18 @@ var Layout = Marionette.LayoutView.extend({
       this.setFormStatus('saved');
     }
 
-    var DepartementItemView = Marionette.ItemView.extend({
-      tagName: 'li',
-      className: 'list-group-item',
-      template: _.template(''),
-      triggers: {
-        'click': 'click'
-      },
+    // var DepartementItemView = Marionette.ItemView.extend({
+    //   tagName: 'li',
+    //   className: 'list-group-item',
+    //   template: _.template(''),
+    //   triggers: {
+    //     'click': 'click'
+    //   },
 
-      onRender: function() {
-        this.$el.text(this.model.get('title'));
-      }
-    });
+    //   onRender: function() {
+    //     this.$el.text(this.model.get('title'));
+    //   }
+    // });
 
     var formSchema = {
       missionId: {
@@ -167,6 +169,7 @@ var Layout = Marionette.LayoutView.extend({
           getSelectedLabel: function(model) {
             var title = model.get('title');
             var taxonTitle = model.get('taxon').title;
+            self.observationModel.set('missionId', model.get('id'));
             if ( taxonTitle )
               title += '<br /><small>'+taxonTitle+'</small>';
             return title; 
@@ -181,7 +184,7 @@ var Layout = Marionette.LayoutView.extend({
         type: 'DialogSelect',
         options: {
           dialogTitle: i18n.t('pages.observation.taxonDialogTitle'),
-          collection: Taxon.collection.getInstance(),
+          collection: self.filteredTaxon(),
           itemView: require('../mission/taxon_filter/taxon_filter_item.view'),
           itemViewOptions: {
             cancelLink: true
@@ -294,6 +297,16 @@ var Layout = Marionette.LayoutView.extend({
 
       self.observationModel.set('mission', _.find(mission.collection.getInstance(), {id: missionId}));
   },*/
+
+  filteredTaxon: function() {
+    var filtered = Taxon.collection.getInstance();
+    if (this.observationModel.get('missionId')) {
+      var missionId = this.observationModel.get('missionId');
+      var mission = Mission.collection.getInstance().get(missionId);
+      filtered = mission.get('taxon');
+    }
+    return filtered;
+  },
 
   updateField: function(e) {
     var self = this;

@@ -99,8 +99,10 @@ var initCustomeEditors = function() {
 
       function onChildClick(childView) {
         dialog.close();
-        self.setValue(childView.model.get('id'));
-        self.setValue(childView.model.get('cd_nom'));
+        if (childView.model.get('id') && !childView.model.get('cd_nom'))
+          self.setValue(childView.model.get('id'));
+        if (childView.model.get('cd_nom'))
+          self.setValue(childView.model.get('cd_nom'));
       }
     },
 
