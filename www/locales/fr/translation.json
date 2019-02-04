@@ -201,9 +201,9 @@
         },
         "observation": {
             "missionPlaceholder": "Mission",
-            "taxonPlaceholder": "Taxon",
+            "taxonPlaceholder": "Espèce",
             "missionDialogTitle": "Sélectionner une mission",
-            "taxonDialogTitle": "Sélectionner un taxon",
+            "taxonDialogTitle": "Sélectionner une espèce",
             "departementDialogTitle": "Sélectionner un département",
             "btns": {
                 "save": "Enregistrer",
