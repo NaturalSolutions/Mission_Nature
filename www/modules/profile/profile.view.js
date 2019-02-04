@@ -41,14 +41,14 @@ var Page = Marionette.LayoutView.extend({
       firstname: {
         type: 'Text',
         editorAttrs: {
-          placeholder: 'Prénom'
+          placeholder: 'Prénom *'
         },
         validators: ['required']
       },
       lastname: {
         type: 'Text',
         editorAttrs: {
-          placeholder: 'Nom'
+          placeholder: 'Nom *'
         },
         validators: ['required']
       },
@@ -56,7 +56,7 @@ var Page = Marionette.LayoutView.extend({
         type: 'Text',
         dataType: 'email',
         editorAttrs: {
-          placeholder: 'E-mail'
+          placeholder: 'E-mail *'
         },
         validators: ['required', 'email']
         /*validators: ['required', 'email', function checkUsername(value, formValues) {
@@ -83,7 +83,7 @@ var Page = Marionette.LayoutView.extend({
         type: 'Select',
         options: ['Scouts et guides de France', 'Eclaireuses-Eclaireurs de France','Francas','Ecole et Nature / GRAINE', 'Autres'],
         editorAttrs: {
-          placeholder: 'Sélectionnez votre groupe',
+          placeholder: 'Sélectionnez votre groupe *',
           selectedvalue: this.model.get('groupcategory')
         },
         validators: [function(value, formValues) {
@@ -106,7 +106,7 @@ var Page = Marionette.LayoutView.extend({
           type: 'Text',
           dataType: 'email',
           editorAttrs: {
-            placeholder: 'Confirmer l\'e-mail'
+            placeholder: 'Confirmer l\'e-mail *'
           },
           validators: ['required', {
             type: 'match',
@@ -117,7 +117,7 @@ var Page = Marionette.LayoutView.extend({
         password: {
           type: 'Password',
           editorAttrs: {
-            placeholder: 'Mot de passe'
+            placeholder: 'Mot de passe *'
           },
           validators: ['required', {
             type: 'regexp',
@@ -128,7 +128,7 @@ var Page = Marionette.LayoutView.extend({
         password2: {
           type: 'Password',
           editorAttrs: {
-            placeholder: 'Confirmer le mot de passe'
+            placeholder: 'Confirmer le mot de passe *'
           },
           validators: ['required', {
             type: 'match',
