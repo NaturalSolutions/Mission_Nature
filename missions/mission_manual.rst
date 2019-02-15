@@ -8,13 +8,12 @@ Lancez le script dans votre terminal :
 
     php mission_tojson.php
 
-Le fichier mission.json est créé dans le dossier où se trouve le script et le csv.
+Le fichier "missions.json" est créé dans le dossier où se trouve le script et le csv.
 
-PLacez le fichier json dans le dossier :
+PLacez le fichier "missions.json" dans le dossier :
 ::
 
     www/data
-
 
 
 Images
@@ -62,17 +61,29 @@ Taxons
 Générer les images
 ------------------
 
-Exemple avec la bibliothèque Image Magic
+Exemple en ligne de commande avec la bibliothèque Image Magic 
 
 .. NOTE::
 
     Eviter les noms de fichiers avec espaces et accents. 
-    Eviter les extensions de fichiers ex JPG et jpg
+    Eviter les extensions de fichiers en capitale, ex JPG et jpg
 
 
-- Créez un dossier photos et un dossier photos-thumb
-- Allez dans le dossier "photos" ou sont contenus les images en grand format
+- Créez un dossier "photos" et un dossier "photos-thumb"
+- Placez les images à recadrer dans le dossier "photos"
+- Placez-vous dans le dossier "photos" 
 
 ::
 
     mogrify -path ../photos-thumb/ -thumbnail 256x256^ -gravity center -extent 256x256 *.jpg
+
+
+
+Afficher des images dans les textes
+===================================
+
+- Ajouter les images dans le dossier www/data/image_source/
+- Ajouter ces balises HTML dans le champ texte du csv :
+::
+
+    <figure><img class='img-thumbnail mx-auto d-block' src='data/image_source/01.jpg' /><figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption></figure>
