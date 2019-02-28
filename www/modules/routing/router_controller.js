@@ -92,6 +92,7 @@ module.exports = Marionette.Object.extend({
 
     var View = require('../mission/sheet/mission_sheet.view');
     main.getInstance().rgMain.show(new View({
+      missionId: mission.get('id'),
       model: taxon
     }), {
       preventDestroy: true

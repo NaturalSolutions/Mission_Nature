@@ -33,9 +33,10 @@ module.exports = Marionette.LayoutView.extend({
     observations: '.observations'
   },
 
-  initialize: function () {
+  initialize: function (option) {
     var self = this;
     var user = User.getCurrent();
+    var missionId =  _.get(option, 'missionId', '');
 
     this.header = {
       title: this.model.get('title'),
@@ -47,27 +48,15 @@ module.exports = Marionette.LayoutView.extend({
     this.listenTo(user, 'change:acceptedMissions', this.onAcceptChange);
     this.listenTo(Observation.collection.getInstance(), 'add', function (observation) {
       observation.set({
-        'missionId': self.model.get('id'),
+        'missionId': missionId,
         'cd_nom': self.model.get('cd_nom')
       });
       observation.save();
     });
 
-    this.listenTo(Footer.getInstance(), 'btn:clue:click', function (e) {
-      e.preventDefault();
-      Router.getInstance().navigate('clue?missionId=' + self.model.get('id'), {
-        trigger: true
-      });
-    });
-/*
-    var queryHash = "missionsheet";
+    var queryHash = window.location.hash;
     var params = _.parseQueryHash(queryHash);
 
-    var currentUser = User.getCurrent();
-    var helps = Help.collection.getInstance();
-
-    helps.someHelp(params);
-*/
   },
 
   openWindow: function (ev) {

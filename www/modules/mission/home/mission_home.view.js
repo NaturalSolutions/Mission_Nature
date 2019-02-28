@@ -9,7 +9,9 @@ var Backbone = require('backbone'),
   Header = require('../../header/header'),
   Help = require('../../main/help.model'),
   Footer = require('../../footer/footer.view'),
+  Observation = require('../../observation/observation.model'),
   taxonCollection = require('../../taxons/taxons.model');
+
 
 module.exports = Marionette.CompositeView.extend({
   template: require('./mission_home.tpl.html'),
@@ -50,9 +52,12 @@ module.exports = Marionette.CompositeView.extend({
 
     this.listenTo(user, 'change:acceptedMissions', this.onAcceptChange);
 
-    this.listenTo(Footer.getInstance(), 'btn:clue:click', function(e) {
-      e.preventDefault();
-      Router.getInstance().navigate('clue?missionId='+self.model.get('id'), {trigger:true});
+    //TODO: if taxons.lenght == 1 => add cd_nom
+    this.listenTo(Observation.collection.getInstance(), 'add', function (observation) {
+      observation.set({
+        'missionId': self.model.get('id')
+      });
+      observation.save();
     });
 
     var queryHash = window.location.hash;
