@@ -30,10 +30,9 @@
         },
         "deltaLong": "plus que {{count}} jour",
         "deltaLong_plural": "plus que {{count}} jours",
-        "difficulty_0": "Apprenti",
-        "difficulty_1": "Débutant",
-        "difficulty_2": "Confirmé",
-        "difficulty_3": "Expert",
+        "difficulty_0": "Débutant",
+        "difficulty_1": "Confirmé",
+        "difficulty_2": "Expert",
         "labelLocalize_interval": "(0){Où le rechercher ?};(1-inf){Où les rechercher ?};",
         "labelIdentification_interval": "(0){Comment l'identifier ?};(1-inf){Comment les identifier ?};"
     },
@@ -77,18 +76,14 @@
         "score": {
             "level": {
                 "0": {
-                    "label": "Apprenti",
-                    "description": "Accomplir une mission de niveau débutant pour progresser"
-                },
-                "1": {
                     "label": "Débutant",
                     "description": "Accomplir une mission de niveau confirmé pour progresser"
                 },
-                "2": {
+                "1": {
                     "label": "Confirmé",
                     "description": "Accomplir une mission de niveau expert pour progresser"
                 },
-                "3": {
+                "2": {
                     "label": "Expert",
                     "description": "Vous êtes au niveau maximum"
                 }

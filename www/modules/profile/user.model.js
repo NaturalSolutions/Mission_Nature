@@ -234,7 +234,7 @@ var UserModel = Backbone.Model.extend({
       return obs.get('mission').get('difficulty');
     });
     //TODO: define rules
-    for (var i = 3; i >= 1; i--) {
+    for (var i = 2; i >= 0; i--) {
       if (difficultiesCompleted[i]) {
         self.set('level', i);
         break;

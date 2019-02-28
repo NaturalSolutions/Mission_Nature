@@ -7,7 +7,7 @@
 	</div>
 	<% } %>
 	<ul class="nav nav-tabs js-nav-tabs nav-justified" role="tablist">
-	<% var difficulties = ['trainee', 'beginner', 'confirmed', 'expert'] %>
+	<% var difficulties = ['beginner', 'confirmed', 'expert'] %>
 	<% _.forEach(data.missionTabs, function(missionTab, index) { %>
 		<li role="presentation" class=" <% if ( index == data.lastTabIndex ) { %>active<% } %>">
 			<a href="#tab-difficulty-<%= index %>" role="tab">

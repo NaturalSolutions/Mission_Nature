@@ -77,7 +77,7 @@ var Model = Backbone.Model.extend({
   },
   getDifficultyName: function() {
     var self = this;
-    var difficultyNames = ['trainee', 'beginner', 'confirmed', 'expert'];
+    var difficultyNames = [ 'beginner', 'confirmed', 'expert'];
 
     return difficultyNames[self.get('difficulty')];
   },

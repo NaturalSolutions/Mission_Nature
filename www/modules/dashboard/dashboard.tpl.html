@@ -4,7 +4,7 @@
 			<img class="score-icon" src="images/score/level_<%= data.user.level %>_awake.png" />
 		</div>
 		<div class="score-name">
-			<% var difficulties = ['trainee', 'beginner', 'confirmed', 'expert'] %>
+			<% var difficulties = ['beginner', 'confirmed', 'expert'] %>
 			<div class="value">Vous êtes niveau <%= i18n.t('user.score.level.'+data.user.level+'.label') %> :
 				<div class="icon icomoon difficulty">difficulty_<%= difficulties[data.user.level] %> </div>
 			</div>
