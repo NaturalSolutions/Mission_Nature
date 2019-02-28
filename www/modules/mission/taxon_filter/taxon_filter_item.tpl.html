@@ -1,6 +1,7 @@
 <div class="media-left thumb">
+		<% var thumbURL = './images/mission_taxon/taxon/thumb/' + (data.taxon.id > 9 ? '' : '0') + data.taxon.id + '.jpg'; %>
     <a class="js-filter-taxon" href="#mission/<%= data.mission_id %>/taxon/<%= data.taxon.id %>">
-		<img class="media-object" src="./images/mission_taxon/taxon/thumb/0<%= data.taxon.id %>.jpg" />
+		<img class="media-object" src="<%= thumbURL %>" />
     </a>
 </div>
 <div class="media-body text">
