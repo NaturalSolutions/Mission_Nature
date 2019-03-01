@@ -99,10 +99,7 @@ var initCustomeEditors = function() {
 
       function onChildClick(childView) {
         dialog.close();
-        if (childView.model.get('id') && !childView.model.get('cd_nom'))
-          self.setValue(childView.model.get('id'));
-        if (childView.model.get('cd_nom'))
-          self.setValue(childView.model.get('cd_nom'));
+        self.setValue(childView.model.get('id'));
       }
     },
 
@@ -115,14 +112,136 @@ var initCustomeEditors = function() {
       this.schema.options.collection.forEach(function(model) {
         if ( model.get('id') == value )
           self.$el.html(self.schema.options.getSelectedLabel(model));
-        if ( model.get('cd_nom') == value )
-          self.$el.html(self.schema.options.getSelectedLabel(model));
-
       });
       if ( !this.$el.text() )
         this.$el.html(this.schema.editorAttrs.placeholder);
       this.$el.data('value', value);
     },
+
+  });
+
+  Form.editors.DialogLinkedSelect = Form.editors.Base.extend({
+    tagName: 'p',
+    className: 'form-control-static input-lg ',
+    events: {
+      'click' : 'onClick',
+    },
+
+    initialize: function(options) {
+      Form.editors.Base.prototype.initialize.call(this, options);
+
+      if (!this.schema || !this.schema.options) throw new Error("Missing required 'schema.options'");
+    },
+
+    render: function() {
+      this.setValue(this.value);
+      return this;
+    },
+
+    onClick: function(e) {
+      if ( !this.schema.options.master)
+        return this.onClickLinked();
+      var self = this;
+      var i18n = require('i18next');
+      var Marionette = require('backbone.marionette');
+      var Dialog = require('bootstrap-dialog');
+
+      var ListView = Marionette.CollectionView.extend({
+        tagName: 'ul',
+        className: 'list-unstyled',
+        childView: this.schema.options.itemView,
+        childViewOptions: this.schema.options.itemViewOptions,
+        childEvents: {
+          'click': onChildClick
+        }
+      });
+      var listView = new ListView({
+        collection: this.schema.options.collection
+      });
+      listView.render();
+
+      var dialog = Dialog.show({
+        closable: true,
+        title: this.schema.options.dialogTitle,
+        cssClass: 'fs-dialog fs-dialog-with-scroll',
+        message: listView.$el
+      });
+
+      function onChildClick(childView) {
+        dialog.close();
+        if (childView.model.get(self.schema.options.idName)) {
+          self.setValue(childView.model.get(self.schema.options.idName));
+          self.form.getEditor(self.schema.options.idNameLink).setValue('');
+        }
+      }
+    },
+
+    onClickLinked : function(e) {
+      var self = this;
+      var i18n = require('i18next');
+      var Marionette = require('backbone.marionette');
+      var Dialog = require('bootstrap-dialog');
+
+      var ListView = Marionette.CollectionView.extend({
+        tagName: 'ul',
+        className: 'list-unstyled',
+        childView: this.schema.options.itemView,
+        childViewOptions: this.schema.options.itemViewOptions,
+        childEvents: {
+          'click': onChildClick
+        }
+      });
+      // TODO generic filter collection
+      var listView = new ListView({
+        collection: (this.schema.options.master) ? this.schema.options.collection : this.getFilteredCollection(this.form.getEditor('missionId').getValue('missionId'))
+      });
+      listView.render();
+
+      var dialog = Dialog.show({
+        closable: true,
+        title: this.schema.options.dialogTitle,
+        cssClass: 'fs-dialog fs-dialog-with-scroll',
+        message: listView.$el
+      });
+
+      function onChildClick(childView) {
+        dialog.close();
+        if (childView.model.get(self.schema.options.idName)) {
+          self.setValue(childView.model.get(self.schema.options.idName));
+        }
+      }
+    },
+
+    getValue: function() {
+      return this.$el.data('value');
+    },
+
+    setValue: function(value) {
+      var self = this;
+      if( !value )
+        return this.$el.html(this.schema.options.editorAttrs.placeholder);
+
+      var collection = (this.schema.options.master) ? this.schema.options.collection : this.getFilteredCollection(this.form.getEditor('missionId').getValue('missionId'));
+
+      collection.forEach(function(model) {
+        if ( value && model.get(self.schema.options.idName) == value ) {
+          self.$el.html(self.schema.options.getSelectedLabel(model));
+        }
+      });
+      if ( !this.$el.text() )
+        this.$el.html(this.schema.options.editorAttrs.placeholder);
+      this.$el.data('value', value);
+
+      this.trigger('change', this);
+
+    },
+
+    getFilteredCollection: function(filter) {
+      // TODO generic filter collection
+      var filteredCollection = this.schema.options.collection.get(filter);
+      filteredCollection = filteredCollection.get('taxon');
+      return filteredCollection;
+    }
 
   });
 };

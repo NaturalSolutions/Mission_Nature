@@ -49,7 +49,6 @@ var Layout = Marionette.LayoutView.extend({
     var user = this.user = User.getCurrent();
     this.observationModel = this.model;
     this.listenTo(this.observationModel, 'change:photos', this.render, this);
-    this.listenTo(this.observationModel, 'change:missionId', this.render, this);
 //    this.listenTo(this.observationModel, 'change:departement', this.render, this);
     this.listenTo(this.observationModel, 'change:shared', this.render, this);
 
@@ -100,17 +99,6 @@ var Layout = Marionette.LayoutView.extend({
 
     this.session = Session.model.getInstance();
 
-/*    if (!this.observationModel.get('departementId')) {
-      if (user.get('departementIds').length) {
-        this.observationModel.set({
-          departementId: user.get('departementIds')[0]
-        }).save();
-      } else if (user.get('city'))
-        this.observationModel.set({
-          departementId: user.get('city').dpt
-        }).save();
-    }
-
     var queryHash = window.location.hash;
     var params = _.parseQueryHash(queryHash);
     var currentUser = User.getCurrent();
@@ -121,7 +109,6 @@ var Layout = Marionette.LayoutView.extend({
     //   }
     // );
     helps.someHelp(params);
-    */
   },
 
   serializeData: function() {
@@ -143,62 +130,50 @@ var Layout = Marionette.LayoutView.extend({
       this.setFormStatus('saved');
     }
 
-    // var DepartementItemView = Marionette.ItemView.extend({
-    //   tagName: 'li',
-    //   className: 'list-group-item',
-    //   template: _.template(''),
-    //   triggers: {
-    //     'click': 'click'
-    //   },
-
-    //   onRender: function() {
-    //     this.$el.text(this.model.get('title'));
-    //   }
-    // });
-
     var formSchema = {
       missionId: {
-        type: 'DialogSelect',
+        type: 'DialogLinkedSelect',
         options: {
           dialogTitle: i18n.t('pages.observation.missionDialogTitle'),
           collection: Mission.collection.getInstance(),
+          master: true,
+          idName: "id",
+          idNameLink: "cd_nom",
           itemView: require('../mission/list_item/mission_list_item.view'),
           itemViewOptions: {
             cancelLink: true
           },
           getSelectedLabel: function(model) {
             var title = model.get('title');
-            var taxonTitle = model.get('taxon').title;
-            self.observationModel.set('missionId', model.get('id'));
-            if ( taxonTitle )
-              title += '<br /><small>'+taxonTitle+'</small>';
-            return title; 
+            return title;
+          },
+          editorAttrs: {
+            placeholder: i18n.t('pages.observation.missionPlaceholder')
           }
-        },
-        editorAttrs: {
-          placeholder: i18n.t('pages.observation.missionPlaceholder')
         },
         validators: ['required']
       },
       cd_nom: {
-        type: 'DialogSelect',
+        type: 'DialogLinkedSelect',
         options: {
           dialogTitle: i18n.t('pages.observation.taxonDialogTitle'),
-          collection: self.filteredTaxon(),
+          collection: Mission.collection.getInstance(),
+          master: false,
+          idName: "cd_nom",
           itemView: require('../mission/taxon_filter/taxon_filter_item.view'),
           itemViewOptions: {
             cancelLink: true
+          },
+          editorAttrs: {
+            placeholder: i18n.t('pages.observation.taxonPlaceholder'),
+            selectedvalue: this.observationModel.get('cd_nom')
           },
           getSelectedLabel: function(model) {
             var title = model.get('title');
             return title;
           }
         },
-        editorAttrs: {
-          placeholder: i18n.t('pages.observation.taxonPlaceholder'),
-          selectedvalue: this.observationModel.get('cd_nom')
-        },
-        validators: ['required']        
+        validators: ['required']
       },
     };
     var observation = this.observationModel.toJSON();
@@ -210,11 +185,10 @@ var Layout = Marionette.LayoutView.extend({
       templateData: {
         observation: observation,
         mission: Mission.collection.getInstance(),
-        taxon: Taxon.collection.getInstance()//, ajout taxon.collection
       }
     }).render();
     
-    var formValues = this.formObs.getValue();
+    //var formValues = this.formObs.getValue();
     this.$el.append(this.formObs.$el);
     this.$progressBar = this.$el.find('.progress-bar');
  
@@ -225,59 +199,20 @@ var Layout = Marionette.LayoutView.extend({
       idToTransmit = null;
     }
 
-    /*if (this.observationModel.get('shared') > 0) {
-      this.$el.addClass('read-only');
-      this.$el.find(':input:not(:submit)').prop('disabled', true);
-    }*/
-
-    this.formObs.$el.find('select').selectPlaceholder();
-
-    /*if (this.observationModel.get('mission')) {
+    if (this.observationModel.get('missionId')) {
       this.$el.find('select#mission').val(this.observationModel.get('mission').id).attr('selected', true);
-    } else {
-      this.$el.find('select').selectPlaceholder();
     }
-
-    if (this.observationModel.get('departement')) {
-      this.$el.find('select#dept').val(this.observationModel.get('deptId')).attr('selected', true);
-    } else {
-      this.$el.find('select').selectPlaceholder();
-    }*/
+    if (this.observationModel.get('cd_nom')) {
+      this.$el.find('select#cd_nom').val(this.observationModel.get('cd_nom')).attr('selected', true);
+    }
   },
 
   onDomRefresh: function(options) {
-/*    // var user = User.getCurrent();
     if (this.user.get('city')) {
       this.observationModel.set({
         departementId: this.user.get('city').dpt
       }).save();
-//      this.observationModel.get('departement');
     }
-*/
-    //this.$el.find('select').selectPlaceholder();
-    /*var user = User.getCurrent();
-    console.log('onDomRefresh');
-
-    if (user.get('departements').length) {
-      this.observationModel.set({
-        departement: user.get('departements')[0]
-      }).save();
-    } else if (user.get('city'))
-      this.observationModel.set({
-        departement: user.get('city').dpt
-      }).save();*/
-
-    /*if (this.observationModel.get('mission')) {
-      this.$el.find('select#mission').val(this.observationModel.get('mission').id).attr('selected', true);
-    } else {
-      this.$el.find('select').selectPlaceholder();
-    }
-
-    if (this.observationModel.get('departement')) {
-      this.$el.find('select#dept').val(this.observationModel.get('deptId')).attr('selected', true);
-    } else {
-      this.$el.find('select').selectPlaceholder();
-    }*/
   },
 
   onPhotoClick: function() {
@@ -291,22 +226,6 @@ var Layout = Marionette.LayoutView.extend({
     slideshow.render();
   },
 
-  /*onMissionChange: function(e) {
-      var self = this;
-      var missionId = $(e.currentTarget).val();
-
-      self.observationModel.set('mission', _.find(mission.collection.getInstance(), {id: missionId}));
-  },*/
-
-  filteredTaxon: function() {
-    var filtered = Taxon.collection.getInstance();
-    if (this.observationModel.get('missionId')) {
-      var missionId = this.observationModel.get('missionId');
-      var mission = Mission.collection.getInstance().get(missionId);
-      filtered = mission.get('taxon');
-    }
-    return filtered;
-  },
 
   updateField: function(e) {
     var self = this;
@@ -321,28 +240,6 @@ var Layout = Marionette.LayoutView.extend({
       this.$el.alterClass('form-status-*', 'form-status-shared-' + shared);
     }
   },
-
-  /*uploadPhoto: function(e) {
-      var self = this;
-      e.preventDefault();
-
-      var $form = $(e.currentTarget);
-      var formdata = (window.FormData) ? new FormData($form[0]) : null;
-      var data = (formdata !== null) ? formdata : $form.serialize();
-
-      $.ajax({
-          url: config.apiUrl + '/file-upload',
-          type: 'post',
-          contentType: false, // obligatoire pour de l'upload
-          processData: false, // obligatoire pour de l'upload
-          dataType: 'json', // selon le retour attendu
-          data: data,
-          success: function(response) {
-              //TODO url into config
-              self.addPhoto(config.coreUrl + '/sites/default/files/' + response.data[0].label, response.data[0].id);
-          }
-      });
-  },*/
 
   onFail: function(message) {
     console.log(message);
@@ -372,7 +269,6 @@ var Layout = Marionette.LayoutView.extend({
     if (window.cordova) {
       //TODO put tag projet in config
       var tagprojet = 'mission-nature';
-//      var tagprojet = 'noe-obf';
       var copiedFile = function(fileEntry) {
         self.addPhoto(fileEntry.toInternalURL());
       };
@@ -566,13 +462,12 @@ var Layout = Marionette.LayoutView.extend({
         und: [{
           value: _.get(self.observationModel.get('coords'), 'latitude', 0) + '/' + _.get(self.observationModel.get('coords'), 'longitude', 0)
         }]
-      }/*,
+      },
         field_code_commune: {
         und: [{
           value: _.get(this.user.get('city'), 'code', '')
         }]
       }
-      */
     };
     var query = {
       url: config.apiUrl + '/node.json',
@@ -608,22 +503,12 @@ var Layout = Marionette.LayoutView.extend({
               }
             }
           });
-          //session.redirectAfterLogin = '#observation/'+self.observationModel.get('id')+'?action=transmit';
-          /*var message = i18n.t('pages.observation.dialogs.need_login');
-          if (user.get('firstname') || user.get('lastname') || user.get('email'))
-              message = i18n.t('pages.observation.dialogs.need_complete_registration');
-          dfd = Login.openDialog({
-            message: message
-          });*/
         } else {
           Dialog.alert({
             closable: true,
             message: error.responseJSON
           });
         }
-        /*dfd.then(function() {
-          Dialog.alert(i18n.t('pages.observation.dialogs.need_complete'));
-        });*/
       },
       success: function(response) {
         self.observationModel.set({
@@ -646,7 +531,6 @@ var Layout = Marionette.LayoutView.extend({
 
   uploadPhotos: function() {
     var self = this;
-    // var user = User.getCurrent();
 
     if ( !window.cordova )
       self.onShared();
@@ -790,10 +674,7 @@ var Layout = Marionette.LayoutView.extend({
             error: function(error) {
               console.log(error);
               dfd.reject('error');
-              /*Dialog.alert({
-                closable: true,
-                message: error.responseJSON
-              });*/
+
             }
           };
           self.session.getCredentials(query).then(function() {
@@ -809,84 +690,6 @@ var Layout = Marionette.LayoutView.extend({
     return dfd;
   },
 
-  shareObs: function() {
-    var self = this;
-    var mission = self.model.get('mission');
-    this.$el.find('form').addClass('loading');
-    var shareOptions = {
-      method: "share",
-      caption: i18n.t('facebook.caption'),
-      href: mission.get('taxon').url,
-    //  share_native: true, // iOS
-    //  hashtag: "#Missionforet", // not implemented 09/2016
-      description: mission.get('taxon').description,
-      picture: _.get(self.model.get('photos'), '[0].externUrl', ''),
-      name: mission.get('title'),
-    //  message: 'First photo post',
-    };
-    //window.facebookConnectPlugin.api();
-    window.facebookConnectPlugin.showDialog(shareOptions,
-      function (response) {
-        self.$el.find('form').removeClass('loading');
-      }, function (error) {
-        Dialog.alert(i18n.t('facebook.dialog.fail'));
-        self.$el.find('form').removeClass('loading');
-      }
-    );
-    /*
-    openFB.init({
-      appId: '146470505768742',
-      tokenStore: window.localStorage
-    });
-    openFB.api({
-      method: 'POST',
-      path: '/me/feed',
-      params: {
-        message: i18n.t('facebook.message'),
-        link: mission.get('taxon').url,
-        name: mission.get('title'),
-        picture: _.get(self.model.get('photos'), '[0].externUrl', ''),
-        caption: i18n.t('facebook.caption'),
-        description: mission.get('taxon').characteristic
-      },
-      success: function() {
-        self.$el.find('form').removeClass('loading');
-        Dialog.alert('Partage réussi');
-      },
-      error: function(error) {
-        if (error.code == 190) {
-          Dialog.show({
-            title: i18n.t('facebook.dialog.title'),
-            message: i18n.t('facebook.dialog.message'),
-            buttons: [{
-              label: i18n.t('facebook.dialog.btns.cancel'),
-              action: function(dialog) {
-                dialog.close();
-                self.$el.find('form').removeClass('loading');
-              }
-            }, {
-              label: i18n.t('facebook.dialog.btns.login'),
-              action: function(dialog) {
-                dialog.close();
-                openFB.login(function(response) {
-                  if (response.status === 'connected') {
-                    self.shareObs();
-                  } else {
-
-                    alert(i18n.t('facebook.dialog.alert') + response.error.message);
-                    self.$el.find('form').removeClass('loading');
-                  }
-                }, {
-                  scope: 'publish_actions'
-                });
-              }
-            }]
-          });
-        }
-      }
-    });
-    */
-  },
 });
 
 module.exports = {
