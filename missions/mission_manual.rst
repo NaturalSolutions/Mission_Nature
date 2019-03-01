@@ -1,8 +1,36 @@
 ====================
 Générer les missions
 ====================
-Remplissez le fichier des missions missions.csv et le fichier des taxons correspondants taxons.csv
-Placez le fichier csv dans le même dossier que le script mission_tojson.php
+Copiez et renommez le fichier missions.csv.tpl en missions.csv.
+Copiez et renommez le fichier taxons.csv.tpl en taxons.csv.
+
+Remplissez le fichier des missions missions.csv et le fichier des taxons correspondants taxons.csv, en référant aux informations ci-dessous :
+::
+
+    missions.csv : Contient les informations relatives à chaque mission : 
+        - id : Sert à trouver telle ou telle mission (utilisé dans le code)
+        - num : Idem
+        - titre : Titre de la mission
+        - plural : Laisser 0 (utilisé dans le code)
+        - difficulté : Difficulté de la mission de 0 (débutant), à 2 (très difficile)
+        - saison : Période en mois (02-09) durant laquelle la mission est susceptible d'être accomplie
+        - introduction: Zone de texte destinée à introduire la mission en quelques mots
+        - Taxons : Id des taxons présents dans la mission, séparés par une virgule (1,2,3)
+
+    taxons.csv : Contient les informations relatives à chaque taxon :
+        - id :  Sert à trouver tel ou tel taxon (utilisé dans le code)
+        - cd_nom : Numéro INPN de l'espèce
+        - nom : Nom de l'espèce
+        - famille : Famille de l'espèce
+        - lien : Lien vers la fiche INPN de l’espèce
+        - description : Description de l'espèce
+        - caractéristiques : Caractéristiques de l'espèce (onglet "Comment l'identifier")
+        - milieu de vie : Milieu au sein duquel l'espèce peut être aperçue (pour l'instant simplement en format texte (ex : "Villages"), probablement une correspondance chiffre - milieu plus tard (1 = Zones humides, 2 = Villes / villages, etc ...)
+        - description du milieu :  Zone de texte pour apporter des précisions quant au milieu
+        - ne pas confondre : Zone de texte pour éviter de confondre les espèces entre elles
+        - sources
+
+Une fois les fichiers csv remplis, placez-les dans le même dossier que le script mission_tojson.php
 Lancez le script dans votre terminal :
 ::
 
@@ -61,7 +89,7 @@ Taxons
 Générer les images
 ------------------
 
-Exemple en ligne de commande avec la bibliothèque Image Magic 
+Exemple en ligne de commande avec la bibliothèque Image Magic
 
 .. NOTE::
 
@@ -71,7 +99,7 @@ Exemple en ligne de commande avec la bibliothèque Image Magic
 
 - Créez un dossier "photos" et un dossier "photos-thumb"
 - Placez les images à recadrer dans le dossier "photos"
-- Placez-vous dans le dossier "photos" 
+- Placez-vous dans le dossier "photos"
 
 ::
 

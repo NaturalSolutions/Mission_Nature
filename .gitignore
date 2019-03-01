@@ -16,6 +16,9 @@ www-*
 .idea
 
 www/data/*
+missions/missions.csv
+missions/taxons.csv
+missions/missions.json
 missions/photos/*
 missions/photos_full/*
 missions/photos-thumb/*

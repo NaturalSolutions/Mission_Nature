@@ -1,0 +1,2 @@
+"id";"cd_nom";"title";"family";"url";"description";"characteristic";"environment";"environment_description";"not_confuse";"sources"
+0;0;"je ne sais pas";"inconnu";"inconnu";"inconnu";"inconnu";0;"inconnu";"inconnu";"inconnu"
