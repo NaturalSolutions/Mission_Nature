@@ -15,6 +15,7 @@ www-*
 .npm
 .idea
 
+config.js
 www/data/*
 missions/missions.csv
 missions/taxons.csv
