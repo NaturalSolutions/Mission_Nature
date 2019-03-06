@@ -12,7 +12,8 @@ function csvtoarray($id_especes, $file, $delimiter)
     $k = 0;
     $i = 0; 
       while (($lineArray = fgetcsv($handle, 4000, $delimiter, '"')) !== FALSE) {
-        if (($id_especes[$k] == $lineArray[0]) || $lineArray[0] == "id") {
+        $cleanItem = trim($id_especes[$k], '"');
+        if (($cleanItem == $lineArray[0]) || $lineArray[0] == "id") {
           for ($j = 0; $j < count($lineArray); $j++) { 
             $arr[$i][$j] = $lineArray[$j];
           } 
@@ -32,7 +33,7 @@ foreach ($missions_rows as $key => $mission_row) {
   if ( $id ) {
     $id_especes = explode(',', $mission_row[7]);
     sort($id_especes);
-    $seasons = explode('-', $mission_row[5]);
+    $seasons = explode('-', trim($mission_row[5], '"'));
     $introduction = trim($mission_row[6], '"');
     $title = trim($mission_row[2], '"');
     // Arrays use every new missions
@@ -65,11 +66,24 @@ foreach ($missions_rows as $key => $mission_row) {
         ),
       ),
       'introduction' => $introduction,
-      'id_taxons' => $id_especes,
+      'id_taxons' => trimArray($id_especes, '"'),
       'taxon' => $newArray,
     );
     $ouput[] = $mission_row;
   }
+}
+function trimArray ($array, $caract) {
+  $cleanArray = [];
+  $cleanItem;
+  foreach ($array as $key => $item) {
+    $cleanItem = $item;
+    $pos = strpos($item, $caract);
+    if($pos !== false) {
+      $cleanItem = trim($item, $caract);
+    }
+    array_push($cleanArray, $cleanItem);
+  }
+  return $cleanArray;
 }
 
 //print_r($ouput);
