@@ -92,7 +92,7 @@ module.exports = Marionette.Object.extend({
 
     var View = require('../mission/sheet/mission_sheet.view');
     main.getInstance().rgMain.show(new View({
-      missionId: mission.get('id'),
+      mission: mission,
       model: taxon
     }), {
       preventDestroy: true
@@ -101,30 +101,30 @@ module.exports = Marionette.Object.extend({
 
   missionHome: function(id) {
     id = _.parseInt(id);
+    var View ;
     var MissionModel = require('../mission/mission.model');
     var mission = MissionModel.collection.getInstance().get(id);
-    mission.taxon = require('../taxons/taxons.model');
-    var taxons = mission.taxon.collection.getInstance().clone();
-    var removables = [];
-    taxons.forEach(function(taxon) {
-      var isPresent = false;
-      mission.attributes.id_taxons.forEach(function(id) {
-        if (id == taxon.id)
-          isPresent = true;
+    var taxons = mission.get('taxon');
+    // mission n taxon or mission 1 taxon
+    if (taxons.length > 2) {
+      View = require('../mission/home/mission_home.view');
+      main.getInstance().rgMain.show(new View({
+        model: mission,
+        collection: taxons
+      }), {
+        preventDestroy: true
       });
-      if (!isPresent)
-        removables.push(taxon);
-    });
-    if (removables.length)
-      taxons.remove(removables);
+    } else {
+      View = require('../mission/sheet/mission_sheet.view');
+      main.getInstance().rgMain.show(new View({
+        mission: mission,
+        model: taxons.models[0],
+        isMission: true
+      }), {
+        preventDestroy: true
+      });
+    }
 
-    var View = require('../mission/home/mission_home.view');
-    main.getInstance().rgMain.show(new View({
-      model: mission,
-      collection: taxons
-    }), {
-      preventDestroy: true
-    });
   },
 
   missionsAll: function() {

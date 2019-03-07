@@ -36,10 +36,12 @@ module.exports = Marionette.LayoutView.extend({
   initialize: function (option) {
     var self = this;
     var user = User.getCurrent();
-    var missionId =  _.get(option, 'missionId', '');
+    this.mission =  _.get(option, 'mission', '');
+    this.isMission = _.get(option, 'isMission', false);
 
+    var title = (this.isMission) ? this.mission.get('title') : this.model.get('title');
     this.header = {
-      title: this.model.get('title'),
+      title: title,
       buttons: {
         left: ['back']
       }
@@ -48,7 +50,7 @@ module.exports = Marionette.LayoutView.extend({
     this.listenTo(user, 'change:acceptedMissions', this.onAcceptChange);
     this.listenTo(Observation.collection.getInstance(), 'add', function (observation) {
       observation.set({
-        'missionId': missionId,
+        'missionId': self.mission.get('id'),
         'cd_nom': self.model.get('cd_nom')
       });
       observation.save();
@@ -69,11 +71,12 @@ module.exports = Marionette.LayoutView.extend({
   },
 
   onRender: function () {
+    var self = this;
     var user = User.getCurrent();
     var observations = Observation.collection.getInstance();
     observations = observations.where({
       userId: user.get('id'),
-      missionId: this.model.get('id')
+      missionId: self.mission.get('id')
     });
     var ObservationsView = require('../../observation/observation_list.view');
     this.showChildView('observations', new ObservationsView({
@@ -132,7 +135,9 @@ module.exports = Marionette.LayoutView.extend({
 
   serializeData: function () {
     return {
-      taxon: this.model.toJSON()
+      taxon: this.model.toJSON(),
+      mission: this.mission.toJSON(),
+      isMission: this.isMission
     };
   },
 
