@@ -64,9 +64,11 @@
             </div>
             <div id="collapse2" class="panel-collapse collapse" role="tabpanel">
                 <div class="panel-body">
+                    <div class="well icons-milieux">
                     <% for(var i = 0; i < data.taxon.environments.length; i++) { %>
-                        <span class="badge badge-pill badge-<%= data.taxon.environments[i].indice %> "><%= data.taxon.environments[i].label %></span>
+                        <div class="milieux milieu-<%= data.taxon.environments[i].indice %> "><%= data.taxon.environments[i].label %></div>
                     <% }; %>
+                    </div>
                     <div><%= data.taxon.environment_description %></div>
                 </div>
             </div>
