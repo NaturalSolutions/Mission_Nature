@@ -39,10 +39,9 @@ var Layout = Marionette.LayoutView.extend({
   events: {
     'submit form.infos': 'onFormSubmit',
     'click .photo .img': 'onPhotoClick',
-//    'change .updateDept-js': 'updateField',
-    'change .updateMission-js': 'updateField',
     'submit form#form-picture': 'uploadPhoto',
-    'click .capture-photo-js': 'capturePhoto'
+    'click .capture-photo-js': 'capturePhoto',
+    'keyup textarea': 'updateField'
   },
 
   initialize: function() {
@@ -123,7 +122,7 @@ var Layout = Marionette.LayoutView.extend({
     var self = this;
     this.$el.attr('data-cid', this.cid);
 
-    var isSaved = (this.observationModel.get('missionId'));
+    var isSaved = (this.observationModel.get('missionId') && this.observationModel.get('cd_nom'));
     if (!isSaved)
       this.setFormStatus('unsaved');
     else {
@@ -175,6 +174,9 @@ var Layout = Marionette.LayoutView.extend({
         },
         validators: ['required']
       },
+      obs_note: {
+        type: 'TextArea'
+      }
     };
     var observation = this.observationModel.toJSON();
 
@@ -205,6 +207,18 @@ var Layout = Marionette.LayoutView.extend({
     if (this.observationModel.get('cd_nom')) {
       this.$el.find('select#cd_nom').val(this.observationModel.get('cd_nom')).attr('selected', true);
     }
+    if (this.observationModel.get('note')) {
+      this.$el.find('textarea').val(this.observationModel.get('note'));
+    }
+    if (this.observationModel.get('shared') == 1) {
+      this.$el.find('.obs-infos').attr("disabled", "disabled");
+
+      this.$el.find('.obs-infos').prop( "disabled", true );
+    }
+
+    this.formObs.on('change', function(form) {
+      self.updateField();
+    });
   },
 
   onDomRefresh: function(options) {
@@ -228,8 +242,7 @@ var Layout = Marionette.LayoutView.extend({
 
 
   updateField: function(e) {
-    var self = this;
-    self.setFormStatus('unsaved');
+    this.setFormStatus('unsaved');
   },
 
   setFormStatus: function(status) {
@@ -398,14 +411,17 @@ var Layout = Marionette.LayoutView.extend({
     var missionId = _.parseInt(formValues.missionId);
     var cd_nom = _.parseInt(formValues.cd_nom); //ajout taxon_cdnom
     var mission = Mission.collection.getInstance().get(missionId);
+    var obs_note = this.$el.find('textarea').val();
 
     this.checkGeolocation().then(
       function() {
         self.observationModel.set({
           missionId: missionId,
-          cd_nom: cd_nom //modif cd_nom
+          cd_nom: cd_nom, //modif cd_nom
+          note: obs_note
         }).save();
         self.setFormStatus('saved');
+        console.log('this.obsM: ', self.observationModel);
       },
       function() {
         return false;
@@ -463,9 +479,14 @@ var Layout = Marionette.LayoutView.extend({
           value: _.get(self.observationModel.get('coords'), 'latitude', 0) + '/' + _.get(self.observationModel.get('coords'), 'longitude', 0)
         }]
       },
-        field_code_commune: {
+      field_code_commune: {
         und: [{
           value: _.get(this.user.get('city'), 'code', '')
+        }]
+      },
+      field_observation_note: {
+        und: [{
+          value: self.observationModel.get('note')
         }]
       }
     };
