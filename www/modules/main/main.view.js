@@ -136,7 +136,7 @@ var Layout = Marionette.LayoutView.extend({
 
   addDialog: function(data) {
     var self = this;
-    var message = (!data.badge && !data.badgeClassNames) ? '' : '<div class="badge ' + (data.badgeClassNames || '') + '">' + (data.badge || '') + '<div class="butterfly"></div></div>';
+    var message = (!data.badge && !data.badgeClassNames) ? '' : '<div class="badge ' + (data.badgeClassNames || '') + '">' + (data.badge || '') + '</div>';
     message += '<div class="floating floating-bottom full-w"><h3>' + data.title + '</h3><p>' + data.message + '</p></div>';
 
     var dialog = new Dialog({

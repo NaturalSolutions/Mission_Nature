@@ -2,6 +2,9 @@
     <% var posterURL = './images/mission_taxon/mission/poster/'+data.mission.poster; %>
     <div class="poster" style="background-image:url('<%= posterURL %>');">
         <img src="<%= posterURL %>" />
+        <% if (data.credits) { %>
+            <figcaption>crédits : <%= data.credits %></figcaption>
+        <% } %>
     </div>
 
     <div class="status accept floating floating-right" style="z-index: 1;">

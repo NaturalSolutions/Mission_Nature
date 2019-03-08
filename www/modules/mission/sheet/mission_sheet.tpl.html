@@ -2,6 +2,9 @@
     <% var posterURL = './images/mission_taxon/taxon/poster/' + (data.taxon.id > 9 ? '' : '0') + data.taxon.id + '.jpg'; %>
     <div class="poster" style="background-image:url('<%= posterURL %>');">
         <img src="<%= posterURL %>" />
+        <% if (data.credits) { %>
+            <figcaption>crédits : <%= data.credits %></figcaption>
+        <% } %>
     </div>
     <% if (data.isMission) { %>
         <div class="status accept floating floating-right" style="z-index: 1;">

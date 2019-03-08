@@ -8,6 +8,7 @@ $ = require('jquery'),
   User = require('../../profile/user.model.js'),
   Header = require('../../header/header'),
   Help = require('../../main/help.model'),
+  Credit = require('../../main/credit.model'),
   Footer = require('../../footer/footer.view');
 
 module.exports = Marionette.LayoutView.extend({
@@ -56,8 +57,10 @@ module.exports = Marionette.LayoutView.extend({
       observation.save();
     });
 
-    var queryHash = window.location.hash;
-    var params = _.parseQueryHash(queryHash);
+
+
+    var credits = Credit.collection.getInstance();
+    this.credits = credits.findWhere({num: self.model.get('id'), type:"taxon"});
 
   },
 
@@ -134,10 +137,12 @@ module.exports = Marionette.LayoutView.extend({
   },
 
   serializeData: function () {
+    var self = this;
     return {
       taxon: this.model.toJSON(),
       mission: this.mission.toJSON(),
-      isMission: this.isMission
+      isMission: this.isMission,
+      credits: _.get(self.credits, 'attributes.credit')
     };
   },
 

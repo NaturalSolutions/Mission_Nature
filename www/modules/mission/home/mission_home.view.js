@@ -8,6 +8,7 @@ var Backbone = require('backbone'),
   User = require('../../profile/user.model.js'),
   Header = require('../../header/header'),
   Help = require('../../main/help.model'),
+  Credit = require('../../main/credit.model'),
   Footer = require('../../footer/footer.view'),
   Observation = require('../../observation/observation.model'),
   taxonCollection = require('../../taxons/taxons.model');
@@ -68,11 +69,15 @@ module.exports = Marionette.CompositeView.extend({
 
     helps.someHelp(params);
 
+    var credits = Credit.collection.getInstance();
+    this.credits = credits.findWhere({num: self.model.get('num'), type:"mission"});
   },
 
   serializeData: function() {
+    var self = this;
     return {
-      mission: this.model.toJSON()
+      mission: this.model.toJSON(),
+      credits: _.get(self.credits, 'attributes.credit')
     };
   },
 

@@ -31,6 +31,7 @@ var Backbone = require('backbone'),
   Log = require('../logs/log.model'),
   City = require('../localize/city.model'),
   //  Departement = require('../main/departement.model'),
+  Credit = require('../main/credit.model'),
   Help = require('../main/help.model'),
   Mission = require('../mission/mission.model'),
   Taxon = require('../taxons/taxons.model'),
@@ -229,6 +230,31 @@ function init() {
     };
     */
 
+  var getCredits = function() {
+    var deferred = $.Deferred();
+    var creditCollection = new Credit.collection.getInstance();
+
+    $.getJSON('./data/credits.json')
+      .then(function(response) {
+        var creditDatas = response;
+        _.forEach(creditDatas, function(creditData) {
+          var credit = new Credit.Model({
+            type: creditData.type,
+            num: creditData.num,
+            taxon: creditData.taxon,
+            nom_fichier: creditData.nom_fichier,
+            credit: creditData.credit
+          });
+          creditCollection.add(credit);
+        });
+        deferred.resolve();
+      }, function(error) {
+        console.log(error);
+      });
+
+    return deferred;
+  };
+
   var gethelp = function () {
     var deferred = $.Deferred();
     var helpCollection = new Help.collection.getInstance();
@@ -330,7 +356,7 @@ function init() {
     Backbone.history.start();
   });
 
-  $.when(getI18n(), getMissions(), getCities(), /*getDepartements(),*/ gethelp(), getUser(), getObservations(), getLogs() /*, getTimeForest()*/ )
+  $.when(getI18n(), getMissions(), getCities(), /*getDepartements(),*/ gethelp(), getCredits(), getUser(), getObservations(), getLogs() /*, getTimeForest()*/ )
     .done(function () {
       if (window.cordova)
         checkUrlFile();
